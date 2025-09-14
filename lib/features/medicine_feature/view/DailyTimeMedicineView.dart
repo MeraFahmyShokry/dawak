@@ -5,7 +5,8 @@ import 'package:clean_arc/features/medicine_feature/view/item/MedicineItem.dart'
 import 'package:clean_arc/features/medicine_feature/view/item/MedicineTime.dart';
 import 'package:clean_arc/features/medicine_feature/view/medicine_view.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class TimeMedicineScreen extends StatefulWidget {
   const TimeMedicineScreen({super.key});
 
@@ -44,7 +45,7 @@ class _TimeMedicineScreenState extends State<TimeMedicineScreen> {
 
     return Scaffold(
       appBar: CustomAppBar(
-        title: context.translate.dailyMedicine,
+        title: LocaleKeys.dailyMedicine.tr(),
         actions: [
           IconButton(
             icon: Icon(

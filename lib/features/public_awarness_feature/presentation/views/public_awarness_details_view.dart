@@ -4,7 +4,8 @@ import 'package:clean_arc/core/presentation/widget/custom_card_container.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/Book_Appointment_feature/presentation/components/book_appointment_app_bar_component.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../../../../core/routing/navigation_helper.dart';
 
 //@RoutePage()
@@ -14,7 +15,7 @@ class PublicAwarnessDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: context.translate.publicAwareness),
+      appBar: CustomAppBar(title: LocaleKeys.publicAwareness.tr()),
       backgroundColor: context.color.whiteColor,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -41,7 +42,7 @@ class PublicAwarnessDetailsView extends StatelessWidget {
                 //       ),
                 //     ),
                 //     TextApp(
-                //       context.translate.publicAwareness,
+                //       LocaleKeys.publicAwareness.tr(),
                 //       style: context.textStyle.copyWith(
                 //           fontSize: AppDimensions.fontSizeLarge,
                 //           fontWeight: FontWeightHelper.medium,
@@ -93,7 +94,7 @@ class PublicAwarnessDetailsView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextApp(
-                          context.translate.publicAwareness,
+                          LocaleKeys.publicAwareness.tr(),
                           style: context.textStyle.copyWith(
                               fontSize: AppDimensions.fontSizeLarge,
                               fontWeight: FontWeightHelper.medium,
@@ -103,7 +104,7 @@ class PublicAwarnessDetailsView extends StatelessWidget {
                           height: 4,
                         ),
                         TextApp(
-                          context.translate.loremText,
+                          LocaleKeys.loremText.tr(),
                           maxLines: 7,
                           textOverflow: TextOverflow.ellipsis,
                           style: context.textStyle.copyWith(
@@ -120,7 +121,7 @@ class PublicAwarnessDetailsView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextApp(
-                          context.translate.publicAwareness,
+                          LocaleKeys.publicAwareness.tr(),
                           style: context.textStyle.copyWith(
                               fontSize: AppDimensions.fontSizeLarge,
                               fontWeight: FontWeightHelper.medium,
@@ -130,7 +131,7 @@ class PublicAwarnessDetailsView extends StatelessWidget {
                           height: 4,
                         ),
                         TextApp(
-                          context.translate.loremText,
+                          LocaleKeys.loremText.tr(),
                           maxLines: 7,
                           textOverflow: TextOverflow.ellipsis,
                           style: context.textStyle.copyWith(

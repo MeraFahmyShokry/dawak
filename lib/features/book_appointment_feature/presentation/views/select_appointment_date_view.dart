@@ -5,7 +5,8 @@ import 'package:clean_arc/features/Book_Appointment_feature/presentation/views/t
 import 'package:clean_arc/features/book_appointment_feature/controller/book_appointment_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../components/book_appointment_progress_bar_component.dart';
 import '../components/select_clinic_component.dart';
 import '../components/select_date_component.dart';
@@ -23,7 +24,7 @@ class SelectBookAppointmentDateView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: context.color.whiteColor,
-      appBar: CustomAppBar(title: context.translate.bookAppointment),
+      appBar: CustomAppBar(title: LocaleKeys.bookAppointment.tr()),
       body: MultiBlocProvider(
         providers: [BlocProvider.value(value: bookAppointmentCubit)],
         child: BlocBuilder(
@@ -51,7 +52,7 @@ class SelectBookAppointmentDateView extends StatelessWidget {
                             bookAppointmentCubit: bookAppointmentCubit,
                           ));
                     },
-                    title: context.translate.next,
+                    title: LocaleKeys.next.tr(),
                     width: double.infinity,
                     height: 40,
                   )

@@ -2,6 +2,8 @@ import 'package:clean_arc/core/utils/app_colors.dart';
 import 'package:clean_arc/core/utils/app_text_them.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/item/SocialButton.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CustomSocialSignIn extends StatelessWidget {
@@ -30,7 +32,7 @@ class DividerWithText extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(left: 10.h, right: 10.h),
           child: TextApp(
-            context.translate.or,
+            LocaleKeys.or.tr(),
             style: AppTextTheme.bodySmall.copyWith(
               color: AppColors.grey
             ),
@@ -51,19 +53,19 @@ class SocialButtons extends StatelessWidget {
       children: [
         SocialButton(
           icon:AppImages.images.core.png.googleIcon.path,
-          text: context.translate.signInWithGoogle,
+          text: LocaleKeys.signInWithGoogle.tr(),
           onPressed: () {},
         ),
         const SizedBox(height: 10),
         SocialButton(
           icon: AppImages.images.core.png.facebookicon.path,
-          text: context.translate.signInWithFacebook,
+          text: LocaleKeys.signInWithFacebook.tr(),
           onPressed: () {},
         ),
         const SizedBox(height: 10),
         SocialButton(
           icon: AppImages.images.core.png.appleicon.path,
-          text: context.translate.signInWithApple,
+          text: LocaleKeys.signInWithApple.tr(),
           onPressed: () {},
         ),
       ],

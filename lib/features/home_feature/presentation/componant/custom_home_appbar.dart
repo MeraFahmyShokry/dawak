@@ -9,7 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
 import '../../../../core/routing/navigation_helper.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class CustomHomeAppbar extends StatelessWidget {
   final Widget? titleWidget;
   final double? borderRadius;
@@ -44,11 +45,11 @@ class CustomHomeAppbar extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                     '${context.translate.welcome} ${getIt<ILocalPreference>().appUser.value?.userName},',
+                     '${LocaleKeys.welcome.tr()} ${getIt<ILocalPreference>().appUser.value?.userName},',
                     style: AppTextTheme.bodySmallSemiBold,
                   ),
                   TextApp(
-                    context.translate.haveANiceDay,
+                    LocaleKeys.haveANiceDay.tr(),
                     style: AppTextTheme.bodyXSmall.copyWith(
                       color: AppColors.grey
                     ),

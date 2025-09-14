@@ -1,4 +1,6 @@
 import 'package:clean_arc/core/utils_package/utils_package.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 //@RoutePage()
@@ -43,7 +45,7 @@ class ResetPasswordView extends StatelessWidget {
                 flex: 3,
               ),
               TextApp(
-                context.translate.resetYourPassword,
+                LocaleKeys.resetYourPassword.tr(),
                 style: context.textStyle.copyWith(
                     fontWeight: FontWeightHelper.bold,
                     fontSize: AppDimensions.fontSizeOverLarge),
@@ -54,7 +56,7 @@ class ResetPasswordView extends StatelessWidget {
               Container(
                 width: context.width / 1.3,
                 child: TextApp(
-                   context.translate.newPasswordMustDiffer,
+                   LocaleKeys.newPasswordMustDiffer.tr(),
                   style: context.textStyle.copyWith(
                     fontWeight: FontWeightHelper.medium,
                     fontSize: AppDimensions.fontSizeLarge,
@@ -68,8 +70,8 @@ class ResetPasswordView extends StatelessWidget {
                 height: 16.h,
               ),
               CustomTextField(
-                titleText: context.translate.password,
-                hintText: context.translate.enterPassword,
+                titleText: LocaleKeys.password.tr(),
+                hintText: LocaleKeys.enterPassword.tr(),
                 suffixIcon: const Icon(Icons.remove_red_eye_sharp),
                 // isShowBorder: true,
               ),
@@ -77,8 +79,8 @@ class ResetPasswordView extends StatelessWidget {
                 height: 16.h,
               ),
               CustomTextField(
-                titleText: context.translate.confirmPassword,
-                hintText: context.translate.enterPassword,
+                titleText: LocaleKeys.confirmPassword.tr(),
+                hintText: LocaleKeys.enterPassword.tr(),
                 // isShowBorder: true,
                 suffixIcon: const Icon(Icons.remove_red_eye_sharp),
               ),
@@ -96,7 +98,7 @@ class ResetPasswordView extends StatelessWidget {
                     width: 5,
                   ),
                   TextApp(
-                     context.translate.passwordCondition1,
+                     LocaleKeys.passwordCondition1.tr(),
                     style: context.textStyle.copyWith(
                       fontWeight: FontWeightHelper.medium,
                       fontSize: AppDimensions.fontSizeLarge,
@@ -118,7 +120,7 @@ class ResetPasswordView extends StatelessWidget {
                     width: 5,
                   ),
                   TextApp(
-                    context.translate.passwordCondition2,
+                    LocaleKeys.passwordCondition2.tr(),
                     style: context.textStyle.copyWith(
                       fontWeight: FontWeightHelper.medium,
                       fontSize: AppDimensions.fontSizeLarge,
@@ -136,7 +138,7 @@ class ResetPasswordView extends StatelessWidget {
                   width: double.infinity,
                   onPressed: () {},
                   child: TextApp(
-                   context.translate.resetPassword,
+                   LocaleKeys.resetPassword.tr(),
                     style: context.textStyleButton,
                   )),
               SizedBox(
@@ -146,7 +148,7 @@ class ResetPasswordView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextApp(
-                  context.translate.returnToSignIn,
+                  LocaleKeys.returnToSignIn.tr(),
                     style: context.textStyle.copyWith(
                         color: context.color.descriptionColor,
                         fontWeight: FontWeightHelper.semiBold),

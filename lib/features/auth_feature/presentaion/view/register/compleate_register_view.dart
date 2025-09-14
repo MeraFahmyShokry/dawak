@@ -7,6 +7,8 @@ import 'package:clean_arc/features/auth_feature/presentaion/view/otp/otp_view.da
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/SelectAccountTypeScreen.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/SignUpText.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/UploadMedicalInsuranceImage.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -36,7 +38,7 @@ class _CompleateRegisterViewState extends State<CompleateRegisterView>
         return Scaffold(
             backgroundColor: context.color.whiteColor,
             appBar: CustomAppBar(
-                title: context.translate.createAccount,
+                title: LocaleKeys.createAccount.tr(),
                 leadingWidget: Icon(
                   Icons.arrow_back_ios,
                   color: context.color.primaryColor,
@@ -91,9 +93,9 @@ class _CompleateRegisterViewState extends State<CompleateRegisterView>
                                       isShowBorder: true,
                                       fillColor: context.color.whiteColor,
                                       showTitle: true,
-                                      titleText: context.translate.email,
+                                      titleText: LocaleKeys.email.tr(),
                                       hintText:
-                                          context.translate.enterAValidEmail,
+                                          LocaleKeys.enterAValidEmail.tr(),
                                       // controller:
                                       //     authCubit.serialNumberEmailController,
                                       onValidate: (value) {
@@ -125,8 +127,8 @@ class _CompleateRegisterViewState extends State<CompleateRegisterView>
                                     fillColor: context.color.whiteColor,
                                     showTitle: true,
                                     isPassword: true,
-                                    titleText: context.translate.password,
-                                    hintText: context.translate.enterPassword,
+                                    titleText: LocaleKeys.password.tr(),
+                                    hintText: LocaleKeys.enterPassword.tr(),
                                     // controller: authCubit.passwordController,
                                     // onValidate: (value) {
                                     //   if (value == null ||
@@ -145,7 +147,7 @@ class _CompleateRegisterViewState extends State<CompleateRegisterView>
                                     onChanged: (value) {},
                                     items: ["male", "female"],
                                     title:
-                                        context.translate.haveMedicalInsurance,
+                                        LocaleKeys.haveMedicalInsurance.tr(),
                                     showTitle: true,
                                   ),
                                   SizedBox(
@@ -166,7 +168,7 @@ class _CompleateRegisterViewState extends State<CompleateRegisterView>
                                         );
                                       },
                                       child: TextApp(
-                                        context.translate.next,
+                                        LocaleKeys.next.tr(),
                                         style: context.textStyleButton,
                                       )),
 
@@ -182,7 +184,7 @@ class _CompleateRegisterViewState extends State<CompleateRegisterView>
                                   //         );
                                   //       },
                                   //       child: TextApp(
-                                  //         context.translate.next,
+                                  //         LocaleKeys.next.tr(),
                                   //         style: context.textStyleButton,
                                   //       ));
                                   // }, loading: () {
@@ -193,7 +195,7 @@ class _CompleateRegisterViewState extends State<CompleateRegisterView>
                                   //         // context.read<LoginCubit>().login();
                                   //       },
                                   //       child: TextApp(
-                                  //         context.translate.signIn,
+                                  //         LocaleKeys.signIn.tr(),
                                   //         style: context.textStyleButton,
                                   //       ));
                                   // }),
@@ -201,8 +203,8 @@ class _CompleateRegisterViewState extends State<CompleateRegisterView>
                                     height: 30.h,
                                   ),
                                   SignUpText(
-                                    text: context.translate.have_an_account,
-                                    actionText: context.translate.signIn,
+                                    text: LocaleKeys.have_an_account.tr(),
+                                    actionText: LocaleKeys.signIn.tr(),
                                     onTap: () {
                                       Navigator.push(
                                         context,

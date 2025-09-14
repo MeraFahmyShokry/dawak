@@ -3,7 +3,8 @@ import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/Pharmacies_feature/view/PharmaciesDetailsScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class PharmaciesCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -77,7 +78,7 @@ class PharmaciesCard extends StatelessWidget {
                       onPressed: () {
                         NavigationHelper.push(context, PharmaciesDetailsScreen());
                       },
-                      title: context.translate.orderNow,
+                      title: LocaleKeys.orderNow.tr(),
                       titleFontSize: AppDimensions.fontSizeDefault,
                     ),
                   ],

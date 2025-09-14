@@ -5,8 +5,9 @@ import 'package:clean_arc/core/routing/navigation_helper.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
-//@RoutePage()
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
+@RoutePage()
 class NotificationView extends StatelessWidget {
   static const String path = '/NotificationView';
   @override
@@ -21,22 +22,22 @@ class NotificationView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomAppBar(
-                title: context.translate.notifications,
+                title: LocaleKeys.notifications.tr(),
                 actions: [
                   Center(
                     child: InkWell(
                       onTap: () {
                         showVerticalAlertDialog(
                           context: context,
-                          title: context.translate.deleteAllNotification,
-                          confirmTxt: context.translate.delete,
+                          title: LocaleKeys.deleteAllNotification.tr(),
+                          confirmTxt: LocaleKeys.delete.tr(),
                           confirm: () {
                             NavigationHelper.pop(context);
                           },
                         );
                       },
                       child: TextApp(
-                        context.translate.clearAll,
+                        LocaleKeys.clearAll.tr(),
                         style: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeSmall,
                             fontWeight: FontWeightHelper.regular,
@@ -81,7 +82,7 @@ class NotificationItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextApp(
-            context.translate.appointmentBookedSuccess
+            LocaleKeys.appointmentBookedSuccess.tr()
             ,
             style: context.textStyle.copyWith(
                 fontSize: AppDimensions.fontSizeDefault,
@@ -89,7 +90,7 @@ class NotificationItem extends StatelessWidget {
                 color: context.color.titleColor),
           ),
           TextApp(
-          context.translate.loremText,
+          LocaleKeys.loremText.tr(),
             style: context.textStyle.copyWith(
                 fontSize: AppDimensions.fontSizeSmall,
                 fontWeight: FontWeightHelper.regular,

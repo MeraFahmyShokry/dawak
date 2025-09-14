@@ -10,7 +10,8 @@ import 'package:clean_arc/features/relevant_feature/presentation/views/Addrevent
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../components/NewReventView.dart';
 import '../items/CustomDropdownrevent.dart';
 
@@ -41,7 +42,7 @@ class _RelevantMedicalHistoryViewState
     return Scaffold(
       appBar: CustomAppBar(
           title:
-          context.translate.addRelevant),
+          LocaleKeys.addRelevant.tr()),
       body: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
@@ -61,7 +62,7 @@ class _RelevantMedicalHistoryViewState
                         height: 24,
                       ),
                       TextApp(
-                        '${context.translate.medicalhistory}',
+                        '${LocaleKeys.medicalhistory.tr()}',
                         style: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeExtraLarge,
                             fontWeight: FontWeightHelper.medium,
@@ -77,7 +78,7 @@ class _RelevantMedicalHistoryViewState
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextApp(
-                        '${context.translate.chronicDiseases}',
+                        '${LocaleKeys.chronicDiseases.tr()}',
                         style: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeDefault,
                             fontWeight: FontWeightHelper.medium,
@@ -88,7 +89,7 @@ class _RelevantMedicalHistoryViewState
                           _chronicDiseases.add(value.toString());
                           setState(() {});
                         },
-                        title: context.translate.chooseDisease,
+                        title: LocaleKeys.chooseDisease.tr(),
                         items: _basicChronicDiseases,
                         showTitle: false,
                         titleStyle: context.textStyle.copyWith(
@@ -120,7 +121,7 @@ class _RelevantMedicalHistoryViewState
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextApp(
-                        '${context.translate.chronicMedications}',
+                        '${LocaleKeys.chronicMedications.tr()}',
                         style: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeDefault,
                             fontWeight: FontWeightHelper.medium,
@@ -128,7 +129,7 @@ class _RelevantMedicalHistoryViewState
                       ),
                       CustomDropdownField(
                         onChanged: (value) {},
-                        title: context.translate.chooseMedication,
+                        title: LocaleKeys.chooseMedication.tr(),
                         showTitle: false,
                         titleStyle: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeSmall,
@@ -143,7 +144,7 @@ class _RelevantMedicalHistoryViewState
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextApp(
-                        '${context.translate.childhoodIllnesses}',
+                        '${LocaleKeys.childhoodIllnesses.tr()}',
                         style: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeDefault,
                             fontWeight: FontWeightHelper.medium,
@@ -151,7 +152,7 @@ class _RelevantMedicalHistoryViewState
                       ),
                       CustomDropdownField(
                         onChanged: (value) {},
-                        title: context.translate.chooseYourAnswer,
+                        title: LocaleKeys.chooseYourAnswer.tr(),
                         showTitle: false,
                         titleStyle: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeSmall,
@@ -166,7 +167,7 @@ class _RelevantMedicalHistoryViewState
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextApp(
-                        '${context.translate.surgeries}',
+                        '${LocaleKeys.surgeries.tr()}',
                         style: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeDefault,
                             fontWeight: FontWeightHelper.medium,
@@ -174,7 +175,7 @@ class _RelevantMedicalHistoryViewState
                       ),
                       CustomDropdownField(
                         onChanged: (value) {},
-                        title: context.translate.chooseYourPastSurgeries,
+                        title: LocaleKeys.chooseYourPastSurgeries.tr(),
                         showTitle: false,
                         titleStyle: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeSmall,
@@ -189,7 +190,7 @@ class _RelevantMedicalHistoryViewState
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextApp(
-                        '${context.translate.familyIllnesses}',
+                        '${LocaleKeys.familyIllnesses.tr()}',
                         style: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeDefault,
                             fontWeight: FontWeightHelper.medium,
@@ -197,7 +198,7 @@ class _RelevantMedicalHistoryViewState
                       ),
                       CustomDropdownField(
                         onChanged: (value) {},
-                        title: context.translate.chooseYourAnswer,
+                        title: LocaleKeys.chooseYourAnswer.tr(),
                         showTitle: false,
                         titleStyle: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeSmall,
@@ -216,14 +217,14 @@ class _RelevantMedicalHistoryViewState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             TextApp(
-                              '${context.translate.weight}',
+                              '${LocaleKeys.weight.tr()}',
                               style: context.textStyle.copyWith(
                                   fontSize: AppDimensions.fontSizeDefault,
                                   fontWeight: FontWeightHelper.medium,
                                   color: context.color.titleColor),
                             ),
                             CustomTextField(
-                              hintText: '${context.translate.enterYourWeight}',
+                              hintText: '${LocaleKeys.enterYourWeight.tr()}',
                               hintStyle: context.textStyle.copyWith(
                                   fontSize: AppDimensions.fontSizeSmall,
                                   fontWeight: FontWeightHelper.regular,
@@ -238,7 +239,7 @@ class _RelevantMedicalHistoryViewState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             TextApp(
-                              '${context.translate.bloodType}',
+                              '${LocaleKeys.bloodType.tr()}',
                               style: context.textStyle.copyWith(
                                   fontSize: AppDimensions.fontSizeDefault,
                                   fontWeight: FontWeightHelper.medium,
@@ -246,7 +247,7 @@ class _RelevantMedicalHistoryViewState
                             ),
                             CustomDropdownField(
                               onChanged: (value) {},
-                              title: context.translate.selectType,
+                              title: LocaleKeys.selectType.tr(),
                               showTitle: false,
                               titleStyle: context.textStyle.copyWith(
                                   fontSize: AppDimensions.fontSizeSmall,
@@ -268,7 +269,7 @@ class _RelevantMedicalHistoryViewState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             TextApp(
-                              '${context.translate.bloodPressure}',
+                              '${LocaleKeys.bloodPressure.tr()}',
                               style: context.textStyle.copyWith(
                                   fontSize: AppDimensions.fontSizeDefault,
                                   fontWeight: FontWeightHelper.medium,
@@ -290,7 +291,7 @@ class _RelevantMedicalHistoryViewState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             TextApp(
-                              '${context.translate.heartRate}',
+                              '${LocaleKeys.heartRate.tr()}',
                               style: context.textStyle.copyWith(
                                   fontSize: AppDimensions.fontSizeDefault,
                                   fontWeight: FontWeightHelper.medium,
@@ -317,7 +318,7 @@ class _RelevantMedicalHistoryViewState
                   NavigationHelper.pushReplacementAll(context, HomeView());
                   // NavigationHelper.push(context, AddRelevantScreen());
                 },
-                title: context.translate.save),
+                title: LocaleKeys.save.tr()),
           ],
         ),
       ),

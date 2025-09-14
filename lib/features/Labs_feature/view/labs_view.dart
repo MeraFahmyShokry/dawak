@@ -5,7 +5,8 @@ import 'package:clean_arc/features/Labs_feature/view/widget/SortResultsWidget.da
 import 'package:clean_arc/features/Labs_feature/view/widget/labs_card.dart';
 import 'package:clean_arc/features/home_feature/presentation/componant/search_componant.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class LabsScreen extends StatefulWidget {
   const LabsScreen({super.key});
 
@@ -22,7 +23,7 @@ class _LabsScreenState extends State<LabsScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            CustomAppBar(title: context.translate.labs),
+            CustomAppBar(title: LocaleKeys.labs.tr()),
               const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),

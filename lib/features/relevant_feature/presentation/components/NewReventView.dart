@@ -22,7 +22,7 @@
 //                   Icon(Icons.person, color: Colors.blue),
 //                   SizedBox(width: 8),
 //                   TextApp(
-//                     context.translate.personalinfo,
+//                     LocaleKeys.personalinfo.tr(),
 //                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
 //                   ),
 //                 ],
@@ -31,36 +31,36 @@
 //               CustomTextField(
 //                   fillColor: context.color.whiteColor,
 //                   showTitle: true,
-//                   titleText: context.translate.firstName +
+//                   titleText: LocaleKeys.firstName.tr() +
 //                       " " +
-//                       context.translate.lastName,
-//                   hintText: context.translate.enterYourName),
+//                       LocaleKeys.lastName.tr(),
+//                   hintText: LocaleKeys.enterYourName.tr()),
 //               SizedBox(height: 10),
 //               CustomTextField(
 //                   fillColor: context.color.whiteColor,
 //                   showTitle: true,
-//                   titleText: context.translate.nationalIdPassportId,
-//                   hintText: context.translate.enterNationalIdPassportId),
+//                   titleText: LocaleKeys.nationalIdPassportId.tr(),
+//                   hintText: LocaleKeys.enterNationalIdPassportId.tr()),
 //               SizedBox(height: 10),
 //               CustomTextField(
 //                   fillColor: context.color.whiteColor,
 //                   showTitle: true,
-//                   titleText: context.translate.firstName +
+//                   titleText: LocaleKeys.firstName.tr() +
 //                       " " +
-//                       context.translate.lastName,
-//                   hintText: context.translate.enterYourName),
+//                       LocaleKeys.lastName.tr(),
+//                   hintText: LocaleKeys.enterYourName.tr()),
 //               SizedBox(height: 10),
 //               CustomDropdownField(
 //                   onChanged: (value) {},
-//                   title: context.translate.gender,
+//                   title: LocaleKeys.gender.tr(),
 //                   dropDownType: DropDownType.dropDownType,
 //                   items: ["Male", "Female"]),
 //               SizedBox(height: 10),
 //               CustomTextField(
 //                 fillColor: context.color.whiteColor,
 //                 showTitle: true,
-//                 titleText: context.translate.birthDate,
-//                 hintText: context.translate.birthDate,
+//                 titleText: LocaleKeys.birthDate.tr(),
+//                 hintText: LocaleKeys.birthDate.tr(),
 //                 suffixIcon: Icon(
 //                   IconlyLight.calendar,
 //                   color: Colors.blue,
@@ -70,7 +70,7 @@
 //               SizedBox(height: 10),
 //               CustomDropdownField(
 //                   onChanged: (value) {},
-//                   title: context.translate.gender,
+//                   title: LocaleKeys.gender.tr(),
 //                   dropDownType: DropDownType.dropDownType,
 //                   items: ["Male", "Female"]),
 //               SizedBox(height: 10),
@@ -79,7 +79,7 @@
 //               CustomButton(
 //                   width: double.infinity,
 //                   onPressed: () {},
-//                   title: context.translate.next),
+//                   title: LocaleKeys.next.tr()),
 //             ],
 //           ),
 //         ),

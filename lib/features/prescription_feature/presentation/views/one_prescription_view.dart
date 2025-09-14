@@ -8,7 +8,8 @@ import 'package:clean_arc/features/Book_Appointment_feature/presentation/compone
 import 'package:clean_arc/features/prescription_feature/presentation/views/two_prescription_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../../../../core/presentation/widget/filter_dropdown_menu_button.dart';
 
 //@RoutePage()
@@ -21,7 +22,7 @@ class OnePrescriptionView extends StatelessWidget {
       length: 2,
       child: Scaffold(
         backgroundColor: context.color.whiteColor,
-        appBar: CustomAppBar(title: context.translate.prescriptions),
+        appBar: CustomAppBar(title: LocaleKeys.prescriptions.tr()),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsetsDirectional.all(16),
@@ -53,13 +54,13 @@ class OnePrescriptionView extends StatelessWidget {
                           tabs: [
                             Tab(
                               child: TextApp(
-                                context.translate.yourPrescriptions,
+                                LocaleKeys.yourPrescriptions.tr(),
                                 textOverflow: TextOverflow.ellipsis,
                               ),
                             ),
                             Tab(
                               child: TextApp(
-                                context.translate.relevantPrescriptions,
+                                LocaleKeys.relevantPrescriptions.tr(),
                                 textOverflow: TextOverflow.ellipsis,
                               ),
                             ),
@@ -113,7 +114,7 @@ class PrescriptionItem extends StatelessWidget {
                   color: context.color.titleColor),
             ),
             TextApp(
-             context.translate.spechDemo,
+             LocaleKeys.spechDemo.tr(),
               style: context.textStyle.copyWith(
                   fontSize: AppDimensions.fontSizeExtraSmall,
                   fontWeight: FontWeightHelper.regular,
@@ -148,7 +149,7 @@ class YourPrescriptionsContentComponent extends StatelessWidget {
             spacing: 8,
             children: [
               TextApp(
-                '5 ${context.translate.prescriptions}',
+                '5 ${LocaleKeys.prescriptions.tr()}',
                 style: context.textStyle.copyWith(
                     fontSize: AppDimensions.fontSizeSmall,
                     fontWeight: FontWeightHelper.regular,

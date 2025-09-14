@@ -4,7 +4,8 @@ import '../../../../core/presentation/util/app_dimensions.dart';
 import '../../../../core/presentation/util/style/fonts/font_weight_helper.dart';
 import '../../../../core/presentation/widget/text_app.dart';
 import '../items/review_card_item.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class ReviewsSectionComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class ReviewsSectionComponent extends StatelessWidget {
           spacing: 8,
           children: [
             TextApp(
-              context.translate.reviews,
+              LocaleKeys.reviews.tr(),
               style: context.textStyle.copyWith(
                   fontSize: AppDimensions.fontSizeDefault,
                   fontWeight: FontWeightHelper.medium,
@@ -30,7 +31,7 @@ class ReviewsSectionComponent extends StatelessWidget {
 
               },
               child: TextApp(
-                context.translate.viewMore,
+                LocaleKeys.viewMore.tr(),
                 style: context.textStyle.copyWith(
                     fontSize: AppDimensions.fontSizeSmall,
                     fontWeight: FontWeightHelper.regular,

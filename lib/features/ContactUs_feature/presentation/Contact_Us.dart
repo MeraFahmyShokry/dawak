@@ -2,8 +2,10 @@ import 'package:clean_arc/core/presentation/widget/CustomAppBar.dart';
 import 'package:clean_arc/core/presentation/widget/custom_card_container.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as dic;
 import 'package:flutter_iconly/flutter_iconly.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class ContactUsScreen extends StatelessWidget {
   const ContactUsScreen({super.key});
 
@@ -14,9 +16,9 @@ class ContactUsScreen extends StatelessWidget {
     final TextEditingController messageController = TextEditingController();
 
     return Directionality(
-      textDirection: TextDirection.rtl,
+      textDirection: dic.TextDirection.rtl,
       child: Scaffold(
-        appBar: CustomAppBar(title: context.translate.contactus),
+        appBar: CustomAppBar(title: LocaleKeys.contactus.tr()),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -29,22 +31,22 @@ class ContactUsScreen extends StatelessWidget {
                   CustomTextField(
                     showTitle: true,
                     controller: nameController,
-                    titleText: context.translate.name,
-                    hintText: context.translate.name,
+                    titleText: LocaleKeys.name.tr(),
+                    hintText: LocaleKeys.name.tr(),
                   ),
                   SizedBox(height: 20.h),
                   CustomTextField(
                     showTitle: true,
                     controller: emailController,
-                    titleText: context.translate.email,
-                    hintText: context.translate.email,
+                    titleText: LocaleKeys.email.tr(),
+                    hintText: LocaleKeys.email.tr(),
                   ),
                   SizedBox(height: 20.h),
                   CustomTextField(
                     showTitle: true,
                     controller: messageController,
-                    titleText: context.translate.message,
-                    hintText: context.translate.message,
+                    titleText: LocaleKeys.message.tr(),
+                    hintText: LocaleKeys.message.tr(),
                     minLines: 8,
                     inputType: TextInputType.multiline,
                   ),
@@ -52,7 +54,7 @@ class ContactUsScreen extends StatelessWidget {
                   CustomButton(
                       width: double.infinity,
                       onPressed: () {},
-                      title: context.translate.send),
+                      title: LocaleKeys.send.tr()),
                   SizedBox(height: 10.h),
                 ]),
               )),
@@ -61,7 +63,7 @@ class ContactUsScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   TextApp(
-                    context.translate.contactinfo,
+                    LocaleKeys.contactinfo.tr(),
                   ),
                 ],
               ),

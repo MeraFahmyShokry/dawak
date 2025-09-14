@@ -1,5 +1,7 @@
 import 'package:clean_arc/core/utils_package/utils_package.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class UploadMedicalInsuranceImage extends StatelessWidget {
@@ -9,7 +11,7 @@ class UploadMedicalInsuranceImage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextApp(
-          context.translate.insertYourMedicalInsuranceImage,
+          LocaleKeys.insertYourMedicalInsuranceImage.tr(),
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
@@ -43,12 +45,12 @@ class UploadMedicalInsuranceImage extends StatelessWidget {
                 ),
                 SizedBox(height: 8),
                 TextApp(
-                  context.translate.dragYourImageHere,
+                  LocaleKeys.dragYourImageHere.tr(),
                   style: TextStyle(color: Colors.grey, fontSize: 14),
                 ),
                 SizedBox(height: 4),
                 Text(
-                  context.translate.maxSize,
+                  LocaleKeys.maxSize.tr(),
                   style: TextStyle(color: Colors.grey, fontSize: 12),
                 ),
               ],

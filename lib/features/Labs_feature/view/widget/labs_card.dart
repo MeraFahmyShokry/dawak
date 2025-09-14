@@ -3,7 +3,8 @@ import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/Labs_feature/view/labs_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class ScanCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -77,7 +78,7 @@ class ScanCard extends StatelessWidget {
                             builder: (context) => LabDetailsScreen()),
                       );
                     },
-                    title: context.translate.viewdetails,
+                    title: LocaleKeys.viewdetails.tr(),
                     titleFontSize: AppDimensions.fontSizeDefault,
                   ),
                 ],

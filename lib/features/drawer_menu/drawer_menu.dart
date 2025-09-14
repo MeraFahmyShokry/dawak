@@ -16,7 +16,8 @@ import 'package:clean_arc/features/my_orders_feature/presentation/views/my_order
 import 'package:clean_arc/features/notification_feature/presentation/views/notification_view.dart';
 import 'package:clean_arc/features/settings_feature/view/Setting_view.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({super.key});
 
@@ -35,7 +36,7 @@ class DrawerMenu extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  context.translate.mainMenu,
+                  LocaleKeys.mainMenu.tr(),
                   style: AppTextTheme.headingMedium
                       .copyWith(color: AppColors.primary),
                 ),
@@ -46,44 +47,44 @@ class DrawerMenu extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       DrawerItem(
-                        title: context.translate.home,
+                        title: LocaleKeys.home.tr(),
                         onTap: () {
                           NavigationHelper.pushReplacementAll(
                               context, HomeView());
                         },
                       ),
                       DrawerItem(
-                        title: context.translate.notifications,
+                        title: LocaleKeys.notifications.tr(),
                         onTap: () {
                           NavigationHelper.push(context, NotificationView());
                         },
                       ),
                       DrawerItem(
-                        title: context.translate.dailyMedicine,
+                        title: LocaleKeys.dailyMedicine.tr(),
                         onTap: () {
                           NavigationHelper.push(context, DailyMedicineScreen());
                         },
                       ),
                       DrawerItem(
-                        title: context.translate.myOrders,
+                        title: LocaleKeys.myOrders.tr(),
                         onTap: () {
                           NavigationHelper.push(context, MyOrdersView());
                         },
                       ),
                       DrawerItem(
-                        title: context.translate.appointment,
+                        title: LocaleKeys.appointment.tr(),
                         onTap: () {
                           NavigationHelper.push(context, AppointmentView());
                         },
                       ),
                       DrawerItem(
-                        title: context.translate.cart,
+                        title: LocaleKeys.cart.tr(),
                         onTap: () {
                           NavigationHelper.push(context, CartScreen());
                         },
                       ),
                       DrawerItem(
-                        title: context.translate.settings,
+                        title: LocaleKeys.settings.tr(),
                         onTap: () {
                           NavigationHelper.push(context, SettingScreen());
                         },

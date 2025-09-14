@@ -2,7 +2,8 @@ import 'package:clean_arc/core/presentation/extintions/context_extintions.dart';
 import 'package:clean_arc/core/presentation/widget/cached_network_image_utill.dart';
 import 'package:clean_arc/core/presentation/widget/custom_card_container.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../../../../core/presentation/util/app_dimensions.dart';
 import '../../../../core/presentation/util/style/fonts/font_weight_helper.dart';
 import '../../../../core/presentation/util/style/images/assets.gen.dart';
@@ -57,7 +58,7 @@ class ClinicCardItem extends StatelessWidget {
               spacing: 10,
               children: [
                 TextApp(
-                  context.translate.clinicDetails,
+                  LocaleKeys.clinicDetails.tr(),
                   style: context.textStyle.copyWith(
                       fontSize: AppDimensions.fontSizeDefault,
                       fontWeight: FontWeightHelper.medium,
@@ -112,7 +113,7 @@ class ClinicCardItem extends StatelessWidget {
               spacing: 10,
               children: [
                 TextApp(
-                  context.translate.pricing,
+                  LocaleKeys.pricing.tr(),
                   style: context.textStyle.copyWith(
                       fontSize: AppDimensions.fontSizeDefault,
                       fontWeight: FontWeightHelper.medium,
@@ -136,7 +137,7 @@ class ClinicCardItem extends StatelessWidget {
                                   BlendMode.srcIn),
                             ),
                             TextApp(
-                              '${context.translate.appointmentPrice} :',
+                              '${LocaleKeys.appointmentPrice.tr()} :',
                               style: context.textStyle.copyWith(
                                   fontSize: AppDimensions.fontSizeSmall,
                                   fontWeight: FontWeightHelper.medium,
@@ -171,7 +172,7 @@ class ClinicCardItem extends StatelessWidget {
                             colorFilter: ColorFilter.mode(context.color.secondaryColor!,BlendMode.srcIn),
                           ),
                           TextApp(
-                            '${context.translate.appointmentPrice} :',
+                            '${LocaleKeys.appointmentPrice.tr()} :',
                             style: context.textStyle.copyWith(
                                 fontSize: AppDimensions.fontSizeSmall,
                                 fontWeight: FontWeightHelper.medium,
@@ -206,7 +207,7 @@ class ClinicCardItem extends StatelessWidget {
                             colorFilter: ColorFilter.mode(context.color.secondaryColor!,BlendMode.srcIn),
                           ),
                           TextApp(
-                            '${context.translate.consultationPrice} :',
+                            '${LocaleKeys.consultationPrice.tr()} :',
                             style: context.textStyle.copyWith(
                                 fontSize: AppDimensions.fontSizeSmall,
                                 fontWeight: FontWeightHelper.medium,

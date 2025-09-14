@@ -19,7 +19,8 @@ import '../components/doctor_header_component.dart';
 import '../components/doctor_state_component.dart';
 import '../components/review_section_component.dart';
 import '../items/clinic_card_item.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 
 //@RoutePage()
@@ -130,7 +131,7 @@ class DoctorDetailsView extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 TextApp(
-                                  context.translate.aboutClinicsAndPrices,
+                                  LocaleKeys.aboutClinicsAndPrices.tr(),
                                   style: context.textStyle.copyWith(
                                       fontSize: AppDimensions.fontSizeDefault,
                                       fontWeight: FontWeightHelper.medium,
@@ -192,7 +193,7 @@ class DoctorDetailsView extends StatelessWidget {
                   onPressed: () {
                     NavigationHelper.push(context, FirstBookAppointmentView(doctorId: id,));
                   },
-                  title: context.translate.bookNow,
+                  title: LocaleKeys.bookNow.tr(),
                   width: double.infinity,
                   height: 40,
                 ),

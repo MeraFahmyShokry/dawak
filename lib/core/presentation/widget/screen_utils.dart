@@ -1,5 +1,7 @@
 import 'package:clean_arc/core/domain/entity/failures.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:top_snackbar_flutter/custom_snack_bar.dart';
 import 'package:top_snackbar_flutter/top_snack_bar.dart';
@@ -14,7 +16,7 @@ mixin ScreenUtils<T extends StatefulWidget> on State<T> {
 
   void showError(
       {Failure? failure, String? customMessage, bool isFloating = true}) {
-    String message = customMessage ?? context.translate.errorMessage;
+    String message = customMessage ?? LocaleKeys.errorMessage.tr();
     print("failurefailure ${failure.runtimeType}");
 
     if (failure != null) {
@@ -23,8 +25,8 @@ mixin ScreenUtils<T extends StatefulWidget> on State<T> {
         message = failure.message;
       } else if (failure is NetworkFailure) {
         message = (failure.connectionTimeOut)
-            ? context.translate.connectionTimeOut
-            : context.translate.noInternetConnection;
+            ? LocaleKeys.connectionTimeOut.tr()
+            : LocaleKeys.noInternetConnection.tr();
         // } else if (failure.message.isNotEmpty) {
         //   message = failure?.message;
         // }
@@ -32,8 +34,8 @@ mixin ScreenUtils<T extends StatefulWidget> on State<T> {
        }
       //   else if (failure is NetworkFailure) {
       //   message = (failure.connectionTimeOut)
-      //       ? context.translate.connectionTimeOut
-      //       : context.translate.noInternetConnection;
+      //       ? LocaleKeys.connectionTimeOut.tr()
+      //       : LocaleKeys.noInternetConnection.tr();
       // }
       showTopSnackBar(
         Overlay.of(context),
@@ -86,7 +88,7 @@ mixin ScreenUtils<T extends StatefulWidget> on State<T> {
       {String? customMessage,
       bool isFloating = false,
       Color? backgroundColor}) {
-    String message = customMessage ?? context.translate.success;
+    String message = customMessage ?? LocaleKeys.success.tr();
     showTopSnackBar(
       Overlay.of(context),
       CustomSnackBar.success(

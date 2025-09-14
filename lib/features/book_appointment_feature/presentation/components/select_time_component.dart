@@ -1,7 +1,8 @@
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/book_appointment_feature/controller/book_appointment_controller.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class SelectTimeComponent extends StatelessWidget {
   const SelectTimeComponent({
     super.key,
@@ -14,7 +15,7 @@ class SelectTimeComponent extends StatelessWidget {
       spacing: 16,
       children: [
         TextApp(
-          context.translate.selectTime,
+          LocaleKeys.selectTime.tr(),
           style: context.textStyle.copyWith(
               fontSize: AppDimensions.fontSizeDefault,
               fontWeight: FontWeightHelper.medium,

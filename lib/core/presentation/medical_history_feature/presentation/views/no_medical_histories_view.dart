@@ -1,6 +1,8 @@
 import 'package:clean_arc/core/presentation/widget/CustomAppBar.dart';
 import 'package:clean_arc/core/routing/navigation_helper.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../components/NewReventView.dart';
@@ -29,7 +31,7 @@ class _NoMedicalHistoriesViewState extends State<NoMedicalHistoriesView> {
             NavigationHelper.pop(context);
           },
           title:
-          context.translate.medicalhistory),
+          LocaleKeys.medicalhistory.tr()),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -43,7 +45,7 @@ class _NoMedicalHistoriesViewState extends State<NoMedicalHistoriesView> {
               ),
               SizedBox(height: 26,),
               TextApp(
-                '${context.translate.noData}',
+                '${LocaleKeys.noData.tr()}',
                 style: context.textStyle.copyWith(
                     fontSize: AppDimensions.fontSizeLarge,
                     fontWeight: FontWeightHelper.semiBold,
@@ -51,7 +53,8 @@ class _NoMedicalHistoriesViewState extends State<NoMedicalHistoriesView> {
               ),
               SizedBox(height: 8,),
               TextApp(
-                '${context.translate.addMedicalHistoryMsg}',
+                //addMedicalHistoryMsg
+                '${LocaleKeys.addMedicalHistoryMsg.tr()}',
                 textAlign: TextAlign.center,
                 style: context.textStyle.copyWith(
                     fontSize: AppDimensions.fontSizeSmall,
@@ -63,7 +66,7 @@ class _NoMedicalHistoriesViewState extends State<NoMedicalHistoriesView> {
                   width: double.infinity,
                   height: 40,
                   onPressed: () {},
-                  title: context.translate.addYourInformation),
+                  title: LocaleKeys.addYourInformation.tr()),
             ],
           ),
         ),

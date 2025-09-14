@@ -2,6 +2,8 @@ import 'package:clean_arc/core/presentation/widget/custom_card_container.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/payment_componant/items/payment_information_radio_item.dart';
 import 'package:flutter/material.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class PaymentWithFawryAndVodafone extends StatelessWidget {
   const PaymentWithFawryAndVodafone({
     super.key,
@@ -39,7 +41,7 @@ class PaymentWithFawryAndVodafone extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TextApp(
-                    context.translate.walletNumber,
+                    LocaleKeys.walletNumber.tr(),
                     style: context.textStyle.copyWith(
                       fontSize: AppDimensions.fontSizeLarge,
                       fontWeight: FontWeightHelper.medium,
@@ -48,7 +50,7 @@ class PaymentWithFawryAndVodafone extends StatelessWidget {
                   ),
                   SizedBox(height: AppDimensions.paddingSizeDefault,),
                   CustomTextField(
-                    hintText: context.translate.enterWalletNumber,
+                    hintText: LocaleKeys.enterWalletNumber.tr(),
                   ),
                 ],
               ),
@@ -111,7 +113,7 @@ class PaymentWithVisaAndMastercard extends StatelessWidget {
                   children: [
                     PaymentInformationRadioItem(),
                     TextApp(
-                      context.translate.newCard,
+                      LocaleKeys.newCard.tr(),
                       style: context.textStyle.copyWith(
                         fontSize: AppDimensions.fontSizeLarge,
                         fontWeight: FontWeightHelper.medium,

@@ -1,4 +1,6 @@
 import 'package:clean_arc/core/presentation/extintions/context_extintions.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/presentation/util/app_dimensions.dart';
@@ -20,7 +22,7 @@ class AboutSectionComponent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextApp(
-          context.translate.aboutMe,
+          LocaleKeys.aboutMe.tr(),
           style: context.textStyle.copyWith(
               fontSize: AppDimensions.fontSizeDefault,
               fontWeight: FontWeightHelper.medium,

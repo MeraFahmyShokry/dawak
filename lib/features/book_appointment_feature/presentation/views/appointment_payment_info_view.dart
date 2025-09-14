@@ -4,7 +4,8 @@ import 'package:clean_arc/core/presentation/util/style/images/fonts.gen.dart';
 import 'package:clean_arc/core/presentation/widget/CustomAppBar.dart';
 import 'package:clean_arc/features/Book_Appointment_feature/presentation/views/appointment_success_view.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../../../../core/presentation/util/app_dimensions.dart';
 import '../../../../core/presentation/util/style/fonts/font_weight_helper.dart';
 import '../../../../core/presentation/util/style/images/assets.gen.dart';
@@ -25,7 +26,7 @@ class AppointmentPaymentInfoView extends StatelessWidget {
     return Scaffold(
       backgroundColor: context.color.whiteColor,
       appBar: CustomAppBar(
-         title: context.translate.paymentinformation,
+         title: LocaleKeys.paymentinformation.tr(),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -38,7 +39,7 @@ class AppointmentPaymentInfoView extends StatelessWidget {
                 progressValueRatio: 1,
               ),
               TextApp(
-                context.translate.selectPaymentMethod,
+                LocaleKeys.selectPaymentMethod.tr(),
                 style: context.textStyle.copyWith(
                     fontSize: AppDimensions.fontSizeLarge,
                     fontWeight: FontWeightHelper.medium,
@@ -52,7 +53,7 @@ class AppointmentPaymentInfoView extends StatelessWidget {
                 onPressed: () {
                   NavigationHelper.push(context, AppointmentSuccessView());
                 },
-                title: context.translate.next,
+                title: LocaleKeys.next.tr(),
                 width: double.infinity,
                 height: 40,
               )

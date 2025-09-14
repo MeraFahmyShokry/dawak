@@ -1,15 +1,16 @@
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/Cheackout_feature/view/Cheackout_view.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class TotalSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        buildTotalRow(context, context.translate.subtotal, "\$444"),
-        buildTotalRow(context, context.translate.tax, "\$54"),
-        buildTotalRow(context, context.translate.total, "\$45",
+        buildTotalRow(context, LocaleKeys.subtotal.tr(), "\$444"),
+        buildTotalRow(context, LocaleKeys.tax.tr(), "\$54"),
+        buildTotalRow(context, LocaleKeys.total.tr(), "\$45",
             isBold: true, color: Colors.blue),
         SizedBox(height: 10),
         buildActionButtons(context),
@@ -53,14 +54,14 @@ class TotalSection extends StatelessWidget {
               Navigator.pop(context);
             },
             titleFontSize: AppDimensions.fontSizeDefault,
-            title: context.translate.addItem,
+            title: LocaleKeys.addItem.tr(),
           ),
         ),
         SizedBox(width: 10),
         Expanded(
             child: CustomButton(
           titleFontSize: AppDimensions.fontSizeDefault,
-          title: context.translate.next,
+          title: LocaleKeys.next.tr(),
           onPressed: () {
             Navigator.push(
                 context,

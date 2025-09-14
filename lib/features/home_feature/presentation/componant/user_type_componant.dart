@@ -6,7 +6,8 @@ import 'package:clean_arc/features/auth_feature/domain/model/account_type_model.
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/item/AccountTypeItem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class UserTypeComponent extends StatelessWidget {
   const UserTypeComponent({super.key});
 
@@ -18,7 +19,7 @@ class UserTypeComponent extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child:
-              ShowAllWidget(title: context.translate.categories, onTap: null),
+              ShowAllWidget(title: LocaleKeys.categories.tr(), onTap: null),
         ),
         SizedBox(
           height: 16,

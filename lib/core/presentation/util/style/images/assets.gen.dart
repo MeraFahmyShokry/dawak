@@ -582,8 +582,8 @@ class $AssetsImagesDemoSvgGen {
 class AppImages {
   const AppImages._();
 
-  // static const String aEnv = '.env.dev';
-  static const String aEnv = '.env.prod';
+  static const String aEnv = '.env.dev';
+  // static const String aEnv = '.env.prod';
   static const $AssetsImagesGen images = $AssetsImagesGen();
 
   /// List of all assets

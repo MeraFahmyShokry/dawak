@@ -4,7 +4,8 @@ import 'package:clean_arc/features/medicine_feature/cubit_cubit/medicine_cubit.d
 import 'package:clean_arc/features/medicine_feature/view/widget/CounterWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 enum IncrementType { dosage, duration, times }
 
 enum decrementType { dosage, duration, times }
@@ -31,7 +32,7 @@ class IncrementalField extends StatelessWidget {
             Expanded(
               child: CustomDropdownField(
                 onChanged: (value) {},
-                title: context.translate.selectDuration,
+                title: LocaleKeys.selectDuration.tr(),
                 showTitle: false,
                 dropDownType: DropDownType.dropDownType,
               ),

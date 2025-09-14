@@ -6,7 +6,8 @@ import 'package:clean_arc/features/relevant_patient/domain/repository/patient_re
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../../../core/data/services/shared_prefs/i_local_preference.dart';
 import '../../../injection/injection.dart';
 import '../domain/params/get_relevent_params.dart';
@@ -45,7 +46,7 @@ class GetPatientCubit
               id:getIt<ILocalPreference>().appUser.value?.id,
               patientId: getIt<ILocalPreference>().appUser.value?.id,
               description: '',
-              name: context.translate.me,
+              name: LocaleKeys.me.tr(),
               dob: DateTime.now(),
               code: '',
               isActive: true),

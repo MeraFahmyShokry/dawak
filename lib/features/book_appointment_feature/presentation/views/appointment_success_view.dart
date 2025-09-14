@@ -9,8 +9,9 @@ import '../../../../core/presentation/util/app_dimensions.dart';
 import '../../../../core/presentation/util/style/fonts/font_weight_helper.dart';
 import '../../../../core/presentation/widget/text_app.dart';
 import '../../../../core/routing/navigation_helper.dart';
-
-//@RoutePage()
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
+@RoutePage()
 class AppointmentSuccessView extends StatelessWidget {
   static const String path = '/AppointmentSuccessView';
   @override
@@ -31,7 +32,7 @@ class AppointmentSuccessView extends StatelessWidget {
                   spacing: 8,
                   children: [
                     TextApp(
-                      context.translate.appointmentSuccessTitle,
+                      LocaleKeys.appointmentSuccessTitle.tr(),
                       textAlign: TextAlign.center,
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeLarge,
@@ -39,7 +40,7 @@ class AppointmentSuccessView extends StatelessWidget {
                           color: context.color.titleColor),
                     ),
                     TextApp(
-                      context.translate.appointmentSuccessSubTitle,
+                      LocaleKeys.appointmentSuccessSubTitle.tr(),
                       textAlign: TextAlign.center,
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeDefault,
@@ -55,7 +56,7 @@ class AppointmentSuccessView extends StatelessWidget {
                       LayoutView(),
                     );
                   },
-                  title: context.translate.home,
+                  title: LocaleKeys.home.tr(),
                   width: double.infinity,
                   height: 40,
                 )

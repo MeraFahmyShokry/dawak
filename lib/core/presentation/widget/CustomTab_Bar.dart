@@ -1,4 +1,6 @@
 import 'package:clean_arc/core/utils_package/utils_package.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CustomTabBar extends StatelessWidget implements PreferredSizeWidget {
@@ -22,11 +24,11 @@ class CustomTabBar extends StatelessWidget implements PreferredSizeWidget {
           fontFamily: FontFamilyHelper.geLocalozedFontFamily()),
       tabs: [
         Tab(
-          text: context.translate.all,
+          text: LocaleKeys.all.tr(),
         ),
-        Tab(text: context.translate.upcoming),
-        Tab(text: context.translate.completed),
-        Tab(text: context.translate.cancelled),
+        Tab(text: LocaleKeys.upcoming.tr()),
+        Tab(text: LocaleKeys.completed.tr()),
+        Tab(text: LocaleKeys.cancelled.tr()),
       ],
     );
   }

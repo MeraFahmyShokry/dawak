@@ -1,4 +1,6 @@
 import 'package:clean_arc/core/utils_package/utils_package.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
@@ -8,9 +10,10 @@ class AppDateTimeFormat {
     // DateTime now = date;
     String? formattedDate;
     if (date != null && date != 'null') {
+
       formattedDate =
-          DateFormat('EEEE,dd-MM-yyyy – hh:mm', context.translate.localeName)
-              .format(DateTime.parse(date!));
+          DateFormat('EEEE,dd-MM-yyyy – hh:mm', LocaleKeys.localeName.tr())
+              .format(DateTime.parse(date));
     } else {
       // formattedDate = '';
     }
@@ -23,7 +26,7 @@ class AppDateTimeFormat {
     String formattedDate = '';
     if (date != null || date != 'null') {
       String format =
-          DateFormat('EEE: dd/MM/yyyy', context.translate.localeName)
+          DateFormat('EEE: dd/MM/yyyy', LocaleKeys.localeName.tr())
               .format(DateTime.parse(date ?? '${DateTime.now()}'));
       formattedDate = format;
     } else {
@@ -36,7 +39,7 @@ class AppDateTimeFormat {
       {required String? date, required BuildContext context}) {
     if (date == null || date == 'null') return null;
     String formattedDate =
-        DateFormat('EEEE,dd-MM-yyyy', context.translate.localeName)
+        DateFormat('EEEE,dd-MM-yyyy', LocaleKeys.localeName.tr())
             .format(DateTime.parse(date!));
     return formattedDate;
   }
@@ -44,7 +47,7 @@ class AppDateTimeFormat {
   static String? formatTime(
       {required String? date, required BuildContext context}) {
     if (date == null || date == 'null') return null;
-    String formattedDate = DateFormat('hh:mm', context.translate.localeName)
+    String formattedDate = DateFormat('hh:mm', LocaleKeys.localeName.tr())
         .format(DateTime.parse(date));
     return formattedDate;
   }

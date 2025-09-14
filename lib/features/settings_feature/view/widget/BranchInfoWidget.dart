@@ -1,7 +1,8 @@
 import 'package:clean_arc/core/presentation/extintions/context_extintions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class BranchInfoWidget extends StatelessWidget {
   final String branchName;
   final String address;
@@ -52,7 +53,7 @@ class BranchInfoWidget extends StatelessWidget {
           child: TextButton(
             onPressed: onChange,
             child: Text(
-              context.translate.change,
+              LocaleKeys.change.tr(),
               style: TextStyle(color: Colors.blue),
             ),
           ),

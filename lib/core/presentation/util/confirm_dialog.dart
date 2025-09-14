@@ -1,5 +1,7 @@
 import 'package:clean_arc/core/presentation/widget/custom_button_button.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -69,8 +71,8 @@ class _ConfirmReasonDialogState extends State<ConfirmReasonDialog> {
             CustomTextField(
               maxLines: 5,
               minLines: 3,
-              titleText: context.translate.reason,
-              hintText: context.translate.reason,
+              titleText: LocaleKeys.reason.tr(),
+              hintText: LocaleKeys.reason.tr(),
             ),
             SizedBox(
               height: 16,
@@ -82,7 +84,7 @@ class _ConfirmReasonDialogState extends State<ConfirmReasonDialog> {
                     isLoading: widget.isLoading ?? false,
 
                     // borderRadius: 10,
-                    child: Text(context.translate.confirm,
+                    child: Text(LocaleKeys.confirm.tr(),
                         style: context.textStyleButton.copyWith()),
                     onPressed: () {
                       widget.confirm();
@@ -102,7 +104,7 @@ class _ConfirmReasonDialogState extends State<ConfirmReasonDialog> {
                     bgColor: Colors.transparent,
                     // borderRadius: 10,
                     child: Text(
-                      context.translate.cancel,
+                      LocaleKeys.cancel.tr(),
                       style: context.textStyleButton.copyWith(
                         color: context.color.primaryColor,
                       ),

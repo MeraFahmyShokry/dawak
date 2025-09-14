@@ -21,7 +21,7 @@ onChanged: (value) { },
 )
 
 ///============================
-context.translate.document,
+LocaleKeys.document.tr(),
 ///============================
 context.textStyle.copyWith(
 fontSize: AppDimensions.fontSizeDefault ,
@@ -33,7 +33,7 @@ AppDimensions.fontSizeDefault
 FontWeightHelper
 ///============================
 TextApp(
-context.translate.document,
+LocaleKeys.document.tr(),
 style: context.textStyle.copyWith(
 fontSize: 16,
 fontWeight: FontWeightHelper.bold,

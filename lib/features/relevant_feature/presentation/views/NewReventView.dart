@@ -6,12 +6,13 @@ import 'package:clean_arc/features/relevant_feature/presentation/items/UploadIma
 import 'package:clean_arc/features/relevant_feature/presentation/views/relevant_medical_history_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class AddNewRelevantScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: context.translate.addRelevant),
+      appBar: CustomAppBar(title: LocaleKeys.addRelevant.tr()),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -26,7 +27,7 @@ class AddNewRelevantScreen extends StatelessWidget {
                         Icon(Icons.person, color: context.color.primaryColor),
                         SizedBox(width: 8),
                         TextApp(
-                          context.translate.personalinfo,
+                          LocaleKeys.personalinfo.tr(),
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -35,36 +36,37 @@ class AddNewRelevantScreen extends StatelessWidget {
                     CustomTextField(
                         fillColor: context.color.whiteColor,
                         showTitle: true,
-                        titleText: context.translate.firstName +
+                        titleText: LocaleKeys.firstName.tr() +
                             " " +
-                            context.translate.lastName,
-                        hintText: context.translate.enterYourName),
+                            LocaleKeys.lastName.tr(),
+                        hintText: LocaleKeys.enterYourName.tr()),
                     SizedBox(height: 10),
                     CustomTextField(
                         fillColor: context.color.whiteColor,
                         showTitle: true,
-                        titleText: context.translate.nationalId,
-                        hintText: context.translate.enterNationalId),
+                        titleText: LocaleKeys.nationalId.tr(),
+                        hintText: LocaleKeys.enterNationalId.tr()),
                     SizedBox(height: 10),
                     CustomTextField(
                         fillColor: context.color.whiteColor,
                         showTitle: true,
-                        titleText: context.translate.firstName +
+                        titleText: LocaleKeys.firstName.tr() +
                             " " +
-                            context.translate.lastName,
-                        hintText: context.translate.enterYourName),
+                            LocaleKeys.lastName.tr(),
+                        hintText: LocaleKeys.enterYourName.tr()),
                     SizedBox(height: 10),
                     CustomDropdownField(
                         onChanged: (value) {},
-                        title: context.translate.gender,
+                        title: LocaleKeys.gender.tr(),
                         dropDownType: DropDownType.dropDownType,
-                        items: [context.translate.male, context.translate.female]),
+                        //male
+                        items: [LocaleKeys.maleK.tr(), LocaleKeys.femaleK.tr()]),
                     SizedBox(height: 10),
                     CustomTextField(
                       fillColor: context.color.whiteColor,
                       showTitle: true,
-                      titleText: context.translate.birthDate,
-                      hintText: context.translate.birthDate,
+                      titleText: LocaleKeys.birthDate.tr(),
+                      hintText: LocaleKeys.birthDate.tr(),
                       suffixIcon: Icon(
                         IconlyLight.calendar,
                         color: Colors.blue,
@@ -74,7 +76,7 @@ class AddNewRelevantScreen extends StatelessWidget {
                     SizedBox(height: 10),
                     CustomDropdownField(
                         onChanged: (value) {},
-                        title: context.translate.gender,
+                        title: LocaleKeys.gender.tr(),
                         dropDownType: DropDownType.dropDownType,
                         items: ["Male", "Female"]),
                     SizedBox(height: 10),
@@ -94,7 +96,7 @@ class AddNewRelevantScreen extends StatelessWidget {
                   NavigationHelper.push(
                       context, RelevantMedicalHistoryView());
                 },
-                title: context.translate.next),
+                title: LocaleKeys.next.tr()),
 
             // SizedBox(height: 16,)
           ],

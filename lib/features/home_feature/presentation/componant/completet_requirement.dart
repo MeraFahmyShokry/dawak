@@ -2,7 +2,8 @@ import 'package:clean_arc/core/routing/navigation_helper.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/relevant_feature/presentation/views/relevant_medical_history_view.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class CompleteRequirement extends StatelessWidget {
   const CompleteRequirement({super.key});
 
@@ -30,7 +31,7 @@ class CompleteRequirement extends StatelessWidget {
                       children: [
                         AppImages.images.core.svg.warrnign.svg(),
                         TextApp(
-                          context.translate.pleaseCompleteYourMedicalHistory,
+                          LocaleKeys.pleaseCompleteYourMedicalHistory.tr(),
                           fontSize: AppDimensions.fontSizeLarge,
                           fontWeight: FontWeightHelper.bold,
                         ),
@@ -46,7 +47,7 @@ class CompleteRequirement extends StatelessWidget {
                         NavigationHelper.push(context, RelevantMedicalHistoryView());
                       },
                       titleFontSize: 16,
-                      title: context.translate.goToSetting,
+                      title: LocaleKeys.goToSetting.tr(),
                     )
                   ],
                 ),

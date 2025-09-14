@@ -1,5 +1,7 @@
 import 'package:clean_arc/core/routing/navigation_helper.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 //@RoutePage()
@@ -31,7 +33,7 @@ class ConfirmOtpView extends StatelessWidget {
               Spacer(),
               Container(
                 child: TextApp(
-                   context.translate.confirmVerificationCode,
+                   LocaleKeys.confirmVerificationCode.tr(),
                   style: context.textStyle.copyWith(
                     fontWeight: FontWeightHelper.medium,
                     fontSize: AppDimensions.fontSizeLarge,
@@ -44,7 +46,7 @@ class ConfirmOtpView extends StatelessWidget {
                 flex: 3,
               ),
               TextApp(
-                 context.translate.codeSent,
+                 LocaleKeys.codeSent.tr(),
                 style: context.textStyle.copyWith(
                     fontWeight: FontWeightHelper.bold,
                     height: 1.6,
@@ -84,7 +86,7 @@ class ConfirmOtpView extends StatelessWidget {
                   Column(
                     children: [
                       TextApp(
-                         context.translate.resendCode,
+                         LocaleKeys.resendCode.tr(),
                         style: context.textStyle.copyWith(
                             color: context.color.blueColor,
                             fontWeight: FontWeightHelper.semiBold),
@@ -113,7 +115,7 @@ class ConfirmOtpView extends StatelessWidget {
                         context, ConfirmOtpView());
                   },
                   child: TextApp(
-                     context.translate.confirmVerificationCode,
+                     LocaleKeys.confirmVerificationCode.tr(),
                     style: context.textStyleButton,
                   )),
               SizedBox(
@@ -123,7 +125,7 @@ class ConfirmOtpView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextApp(
-              context.translate.returnToSignIn,
+              LocaleKeys.returnToSignIn.tr(),
                     style: context.textStyle.copyWith(
                         color: context.color.descriptionColor,
                         fontWeight: FontWeightHelper.semiBold),

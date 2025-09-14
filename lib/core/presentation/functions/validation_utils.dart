@@ -125,7 +125,7 @@ class RequiredEmailOrMobileValidator extends TextFieldValidator {
         EmailValidator(errorText: errorText) ==
             false) {
       return false;
-      // context.translate.enterAValidPhoneOrEmail;
+      // LocaleKeys.enterAValidPhoneOrEmail.tr();
     } else {
       return true;
     }

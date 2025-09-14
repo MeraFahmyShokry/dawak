@@ -1,6 +1,7 @@
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class ConsultationLogItem extends StatelessWidget {
   final String doctorName;
   final String status;
@@ -86,7 +87,7 @@ class ConsultationPopupMenu {
           child: SizedBox(
             width: 150,
             child: TextApp(
-              context.translate.delete,
+              LocaleKeys.delete.tr(),
               style: TextStyle(color: context.color.textColor),
             ),
           ),
@@ -97,7 +98,7 @@ class ConsultationPopupMenu {
           child: SizedBox(
             width: 120,
             child: TextApp(
-              context.translate.callagain,
+              LocaleKeys.callagain.tr(),
               style: TextStyle(color: context.color.textColor),
             ),
           ),

@@ -8,7 +8,8 @@ import 'package:clean_arc/features/Cheackout_feature/view/widget/ConfirmationScr
 import 'package:clean_arc/features/my_orders_feature/presentation/views/my_orders_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class CheckoutScreen extends StatefulWidget {
   @override
   _CheckoutScreenState createState() => _CheckoutScreenState();
@@ -21,7 +22,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: context.translate.checkout),
+      appBar: CustomAppBar(title: LocaleKeys.checkout.tr()),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -49,7 +50,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         : context.color.primaryColor!,
                     onPressed: () => setState(() => _selectedOption = 0),
                     titleFontSize: AppDimensions.fontSizeDefault,
-                    title: context.translate.takeaway,
+                    title: LocaleKeys.takeaway.tr(),
                   ),
                 ),
                 SizedBox(width: 10),
@@ -73,7 +74,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         : context.color.primaryColor!,
                     onPressed: () => setState(() => _selectedOption = 1),
                     titleFontSize: AppDimensions.fontSizeDefault,
-                    title: context.translate.delivery,
+                    title: LocaleKeys.delivery.tr(),
                   ),
                 ),
               ],
@@ -95,7 +96,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                             },
                           ),
                     SizedBox(height: 16),
-                    TextApp(context.translate.paymentMethod,
+                    TextApp(LocaleKeys.paymentMethod.tr(),
                         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                     SizedBox(height: 8),
                     _buildPaymentOptions(),
@@ -118,7 +119,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   ),
                 );
               },
-              title: context.translate.orderNow,
+              title: LocaleKeys.orderNow.tr(),
             ),  ],
         ),
       ),
@@ -148,7 +149,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     //           alignment: Alignment.centerRight,
     //           child: TextButton(
     //             onPressed: () {},
-    //             child: TextApp(context.translate.change,
+    //             child: TextApp(LocaleKeys.change.tr(),
     //                 style: TextStyle(color: Colors.blue)),
     //           ),
     //         ),
@@ -162,25 +163,25 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     return Column(
       children: [
         PaymentOption(
-          title: context.translate.payWithCreditCard,
+          title: LocaleKeys.payWithCreditCard.tr(),
           imagePath: AppImages.images.demo.png.mastercard.path,
           isSelected: _selectedPaymentMethod == 0,
           onTap: () => setState(() => _selectedPaymentMethod = 0),
         ),
         PaymentOption(
-          title: context.translate.payWithFawry,
+          title: LocaleKeys.payWithFawry.tr(),
           imagePath: AppImages.images.demo.png.fawry.path,
           isSelected: _selectedPaymentMethod == 1,
           onTap: () => setState(() => _selectedPaymentMethod = 1),
         ),
         PaymentOption(
-          title: context.translate.payWithWallet + "  35 EGP ",
+          title: LocaleKeys.payWithWallet.tr() + "  35 EGP ",
           imagePath: AppImages.images.demo.png.wallt.path,
           isSelected: _selectedPaymentMethod == 2,
           onTap: () => setState(() => _selectedPaymentMethod = 2),
         ),
         PaymentOption(
-          title: context.translate.payOnDelivery,
+          title: LocaleKeys.payOnDelivery.tr(),
           imagePath: AppImages.images.demo.png.payondelivery.path,
           isSelected: _selectedPaymentMethod == 3,
           onTap: () => setState(() => _selectedPaymentMethod = 3),

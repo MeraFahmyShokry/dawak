@@ -6,8 +6,9 @@ import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/Book_Appointment_feature/presentation/components/book_appointment_app_bar_component.dart';
 import 'package:clean_arc/features/public_awarness_feature/presentation/views/public_awarness_details_view.dart';
 import 'package:flutter/material.dart';
-
-//@RoutePage()
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
+@RoutePage()
 class PublicAwarnessView extends StatelessWidget {
   static const String path = '/PublicAwarnessView';
 
@@ -71,7 +72,7 @@ class PublicAwarnessView extends StatelessWidget {
                     AppImages.images.core.logos.awarnessImg.image(
                         width: double.infinity, height: 240, fit: BoxFit.cover),
                     TextApp(
-                      context.translate.publicAwareness,
+                      LocaleKeys.publicAwareness.tr(),
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeLarge,
                           fontWeight: FontWeightHelper.medium,
@@ -85,7 +86,7 @@ class PublicAwarnessView extends StatelessWidget {
                       spacing: 3,
                       children: [
                         TextApp(
-                          context.translate.loremText,
+                          LocaleKeys.loremText.tr(),
                           maxLines: 7,
                           textOverflow: TextOverflow.ellipsis,
                           style: context.textStyle.copyWith(
@@ -99,7 +100,7 @@ class PublicAwarnessView extends StatelessWidget {
                                 context, PublicAwarnessDetailsView());
                           },
                           child: TextApp(
-                            context.translate.readMore,
+                            LocaleKeys.readMore.tr(),
                             style: context.textStyle.copyWith(
                               fontSize: AppDimensions.fontSizeSmall,
                               fontWeight: FontWeightHelper.regular,
@@ -120,7 +121,7 @@ class PublicAwarnessView extends StatelessWidget {
                         NavigationHelper.push(
                             context, PublicAwarnessDetailsView());
                       },
-                      title: context.translate.viewAllBlog,
+                      title: LocaleKeys.viewAllBlog.tr(),
                       width: double.infinity,
                       height: 40,
                     )

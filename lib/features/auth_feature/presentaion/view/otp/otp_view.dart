@@ -3,6 +3,8 @@ import 'package:clean_arc/core/presentation/widget/screen_utils.dart';
 import 'package:clean_arc/core/routing/navigation_helper.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/home_feature/presentation/view/home_view.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -29,14 +31,14 @@ class _OtpViewState extends State<OtpView> with ScreenUtils {
       );
       // ScaffoldMessenger.of(context).showSnackBar(
       //   SnackBar(
-      //     content: Text(context.translate.verificationSuccess),
+      //     content: Text(LocaleKeys.verificationSuccess.tr()),
       //     backgroundColor: Colors.green,
       //   ),
       // );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(context.translate.invalidOtp),
+          content: Text(LocaleKeys.invalidOtp.tr()),
           backgroundColor: Colors.red,
         ),
       );
@@ -54,7 +56,7 @@ class _OtpViewState extends State<OtpView> with ScreenUtils {
       });
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(context.translate.codeResent),
+          content: Text(LocaleKeys.codeResent.tr()),
           backgroundColor: Colors.blue,
         ),
       );
@@ -66,7 +68,7 @@ class _OtpViewState extends State<OtpView> with ScreenUtils {
     return Scaffold(
       backgroundColor: context.color.whiteColor,
       appBar: CustomAppBar(
-        title: context.translate.verifyAccount,
+        title: LocaleKeys.verifyAccount.tr(),
         leadingWidget: Icon(
           Icons.arrow_back_ios,
           color: context.color.primaryColor,
@@ -80,7 +82,7 @@ class _OtpViewState extends State<OtpView> with ScreenUtils {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextApp(
-              "${context.translate.checkYourEmail} $email ${context.translate.forVerificationCode}",
+              "${LocaleKeys.checkYourEmail.tr()} $email ${LocaleKeys.forVerificationCode.tr()}",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),
             ),
@@ -112,14 +114,14 @@ class _OtpViewState extends State<OtpView> with ScreenUtils {
             SizedBox(height: 20.h),
             RichText(
               text: TextSpan(
-                text: context.translate.didNotReceiveCode,
+                text: LocaleKeys.didNotReceiveCode.tr(),
                 style: TextStyle(color: Colors.black, fontSize: 14.sp),
                 children: [
                   WidgetSpan(
                     child: GestureDetector(
                       onTap: isResendDisabled ? null : _resendCode,
                       child: TextApp(
-                        context.translate.resendCode,
+                        LocaleKeys.resendCode.tr(),
                         style: TextStyle(
                           color: isResendDisabled ? Colors.grey : Colors.blue,
                           fontWeight: FontWeight.bold,
@@ -140,7 +142,7 @@ class _OtpViewState extends State<OtpView> with ScreenUtils {
                   );
                 },
                 child: TextApp(
-                  context.translate.confirmVerificationCode,
+                  LocaleKeys.confirmVerificationCode.tr(),
                   style: context.textStyleButton,
                 )),
           ],
@@ -179,11 +181,11 @@ class _SucsessOtpViewState extends State<SucsessOtpView> with ScreenUtils {
           mainAxisSize: MainAxisSize.min,
           children: [
             TextApp(
-              context.translate.verificationDone,
+              LocaleKeys.verificationDone.tr(),
             ),
             SizedBox(height: 10.h),
             TextApp(
-              context.translate.welcomeToCommunity,
+              LocaleKeys.welcomeToCommunity.tr(),
             ),
 
             SizedBox(height: 10.h),
@@ -197,7 +199,7 @@ class _SucsessOtpViewState extends State<SucsessOtpView> with ScreenUtils {
                     NavigationHelper.pushReplacementAll(context, HomeView());
                   },
                   child: TextApp(
-                    context.translate.home,
+                    LocaleKeys.home.tr(),
                     style: context.textStyleButton,
                   )),
             ),

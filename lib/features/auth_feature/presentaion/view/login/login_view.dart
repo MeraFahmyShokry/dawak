@@ -10,7 +10,9 @@ import 'package:clean_arc/features/auth_feature/presentaion/widgets/CustomSocial
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/SelectAccountTypeScreen.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/SignUpText.dart';
 import 'package:clean_arc/features/layout_feature/view/layout_view.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
 import 'package:clean_arc/injection/injection.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -68,7 +70,7 @@ class _LoginViewState extends State<LoginView> with ScreenUtils {
                               isShowBorder: true,
                               fillColor: AppColors.white,
                               showTitle: true,
-                              titleText: context.translate.serialNumberEmail,
+                              titleText: LocaleKeys.serialNumberEmail.tr(),
                               hintText: context
                                   .translate.enterYourSerialNumberOrEmail,
                               onValidate: Validator.validate,
@@ -82,8 +84,8 @@ class _LoginViewState extends State<LoginView> with ScreenUtils {
                               fillColor: context.color.whiteColor,
                               showTitle: true,
                               isPassword: true,
-                              titleText: context.translate.password,
-                              hintText: context.translate.enterYourPassword,
+                              titleText: LocaleKeys.password.tr(),
+                              hintText: LocaleKeys.enterYourPassword.tr(),
                               onValidate: Validator.validatePassword,
                             ),
                             OnTap(
@@ -93,7 +95,7 @@ class _LoginViewState extends State<LoginView> with ScreenUtils {
                               child: Padding(
                                 padding: 6.padVertical + 4.padHorizontal,
                                 child: Text(
-                                  context.translate.forgetYourPassword,
+                                  LocaleKeys.forgetYourPassword.tr(),
                                   style: AppTextTheme.linkSmall
                                       .copyWith(color: AppColors.primary),
                                 ),
@@ -109,7 +111,7 @@ class _LoginViewState extends State<LoginView> with ScreenUtils {
                                   await loginCubit.login();
                                 }
                               },
-                              title: context.translate.login,
+                              title: LocaleKeys.login.tr(),
                             ),
                             20.verticalSpace,
                             CustomSocialSignIn(),
@@ -117,8 +119,8 @@ class _LoginViewState extends State<LoginView> with ScreenUtils {
                               height: 24.h,
                             ),
                             SignUpText(
-                              text: context.translate.haveAnAccount,
-                              actionText: context.translate.signUp,
+                              text: LocaleKeys.haveAnAccount.tr(),
+                              actionText: LocaleKeys.signUp.tr(),
                               onTap: () {
                                 Navigator.push(
                                   context,

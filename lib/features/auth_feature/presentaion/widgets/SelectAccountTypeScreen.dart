@@ -4,6 +4,8 @@ import 'package:clean_arc/features/auth_feature/domain/model/account_type_model.
 import 'package:clean_arc/features/auth_feature/presentaion/view/register/register_view.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/SignUpText.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/item/AccountTypeItem.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class SelectAccountTypeScreen extends StatelessWidget {
@@ -23,7 +25,7 @@ class SelectAccountTypeScreen extends StatelessWidget {
               height: 30.h,
             ),
             TextApp(
-              context.translate.createAccount,
+              LocaleKeys.createAccount.tr(),
               style: context.textStyle.copyWith(
                 fontSize: AppDimensions.fontSizeExtraLarge,
                 fontWeight: FontWeightHelper.semiBold,
@@ -52,7 +54,7 @@ class SelectAccountTypeScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.h),
             TextApp(
-              context.translate.select_account_type,
+              LocaleKeys.select_account_type.tr(),
               style: context.textStyle.copyWith(
                 fontSize: AppDimensions.fontSizeDefault,
                 fontWeight: FontWeightHelper.medium,
@@ -90,13 +92,13 @@ class SelectAccountTypeScreen extends StatelessWidget {
                   print("dsdsdsdddsdsdsdd");
                 },
                 child: TextApp(
-                  context.translate.next,
+                  LocaleKeys.next.tr(),
                   style: context.textStyleButton,
                 )),
             SizedBox(height: 16),
             SignUpText(
-              text: context.translate.have_an_account,
-              actionText: context.translate.signIn,
+              text: LocaleKeys.have_an_account.tr(),
+              actionText: LocaleKeys.signIn.tr(),
               onTap: () {
                 Navigator.push(
                   context,
