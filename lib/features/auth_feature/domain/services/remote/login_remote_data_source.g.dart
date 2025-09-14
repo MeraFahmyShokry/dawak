@@ -2,8 +2,6 @@
 
 part of 'login_remote_data_source.dart';
 
-// dart format off
-
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -290,5 +288,3 @@ class _AuthServices implements AuthServices {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
-
-// dart format on

@@ -2,8 +2,6 @@
 
 part of 'book_appointment_remote_data_source.dart';
 
-// dart format off
-
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -79,5 +77,3 @@ class _BookAppointmentServices implements BookAppointmentServices {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
-
-// dart format on

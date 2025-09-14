@@ -105,19 +105,19 @@ dependencies:
 
 dev_dependencies:
   #  ============================ Start dev Core Package ========
-  auto_route_generator: ^10.1.0
+  auto_route_generator:
 #  very_good_analysis: ^8.0.0
   flutter_launcher_icons: ^0.14.4
   flutter_iconly:
-  retrofit_generator: ^10.0.5
+  retrofit_generator: 9.7.0
 
   build_runner:
   injectable_generator: ^2.4.1
   # Asset generator
   flutter_gen_runner:
   # Freezed Code Generation
-  freezed: ^3.2.3
-  freezed_annotation: ^3.1.0
+  freezed: ^2.4.5
+  freezed_annotation: ^2.4.4
   json_serializable: ^6.7.1
 
 

@@ -97,30 +97,27 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i790.DevConfiguration(),
       registerFor: {_dev},
     );
-    gh.lazySingleton<_i790.Configuration>(
-      () => _i790.ProdConfiguration(),
-      registerFor: {_prod},
-    );
     gh.lazySingleton<_i275.AuthServices>(
-      () => _i275.AuthServices.new(gh<_i845.Dio>(), gh<_i790.Configuration>()),
+      () => _i275.AuthServices(gh<_i845.Dio>(), gh<_i790.Configuration>()),
     );
     gh.lazySingleton<_i453.BookAppointmentServices>(
-      () => _i453.BookAppointmentServices.new(
+      () => _i453.BookAppointmentServices(
         gh<_i845.Dio>(),
         gh<_i790.Configuration>(),
       ),
     );
     gh.lazySingleton<_i27.ClinicsServices>(
-      () =>
-          _i27.ClinicsServices.new(gh<_i845.Dio>(), gh<_i790.Configuration>()),
+      () => _i27.ClinicsServices(gh<_i845.Dio>(), gh<_i790.Configuration>()),
     );
     gh.lazySingleton<_i397.DoctorsServices>(
-      () =>
-          _i397.DoctorsServices.new(gh<_i845.Dio>(), gh<_i790.Configuration>()),
+      () => _i397.DoctorsServices(gh<_i845.Dio>(), gh<_i790.Configuration>()),
     );
     gh.lazySingleton<_i589.PatientServices>(
-      () =>
-          _i589.PatientServices.new(gh<_i845.Dio>(), gh<_i790.Configuration>()),
+      () => _i589.PatientServices(gh<_i845.Dio>(), gh<_i790.Configuration>()),
+    );
+    gh.lazySingleton<_i790.Configuration>(
+      () => _i790.ProdConfiguration(),
+      registerFor: {_prod},
     );
     gh.lazySingleton<_i654.ClinicsRepository>(
       () => _i654.ClinicsRepositoryImpl(

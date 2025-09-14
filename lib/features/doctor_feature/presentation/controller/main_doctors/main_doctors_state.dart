@@ -8,17 +8,6 @@ class MainDoctorsState with _$MainDoctorsState {
     @Default([]) List<TopDoctorsReview> doctors,
   }) = _MainDoctorsState;
 
-  @override
-  // TODO: implement doctors
-  List<TopDoctorsReview> get doctors => throw UnimplementedError();
-
-  @override
-  // TODO: implement specialists
-  List<SpecialistsModel> get specialists => throw UnimplementedError();
-
-  @override
-  // TODO: implement status
-  MainDoctorsStatus get status => throw UnimplementedError();
 }
 
 @freezed

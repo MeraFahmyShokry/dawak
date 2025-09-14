@@ -2,8 +2,6 @@
 
 part of 'clinic_remote_data_source.dart';
 
-// dart format off
-
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -161,5 +159,3 @@ class _ClinicsServices implements ClinicsServices {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
-
-// dart format on

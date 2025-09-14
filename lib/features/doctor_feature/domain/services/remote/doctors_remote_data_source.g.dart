@@ -2,8 +2,6 @@
 
 part of 'doctors_remote_data_source.dart';
 
-// dart format off
-
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -274,5 +272,3 @@ class _DoctorsServices implements DoctorsServices {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
-
-// dart format on

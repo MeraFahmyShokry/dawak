@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,270 +9,319 @@ part of 'layout_cubit.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
+
 /// @nodoc
 mixin _$LayoutState {
-
-
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LayoutState);
-}
-
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'LayoutState()';
-}
-
-
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int index) changeLayoutIndex,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int index)? changeLayoutIndex,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int index)? changeLayoutIndex,
+    required TResult orElse(),
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_changeLayoutIndex value) changeLayoutIndex,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_changeLayoutIndex value)? changeLayoutIndex,
+  }) => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_changeLayoutIndex value)? changeLayoutIndex,
+    required TResult orElse(),
+  }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class $LayoutStateCopyWith<$Res>  {
-$LayoutStateCopyWith(LayoutState _, $Res Function(LayoutState) __);
+abstract class $LayoutStateCopyWith<$Res> {
+  factory $LayoutStateCopyWith(
+    LayoutState value,
+    $Res Function(LayoutState) then,
+  ) = _$LayoutStateCopyWithImpl<$Res, LayoutState>;
 }
 
+/// @nodoc
+class _$LayoutStateCopyWithImpl<$Res, $Val extends LayoutState>
+    implements $LayoutStateCopyWith<$Res> {
+  _$LayoutStateCopyWithImpl(this._value, this._then);
 
-/// Adds pattern-matching-related methods to [LayoutState].
-extension LayoutStatePatterns on LayoutState {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( _changeLayoutIndex value)?  changeLayoutIndex,required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _Initial() when initial != null:
-return initial(_that);case _changeLayoutIndex() when changeLayoutIndex != null:
-return changeLayoutIndex(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( _changeLayoutIndex value)  changeLayoutIndex,}){
-final _that = this;
-switch (_that) {
-case _Initial():
-return initial(_that);case _changeLayoutIndex():
-return changeLayoutIndex(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( _changeLayoutIndex value)?  changeLayoutIndex,}){
-final _that = this;
-switch (_that) {
-case _Initial() when initial != null:
-return initial(_that);case _changeLayoutIndex() when changeLayoutIndex != null:
-return changeLayoutIndex(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( int index)?  changeLayoutIndex,required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _Initial() when initial != null:
-return initial();case _changeLayoutIndex() when changeLayoutIndex != null:
-return changeLayoutIndex(_that.index);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( int index)  changeLayoutIndex,}) {final _that = this;
-switch (_that) {
-case _Initial():
-return initial();case _changeLayoutIndex():
-return changeLayoutIndex(_that.index);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( int index)?  changeLayoutIndex,}) {final _that = this;
-switch (_that) {
-case _Initial() when initial != null:
-return initial();case _changeLayoutIndex() when changeLayoutIndex != null:
-return changeLayoutIndex(_that.index);case _:
-  return null;
-
-}
+  /// Create a copy of LayoutState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
+/// @nodoc
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+    _$InitialImpl value,
+    $Res Function(_$InitialImpl) then,
+  ) = __$$InitialImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$LayoutStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+    _$InitialImpl _value,
+    $Res Function(_$InitialImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of LayoutState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
-class _Initial implements LayoutState {
-  const _Initial();
-  
+  @override
+  String toString() {
+    return 'LayoutState.initial()';
+  }
 
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
+  }
 
+  @override
+  int get hashCode => runtimeType.hashCode;
 
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int index) changeLayoutIndex,
+  }) {
+    return initial();
+  }
 
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int index)? changeLayoutIndex,
+  }) {
+    return initial?.call();
+  }
 
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int index)? changeLayoutIndex,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Initial);
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_changeLayoutIndex value) changeLayoutIndex,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_changeLayoutIndex value)? changeLayoutIndex,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_changeLayoutIndex value)? changeLayoutIndex,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
 }
 
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'LayoutState.initial()';
+abstract class _Initial implements LayoutState {
+  const factory _Initial() = _$InitialImpl;
 }
 
-
+/// @nodoc
+abstract class _$$changeLayoutIndexImplCopyWith<$Res> {
+  factory _$$changeLayoutIndexImplCopyWith(
+    _$changeLayoutIndexImpl value,
+    $Res Function(_$changeLayoutIndexImpl) then,
+  ) = __$$changeLayoutIndexImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int index});
 }
 
+/// @nodoc
+class __$$changeLayoutIndexImplCopyWithImpl<$Res>
+    extends _$LayoutStateCopyWithImpl<$Res, _$changeLayoutIndexImpl>
+    implements _$$changeLayoutIndexImplCopyWith<$Res> {
+  __$$changeLayoutIndexImplCopyWithImpl(
+    _$changeLayoutIndexImpl _value,
+    $Res Function(_$changeLayoutIndexImpl) _then,
+  ) : super(_value, _then);
 
-
+  /// Create a copy of LayoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? index = null}) {
+    return _then(
+      _$changeLayoutIndexImpl(
+        index: null == index
+            ? _value.index
+            : index // ignore: cast_nullable_to_non_nullable
+                  as int,
+      ),
+    );
+  }
+}
 
 /// @nodoc
 
+class _$changeLayoutIndexImpl implements _changeLayoutIndex {
+  const _$changeLayoutIndexImpl({this.index = 0});
 
-class _changeLayoutIndex implements LayoutState {
-  const _changeLayoutIndex({this.index = 0});
-  
+  @override
+  @JsonKey()
+  final int index;
 
-@JsonKey() final  int index;
+  @override
+  String toString() {
+    return 'LayoutState.changeLayoutIndex(index: $index)';
+  }
 
-/// Create a copy of LayoutState
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$changeLayoutIndexCopyWith<_changeLayoutIndex> get copyWith => __$changeLayoutIndexCopyWithImpl<_changeLayoutIndex>(this, _$identity);
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$changeLayoutIndexImpl &&
+            (identical(other.index, index) || other.index == index));
+  }
 
+  @override
+  int get hashCode => Object.hash(runtimeType, index);
 
+  /// Create a copy of LayoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$changeLayoutIndexImplCopyWith<_$changeLayoutIndexImpl> get copyWith =>
+      __$$changeLayoutIndexImplCopyWithImpl<_$changeLayoutIndexImpl>(
+        this,
+        _$identity,
+      );
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _changeLayoutIndex&&(identical(other.index, index) || other.index == index));
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(int index) changeLayoutIndex,
+  }) {
+    return changeLayoutIndex(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(int index)? changeLayoutIndex,
+  }) {
+    return changeLayoutIndex?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(int index)? changeLayoutIndex,
+    required TResult orElse(),
+  }) {
+    if (changeLayoutIndex != null) {
+      return changeLayoutIndex(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_changeLayoutIndex value) changeLayoutIndex,
+  }) {
+    return changeLayoutIndex(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_changeLayoutIndex value)? changeLayoutIndex,
+  }) {
+    return changeLayoutIndex?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_changeLayoutIndex value)? changeLayoutIndex,
+    required TResult orElse(),
+  }) {
+    if (changeLayoutIndex != null) {
+      return changeLayoutIndex(this);
+    }
+    return orElse();
+  }
 }
 
+abstract class _changeLayoutIndex implements LayoutState {
+  const factory _changeLayoutIndex({final int index}) = _$changeLayoutIndexImpl;
 
-@override
-int get hashCode => Object.hash(runtimeType,index);
+  int get index;
 
-@override
-String toString() {
-  return 'LayoutState.changeLayoutIndex(index: $index)';
+  /// Create a copy of LayoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$changeLayoutIndexImplCopyWith<_$changeLayoutIndexImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class _$changeLayoutIndexCopyWith<$Res> implements $LayoutStateCopyWith<$Res> {
-  factory _$changeLayoutIndexCopyWith(_changeLayoutIndex value, $Res Function(_changeLayoutIndex) _then) = __$changeLayoutIndexCopyWithImpl;
-@useResult
-$Res call({
- int index
-});
-
-
-
-
-}
-/// @nodoc
-class __$changeLayoutIndexCopyWithImpl<$Res>
-    implements _$changeLayoutIndexCopyWith<$Res> {
-  __$changeLayoutIndexCopyWithImpl(this._self, this._then);
-
-  final _changeLayoutIndex _self;
-  final $Res Function(_changeLayoutIndex) _then;
-
-/// Create a copy of LayoutState
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? index = null,}) {
-  return _then(_changeLayoutIndex(
-index: null == index ? _self.index : index // ignore: cast_nullable_to_non_nullable
-as int,
-  ));
-}
-
-
-}
-
-// dart format on
