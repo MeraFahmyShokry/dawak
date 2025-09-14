@@ -33,6 +33,7 @@ class MainDoctorsCubit extends Cubit<MainDoctorsState> {
   }
   Future<void> specialists() async {
     final result = await repository.getAllSpecialist(
+      pageSize: 8,
         languageId: LocalizationUtil.getCurrentLanguageId);
     result.fold(
           (failure) {

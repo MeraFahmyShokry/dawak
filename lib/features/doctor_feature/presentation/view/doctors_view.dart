@@ -48,18 +48,13 @@ class _DoctorsViewState extends State<DoctorsView> {
                 child: Column(
                   children: [
                     SearchComponent(),
+                    15.verticalSpace,
                     Expanded(
                       child: SingleChildScrollView(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        padding: 5.padHorizontal,
                         child: Column(
                           children: [
-                            SizedBox(
-                              height: 10,
-                            ),
                             SpecialistGrid(),
-                            SizedBox(
-                              height: 10,
-                            ),
                             TopDoctors()
                           ],
                         ),

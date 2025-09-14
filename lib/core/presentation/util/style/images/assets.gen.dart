@@ -230,6 +230,10 @@ class $AssetsImagesCoreSvgGen {
   SvgGenImage get arrowBack =>
       const SvgGenImage('assets/images/core/svg/arrowBack.svg');
 
+  /// File path: assets/images/core/svg/available.svg
+  SvgGenImage get available =>
+      const SvgGenImage('assets/images/core/svg/available.svg');
+
   /// File path: assets/images/core/svg/back_btn_arrow.svg
   SvgGenImage get backBtnArrow =>
       const SvgGenImage('assets/images/core/svg/back_btn_arrow.svg');
@@ -377,6 +381,9 @@ class $AssetsImagesCoreSvgGen {
   SvgGenImage get smallClinicIcon =>
       const SvgGenImage('assets/images/core/svg/small_clinic_icon.svg');
 
+  /// File path: assets/images/core/svg/star.svg
+  SvgGenImage get star => const SvgGenImage('assets/images/core/svg/star.svg');
+
   /// File path: assets/images/core/svg/star_review_icon.svg
   SvgGenImage get starReviewIcon =>
       const SvgGenImage('assets/images/core/svg/star_review_icon.svg');
@@ -384,6 +391,10 @@ class $AssetsImagesCoreSvgGen {
   /// File path: assets/images/core/svg/stethoscope_icon.svg
   SvgGenImage get stethoscopeIcon =>
       const SvgGenImage('assets/images/core/svg/stethoscope_icon.svg');
+
+  /// File path: assets/images/core/svg/unavailable.svg
+  SvgGenImage get unavailable =>
+      const SvgGenImage('assets/images/core/svg/unavailable.svg');
 
   /// File path: assets/images/core/svg/visa.svg
   SvgGenImage get visa => const SvgGenImage('assets/images/core/svg/visa.svg');
@@ -417,6 +428,7 @@ class $AssetsImagesCoreSvgGen {
     group8,
     appointmentSuccessImg,
     arrowBack,
+    available,
     backBtnArrow,
     balanceIcon,
     bottomArrow,
@@ -454,8 +466,10 @@ class $AssetsImagesCoreSvgGen {
     search,
     shareIcon,
     smallClinicIcon,
+    star,
     starReviewIcon,
     stethoscopeIcon,
+    unavailable,
     visa,
     visaCardName,
     visaCardNumber,
@@ -582,8 +596,8 @@ class $AssetsImagesDemoSvgGen {
 class AppImages {
   const AppImages._();
 
-  static const String aEnv = '.env.dev';
-  // static const String aEnv = '.env.prod';
+  // static const String aEnv = '.env.dev';
+  static const String aEnv = '.env.prod';
   static const $AssetsImagesGen images = $AssetsImagesGen();
 
   /// List of all assets

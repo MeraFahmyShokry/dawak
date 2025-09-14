@@ -10,14 +10,14 @@ class AppTextTheme {
   // }
 
   static TextStyle _textStyle(double fontSize, FontWeight fontWeight,
-      {bool isHeading = false, bool underline = false}) {
+      {bool isHeading = false, bool underline = false,Color decorationColor = AppColors.primary }) {
     return TextStyle(
       fontSize: fontSize.sp,
       fontWeight: fontWeight,
       color: AppColors.textColor,
       // fontFamily: getFontFamily(isHeading: isHeading),
       decoration: underline ? TextDecoration.underline : null,
-      decorationColor: underline ? AppColors.primary : null,
+      decorationColor: underline ?  decorationColor:null,
     );
   }
 

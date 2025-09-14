@@ -1,5 +1,6 @@
 import 'package:clean_arc/core/presentation/widget/custom_dropdown_field.dart';
 import 'package:clean_arc/core/routing/navigation_helper.dart';
+import 'package:clean_arc/core/utils/extensions/padding_extensions.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class CustomButton extends StatelessWidget {
     this.withBorderOnly = false,
     this.width,
     this.isLoading ,
-    super.key,
+    super.key, this.padding, this.borderRadius,
   });
 
   final VoidCallback? onPressed;
@@ -25,6 +26,7 @@ class CustomButton extends StatelessWidget {
   final Widget? icon;
   final String? title;
   final double? titleFontSize;
+  final double? borderRadius;
   final bool withBorderOnly;
   final double? height;
   final Color? bgColor;
@@ -32,6 +34,7 @@ class CustomButton extends StatelessWidget {
   final Color? borderColor;
   final double? width;
   final bool ?isLoading;
+  final EdgeInsetsGeometry? padding;
 
   @override
   Widget build(BuildContext context) {
@@ -46,12 +49,12 @@ class CustomButton extends StatelessWidget {
             }
           },
       child: Container(
-        height: height ?? 45,
-        width: width ?? 50.w,
+        padding: padding??10.padHorizontal+8.padVertical,
+
         decoration: ShapeDecoration(
           color: bgColor ?? context.color.primaryColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(9.r),
+            borderRadius: BorderRadius.circular(borderRadius??9.r),
             side: withBorderOnly
                 ? BorderSide(color: borderColor ?? context.color.borderColor!)
                 : BorderSide.none,

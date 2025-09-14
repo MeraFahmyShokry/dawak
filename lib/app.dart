@@ -8,7 +8,7 @@ import 'package:clean_arc/core/presentation/screen/no_network_screen.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/controller/auth_cubit.dart';
 import 'package:clean_arc/features/layout_feature/cubit_cubit/layout_cubit.dart';
-import 'package:clean_arc/features/splash_feature/SplashView.dart';
+import 'package:clean_arc/features/splash_feature/splash_screen.dart';
 import 'package:clean_arc/injection/injection.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +68,7 @@ class AgzgantyApp extends StatelessWidget {
                           MonthYearPickerLocalizations.delegate,
                           ...Translations.localizationsDelegates
                         ],
-                        home: SplashView(),
+                        home: SplashScreen(),
                         locale: Locale(cubit.currentLangCode),
                         themeMode: ThemeMode.light,
                         theme: themeLight(),

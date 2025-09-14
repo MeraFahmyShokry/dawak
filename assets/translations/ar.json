@@ -578,8 +578,9 @@
   "login": "تسجيل الدخول",
   "doNotHaveAnAccount": "ليس لديك حساب؟",
   "haveANiceDay": "أتمنى لك يومًا سعيدًا",
- "twiceBerWeek": "Twice per day",
-  "localeName": "localeName",
-  "addMedicalHistoryMsg": "Let’s Add Your Medical History to help doctors diagnoses you correctly."
+  "twiceBerWeek": "مرتين في اليوم",
+  "localeName": "اسم اللغة",
+  "addMedicalHistoryMsg": "لنضف تاريخك الطبي لمساعدة الأطباء على تشخيصك بشكل صحيح.",
+  "topSpecialists": "أفضل الأخصائيين"
 }
 

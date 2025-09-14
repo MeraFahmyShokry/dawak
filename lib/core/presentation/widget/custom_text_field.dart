@@ -96,6 +96,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           textCapitalization: widget.capitalization,
           enabled: widget.isEnabled,
           autofocus: false,
+
           onSaved: widget.onSaved,
           //onChanged: widget.isSearch ? widget.languageProvider.searchLanguage : null,
           obscureText: widget.isPassword == true ? _obscureText : false,
@@ -119,7 +120,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 ),
                 enabledBorder: getBorder(),
                 contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 22),
+                    const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
                 border: getBorder(),
                 isDense: true,
                 hintText: widget.hintText ?? '',
