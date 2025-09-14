@@ -1,7 +1,7 @@
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-@RoutePage()
+//@RoutePage()
 
 class ResetPasswordView extends StatelessWidget {
   const ResetPasswordView({super.key});

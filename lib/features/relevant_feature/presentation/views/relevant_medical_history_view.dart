@@ -14,7 +14,7 @@ import 'package:image_picker/image_picker.dart';
 import '../components/NewReventView.dart';
 import '../items/CustomDropdownrevent.dart';
 
-@RoutePage()
+//@RoutePage()
 class RelevantMedicalHistoryView extends StatefulWidget {
   static const String path = '/RelevantMedicalHistoryView';
 

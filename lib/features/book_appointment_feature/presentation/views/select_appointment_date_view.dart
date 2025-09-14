@@ -10,7 +10,7 @@ import '../components/book_appointment_progress_bar_component.dart';
 import '../components/select_clinic_component.dart';
 import '../components/select_date_component.dart';
 
-@RoutePage()
+//@RoutePage()
 class SelectBookAppointmentDateView extends StatelessWidget {
   BookAppointmentCubit bookAppointmentCubit;
 

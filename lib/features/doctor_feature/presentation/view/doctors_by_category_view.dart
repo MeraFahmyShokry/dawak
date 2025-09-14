@@ -14,7 +14,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 
 import '../../../../core/utils_package/utils_package.dart';
 
-@RoutePage()
+//@RoutePage()
 class DoctorsByCategoryView extends StatelessWidget {
   int? specialtyId;
 

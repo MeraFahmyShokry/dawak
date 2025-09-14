@@ -20,7 +20,7 @@ import '../../../../core/presentation/widget/custom_button_button.dart';
 import '../../../../core/routing/navigation_helper.dart';
 import '../../../book_appointment_feature/presentation/components/book_appointment_progress_bar_component.dart';
 
-@RoutePage()
+//@RoutePage()
 class FirstBookAppointmentView extends StatefulWidget {
   final String doctorId;
 

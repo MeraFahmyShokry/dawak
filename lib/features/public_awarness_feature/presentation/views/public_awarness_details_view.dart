@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/routing/navigation_helper.dart';
 
-@RoutePage()
+//@RoutePage()
 class PublicAwarnessDetailsView extends StatelessWidget {
   static const String path = '/PublicAwarnessDetailsView';
 

@@ -5,11 +5,11 @@ import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/controller/auth_cubit.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/view/register/compleate_register_view.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/SignUpText.dart';
-import 'package:clean_arc/features/splash_feature/SplashView.dart';
+import 'package:clean_arc/features/splash_feature/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-@RoutePage()
+//@RoutePage()
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
 

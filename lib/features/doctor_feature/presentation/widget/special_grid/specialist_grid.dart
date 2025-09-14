@@ -7,49 +7,26 @@ import 'package:clean_arc/core/presentation/widget/show_all_widget.dart';
 import 'package:clean_arc/core/routing/navigation_helper.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/doctor_feature/domain/model/specialists_model/specialists_model.dart';
+import 'package:clean_arc/features/doctor_feature/presentation/controller/main_doctors/main_doctors_cubit.dart';
 import 'package:clean_arc/features/doctor_feature/presentation/controller/specialists/specialists_cubit.dart';
 import 'package:clean_arc/features/doctor_feature/presentation/view/doctors_by_category_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SpecialistGrid extends StatefulWidget {
+class SpecialistGrid extends StatelessWidget {
   const SpecialistGrid({super.key});
 
   @override
-  State<SpecialistGrid> createState() => _SpecialistGridState();
-}
-
-class _SpecialistGridState extends State<SpecialistGrid> {
-  @override
-  void initState() {
-    context.read<SpecialistsCubit>().specialists();
-
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    SpecialistsCubit specialistsCubit = context.watch<SpecialistsCubit>();
-    return Column(
-      children: [
-        ShowAllWidget(
-          title: context.translate.specialists,
-          onTap: () {},
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        ResponseBuilderWidget<PaginatedList<SpecialistsModel>>(
-            onRetry: () {
-              specialistsCubit.specialists();
-            },
-            isLoading: specialistsCubit.state.isLoading,
-            failure: specialistsCubit.state.isError,
-
-            // state: specialistsCubit.state,
-            childBuilder: () {
-              PaginatedState<SpecialistsModel> state = specialistsCubit.state;
-              return GridView.builder(
+    return BlocBuilder<MainDoctorsCubit, MainDoctorsState>(
+      builder: (context, state) {
+        return Column(
+          children: [
+            ShowAllWidget(title: context.translate.specialists, onTap: () {}),
+            SizedBox(height: 10),
+            SizedBox(
+              height: 100,
+              child: GridView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -58,18 +35,17 @@ class _SpecialistGridState extends State<SpecialistGrid> {
                   mainAxisSpacing: 5.h,
                   childAspectRatio: .7,
                 ),
-                itemCount: specialistsCubit.state.isLoading ?? false
-                    ? 8
-                    : state.success?.value?.length ?? 0,
+                itemCount: state.specialists?.value?.length??0,
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
                       // context.pushRoute(DoctorsByCategoryViewRoute());
                       NavigationHelper.push(
-                          context,
-                          DoctorsByCategoryView(
-                            specialtyId: state.success?.value?[index].id,
-                          ));
+                        context,
+                        DoctorsByCategoryView(
+                          specialtyId: state.specialists?.value?[index].id,
+                        ),
+                      );
                     },
                     child: Column(
                       children: [
@@ -78,28 +54,28 @@ class _SpecialistGridState extends State<SpecialistGrid> {
                         //     .cornerRadiusWithClipRRect(100)
                         CustomCachedNetworkImage(
                           imageUrl:
-                              state.success?.value?[index].specialistImageUrl ??
-                                  '',
+                          state.specialists?.value?[index].specialistImageUrl??
+                              '',
                           width: 60,
                           height: 60,
                         ).cornerRadiusWithClipRRect(100),
-                        SizedBox(
-                          height: 5,
-                        ),
+                        SizedBox(height: 5),
                         TextApp(
-                          state.success?.value?[index].translationValue
+                          state.specialists?.value?[index].translationValue
                                   .toString() ??
                               '',
                           maxLines: 1,
-                          isLoading: state.isLoading ?? false,
-                        )
+                          isLoading: false,
+                        ),
                       ],
                     ),
                   );
                 },
-              );
-            }),
-      ],
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

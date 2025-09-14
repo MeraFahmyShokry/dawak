@@ -10,7 +10,7 @@ import '../../../../core/presentation/util/style/fonts/font_weight_helper.dart';
 import '../../../../core/presentation/widget/text_app.dart';
 import '../../../../core/routing/navigation_helper.dart';
 
-@RoutePage()
+//@RoutePage()
 class AppointmentSuccessView extends StatelessWidget {
   static const String path = '/AppointmentSuccessView';
   @override

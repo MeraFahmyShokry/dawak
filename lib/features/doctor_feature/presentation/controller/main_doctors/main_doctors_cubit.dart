@@ -6,6 +6,9 @@ import 'package:clean_arc/features/doctor_feature/domain/repository/doctor_repos
 import 'package:clean_arc/injection/injection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../../../core/data/model/base_response/base_response.dart';
+import '../../../../../core/presentation/util/type_of_list.dart';
+
 part 'main_doctors_state.dart';
 part 'main_doctors_cubit.freezed.dart';
 
@@ -30,13 +33,13 @@ class MainDoctorsCubit extends Cubit<MainDoctorsState> {
   }
   Future<void> specialists() async {
     final result = await repository.getAllSpecialist(
-        pageSize: 100, languageId: LocalizationUtil.getCurrentLanguageId);
+        languageId: LocalizationUtil.getCurrentLanguageId);
     result.fold(
           (failure) {
         emit(state.copyWith(status: GetCategoriesFailure()));
       },
           (result) async {
-        emit(state.copyWith(status: GetCategoriesSuccess(),specialists: result.data??[]));
+        emit(state.copyWith(status: GetCategoriesSuccess(),specialists: result));
       },
     );
   }
@@ -53,7 +56,7 @@ class MainDoctorsCubit extends Cubit<MainDoctorsState> {
         emit(state.copyWith(status: GetDoctorsFailure()));
       },
           (data) {
-        emit(state.copyWith(status: GetDoctorsSuccess(),doctors: data.data??[]));
+        emit(state.copyWith(status: GetDoctorsSuccess(),doctors: data));
       },
     );
   }

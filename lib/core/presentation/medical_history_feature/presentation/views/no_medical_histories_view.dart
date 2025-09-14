@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../components/NewReventView.dart';
 import '../items/CustomDropdownrevent.dart';
 
-@RoutePage()
+//@RoutePage()
 class NoMedicalHistoriesView extends StatefulWidget {
   static const String path = '/NoMedicalHistoriesView';
   @override

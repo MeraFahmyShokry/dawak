@@ -17,6 +17,7 @@ import 'package:clean_arc/core/data/services/shared_prefs/i_local_preference.dar
 import 'package:clean_arc/core/data/services/shared_prefs/local_storage.dart'
     as _i290;
 import 'package:clean_arc/core/data/utill/configration.dart' as _i790;
+import 'package:clean_arc/core/utils/helper/error_handler.dart' as _i246;
 import 'package:clean_arc/core/utils_package/utils_package.dart' as _i845;
 import 'package:clean_arc/features/auth_feature/domain/repository/auth_repository.dart'
     as _i453;
@@ -82,6 +83,7 @@ extension GetItInjectableX on _i174.GetIt {
     final injectableModule = _$InjectableModule();
     gh.factory<_i421.AppCubit>(() => _i421.AppCubit());
     gh.factory<_i732.LayoutCubit>(() => _i732.LayoutCubit());
+    gh.singleton<_i246.ErrorHandler>(() => _i246.ErrorHandler());
     await gh.lazySingletonAsync<_i460.SharedPreferences>(
       () => injectableModule.sharedPref,
       preResolve: true,

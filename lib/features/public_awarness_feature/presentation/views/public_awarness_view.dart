@@ -7,7 +7,7 @@ import 'package:clean_arc/features/Book_Appointment_feature/presentation/compone
 import 'package:clean_arc/features/public_awarness_feature/presentation/views/public_awarness_details_view.dart';
 import 'package:flutter/material.dart';
 
-@RoutePage()
+//@RoutePage()
 class PublicAwarnessView extends StatelessWidget {
   static const String path = '/PublicAwarnessView';
 

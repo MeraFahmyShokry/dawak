@@ -6,7 +6,7 @@ import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-@RoutePage()
+//@RoutePage()
 class NotificationView extends StatelessWidget {
   static const String path = '/NotificationView';
   @override

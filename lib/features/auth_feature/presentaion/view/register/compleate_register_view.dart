@@ -10,7 +10,7 @@ import 'package:clean_arc/features/auth_feature/presentaion/widgets/UploadMedica
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-@RoutePage()
+//@RoutePage()
 class CompleateRegisterView extends StatefulWidget {
   const CompleateRegisterView({super.key});
 

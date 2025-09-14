@@ -6,7 +6,7 @@ import 'package:clean_arc/features/home_feature/presentation/view/home_view.dart
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-@RoutePage()
+//@RoutePage()
 class OtpView extends StatefulWidget {
   const OtpView({super.key});
 
@@ -151,7 +151,7 @@ class _OtpViewState extends State<OtpView> with ScreenUtils {
 }
 
 //////////////////////////////////////////////////////////
-@RoutePage()
+//@RoutePage()
 class SucsessOtpView extends StatefulWidget {
   const SucsessOtpView({super.key});
 

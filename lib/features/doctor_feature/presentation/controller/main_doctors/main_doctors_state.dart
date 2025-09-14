@@ -4,8 +4,8 @@ part of 'main_doctors_cubit.dart';
 class MainDoctorsState with _$MainDoctorsState {
   const factory MainDoctorsState({
     required MainDoctorsStatus status,
-    @Default([]) List<SpecialistsModel> specialists,
-    @Default([]) List<TopDoctorsReview> doctors,
+    PaginatedList<SpecialistsModel>? specialists,
+    PaginatedList<TopDoctorsReview>? doctors,
   }) = _MainDoctorsState;
 
 }

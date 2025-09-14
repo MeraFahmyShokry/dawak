@@ -16,7 +16,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/helper/validator.dart';
 
-@RoutePage()
+//@RoutePage()
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
 

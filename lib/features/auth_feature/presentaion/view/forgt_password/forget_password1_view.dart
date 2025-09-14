@@ -3,7 +3,7 @@ import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/view/forgt_password/rest_password_view.dart';
 import 'package:flutter/material.dart';
 
-@RoutePage()
+//@RoutePage()
 class ForgetPasswordView extends StatelessWidget {
   const ForgetPasswordView({super.key});
 

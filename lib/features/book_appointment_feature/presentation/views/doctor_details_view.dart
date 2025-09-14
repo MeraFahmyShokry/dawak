@@ -22,7 +22,7 @@ import '../items/clinic_card_item.dart';
 
 
 
-@RoutePage()
+//@RoutePage()
 class DoctorDetailsView extends StatelessWidget {
   String id;
   String name;

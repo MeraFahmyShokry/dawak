@@ -6,23 +6,23 @@ import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/controller/auth_cubit.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/view/login/login_view.dart';
 import 'package:clean_arc/features/layout_feature/view/layout_view.dart';
-import 'package:clean_arc/features/splash_feature/presentation/onboarding_view.dart';
+import 'package:clean_arc/features/splash_feature/presentation/onboarding_screen.dart';
 import 'package:clean_arc/injection/injection.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/data/services/shared_prefs/shared_pref.dart';
 import '../../core/data/services/shared_prefs/shared_prefs_key.dart';
 @RoutePage()
-class SplashView extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
   static const String path = '/SplashScreen';
 
-  const SplashView({super.key});
+  const SplashScreen({super.key});
 
   @override
-  SplashViewState createState() => SplashViewState();
+  SplashScreenState createState() => SplashScreenState();
 }
 
-class SplashViewState extends State<SplashView>
+class SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   var _visible = true;
 
@@ -41,7 +41,7 @@ class SplashViewState extends State<SplashView>
     getIt<ILocalPreference>().appUser.value !=null ?
     NavigationHelper.pushReplacementAll(context,LayoutView())
         : NavigationHelper.pushReplacementAll(context,LoginView()):
-    NavigationHelper.pushReplacementAll(context,OnBoardingView());
+    NavigationHelper.pushReplacementAll(context,OnBoardingScreen());
   }
 
   @override

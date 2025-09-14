@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/presentation/widget/filter_dropdown_menu_button.dart';
 
-@RoutePage()
+//@RoutePage()
 class TwoPrescriptionView extends StatelessWidget {
   static const String path = '/TwoPrescriptionView';
 

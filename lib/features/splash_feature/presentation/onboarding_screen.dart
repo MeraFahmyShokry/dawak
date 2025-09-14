@@ -14,16 +14,16 @@ import '../../../core/data/services/shared_prefs/i_local_preference.dart';
 import '../../../injection/injection.dart';
 
 @RoutePage()
-class OnBoardingView extends StatefulWidget {
-  const OnBoardingView({super.key});
+class OnBoardingScreen extends StatefulWidget {
+  const OnBoardingScreen({super.key});
 
-  static const String path = '/OnBoardingView';
+  static const String path = '/OnBoardingScreen';
 
   @override
-  State<OnBoardingView> createState() => _OnBoardingViewState();
+  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
 }
 
-class _OnBoardingViewState extends State<OnBoardingView> {
+class _OnBoardingScreenState extends State<OnBoardingScreen> {
   late PageController controller;
   int currentPage = 0;
 

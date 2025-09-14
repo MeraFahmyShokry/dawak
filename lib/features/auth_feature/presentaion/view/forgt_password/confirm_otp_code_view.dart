@@ -2,7 +2,7 @@ import 'package:clean_arc/core/routing/navigation_helper.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-@RoutePage()
+//@RoutePage()
 class ConfirmOtpView extends StatelessWidget {
   const ConfirmOtpView({super.key});
 

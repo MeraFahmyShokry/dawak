@@ -15,7 +15,7 @@ import '../components/book_appointment_app_bar_component.dart';
 import '../components/book_appointment_progress_bar_component.dart';
 import '../components/payment_options_component.dart';
 
-@RoutePage()
+//@RoutePage()
 class AppointmentPaymentInfoView extends StatelessWidget {
   const AppointmentPaymentInfoView({super.key});
 

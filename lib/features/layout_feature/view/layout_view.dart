@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
-@RoutePage()
+//@RoutePage()
 class LayoutView extends StatefulWidget {
   static const String path = "/LayoutView";
 

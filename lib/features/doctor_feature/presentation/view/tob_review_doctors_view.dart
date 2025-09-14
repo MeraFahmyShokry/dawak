@@ -9,7 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/utils_package/utils_package.dart';
 
-@RoutePage()
+//@RoutePage()
 class TopReviewDoctorView extends StatelessWidget {
   List<String> categoryFiltteration = [
     'all',

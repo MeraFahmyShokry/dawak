@@ -24,8 +24,8 @@ abstract class InjectableModule {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-          if(getIt<ILocalPreference>().appUser.value?.token!=null)
-          'Authorization':'Bearer ${getIt<ILocalPreference>().appUser.value?.token}'
+          // if(getIt<ILocalPreference>().appUser.value?.token!=null)
+          // 'Authorization':'Bearer ${getIt<ILocalPreference>().appUser.value?.token}'
         },
         validateStatus: (statusCode) {
           if (statusCode != null) {

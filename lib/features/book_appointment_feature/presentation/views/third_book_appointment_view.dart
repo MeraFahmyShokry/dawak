@@ -14,7 +14,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/routing/navigation_helper.dart';
 import '../components/book_appointment_progress_bar_component.dart';
 
-@RoutePage()
+//@RoutePage()
 class ThirdBookAppointmentView extends StatefulWidget {
   final BookAppointmentCubit bookAppointmentCubit;
 
