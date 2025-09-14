@@ -1,9 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../../domain/model/specialists_model/specialists_model.dart';
-import '../../../domain/model/top_review_doctors_model/top_review_doctors_model.dart';
-
-part 'main_doctors_state.freezed.dart';
+part of 'main_doctors_cubit.dart';
 
 @freezed
 class MainDoctorsState with _$MainDoctorsState {
@@ -11,7 +6,19 @@ class MainDoctorsState with _$MainDoctorsState {
     required MainDoctorsStatus status,
     @Default([]) List<SpecialistsModel> specialists,
     @Default([]) List<TopDoctorsReview> doctors,
-}) = _MainDoctorsState;
+  }) = _MainDoctorsState;
+
+  @override
+  // TODO: implement doctors
+  List<TopDoctorsReview> get doctors => throw UnimplementedError();
+
+  @override
+  // TODO: implement specialists
+  List<SpecialistsModel> get specialists => throw UnimplementedError();
+
+  @override
+  // TODO: implement status
+  MainDoctorsStatus get status => throw UnimplementedError();
 }
 
 @freezed

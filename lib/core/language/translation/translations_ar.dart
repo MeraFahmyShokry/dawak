@@ -221,8 +221,8 @@ class TranslationsAr extends Translations {
 
   @override
   String
-      get weHaveReceivedYourOrderAndNowWeWillSearchForTheBestOffersFromThePharmaciesAroundYou =>
-          'استلمنا طلبك ودلوقتي بندور لك علي افضل العروض من الصيدليات الي حوليك';
+  get weHaveReceivedYourOrderAndNowWeWillSearchForTheBestOffersFromThePharmaciesAroundYou =>
+      'استلمنا طلبك ودلوقتي بندور لك علي افضل العروض من الصيدليات الي حوليك';
 
   @override
   String get cancellingOrder => 'إلغاء الطلب';
@@ -685,8 +685,8 @@ class TranslationsAr extends Translations {
 
   @override
   String
-      get upload_your_prescription_and_top_doctors_will_help_you_to_know_your_prescription =>
-          'ارفع روشتتك وهيساعدك نخبة من امهر الاطباء في انك تعرف الروشتة';
+  get upload_your_prescription_and_top_doctors_will_help_you_to_know_your_prescription =>
+      'ارفع روشتتك وهيساعدك نخبة من امهر الاطباء في انك تعرف الروشتة';
 
   @override
   String get confirm => 'تأكيد';

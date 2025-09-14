@@ -63,7 +63,7 @@ import 'translations_en.dart';
 /// property.
 abstract class Translations {
   Translations(String locale)
-      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -86,16 +86,16 @@ abstract class Translations {
   /// of delegates is preferred or required.
   static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
       <LocalizationsDelegate<dynamic>>[
-    delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-  ];
+        delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
     Locale('ar'),
-    Locale('en')
+    Locale('en'),
   ];
 
   /// No description provided for @splash.
@@ -511,7 +511,7 @@ abstract class Translations {
   /// In en, this message translates to:
   /// **'We have received your order and now we will search for the best offers from the pharmacies around you'**
   String
-      get weHaveReceivedYourOrderAndNowWeWillSearchForTheBestOffersFromThePharmaciesAroundYou;
+  get weHaveReceivedYourOrderAndNowWeWillSearchForTheBestOffersFromThePharmaciesAroundYou;
 
   /// No description provided for @cancellingOrder.
   ///
@@ -1418,7 +1418,7 @@ abstract class Translations {
   /// In en, this message translates to:
   /// **'Upload your prescription and top doctors will help you to know your prescription'**
   String
-      get upload_your_prescription_and_top_doctors_will_help_you_to_know_your_prescription;
+  get upload_your_prescription_and_top_doctors_will_help_you_to_know_your_prescription;
 
   /// No description provided for @confirm.
   ///
@@ -3619,8 +3619,9 @@ Translations lookupTranslations(Locale locale) {
   }
 
   throw FlutterError(
-      'Translations.delegate failed to load unsupported locale "$locale". This is likely '
-      'an issue with the localizations generation tool. Please file an issue '
-      'on GitHub with a reproducible sample app and the gen-l10n configuration '
-      'that was used.');
+    'Translations.delegate failed to load unsupported locale "$locale". This is likely '
+    'an issue with the localizations generation tool. Please file an issue '
+    'on GitHub with a reproducible sample app and the gen-l10n configuration '
+    'that was used.',
+  );
 }

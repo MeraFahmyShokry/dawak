@@ -226,7 +226,8 @@ class TranslationsEn extends Translations {
   String get totalCart => 'Total Cart';
 
   @override
-  String get weHaveReceivedYourOrderAndNowWeWillSearchForTheBestOffersFromThePharmaciesAroundYou =>
+  String
+  get weHaveReceivedYourOrderAndNowWeWillSearchForTheBestOffersFromThePharmaciesAroundYou =>
       'We have received your order and now we will search for the best offers from the pharmacies around you';
 
   @override
@@ -691,7 +692,8 @@ class TranslationsEn extends Translations {
   String get upload_your_prescription => 'Upload your prescription';
 
   @override
-  String get upload_your_prescription_and_top_doctors_will_help_you_to_know_your_prescription =>
+  String
+  get upload_your_prescription_and_top_doctors_will_help_you_to_know_your_prescription =>
       'Upload your prescription and top doctors will help you to know your prescription';
 
   @override
