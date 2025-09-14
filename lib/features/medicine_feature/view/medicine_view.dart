@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import '../cubit_cubit/medicine_cubit.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class DailyMedicineScreen extends StatefulWidget {
   const DailyMedicineScreen({super.key});
 
@@ -21,20 +22,20 @@ class _DailyMedicineScreenState extends State<DailyMedicineScreen> {
     return Column(
       children: [
         IncrementalField(
-          label: context.translate.howManyTimes,
-          hint: context.translate.selectTimes,
+          label: LocaleKeys.howManyTimes.tr(),
+          hint: LocaleKeys.selectTimes.tr(),
           type: IncrementType.times,
         ),
         SizedBox(height: 12.h),
         IncrementalField(
-          label: context.translate.dosage,
-          hint: context.translate.selectType,
+          label: LocaleKeys.dosage.tr(),
+          hint: LocaleKeys.selectType.tr(),
           type: IncrementType.dosage,
         ),
         SizedBox(height: 12.h),
         IncrementalField(
-          label: context.translate.duration,
-          hint: context.translate.selectDuration,
+          label: LocaleKeys.duration.tr(),
+          hint: LocaleKeys.selectDuration.tr(),
           type: IncrementType.duration,
         ),
         SizedBox(height: 12.h),
@@ -43,7 +44,7 @@ class _DailyMedicineScreenState extends State<DailyMedicineScreen> {
             Expanded(
               child: CustomDropdownField(
                 onChanged: (value) {},
-                title: context.translate.reminder,
+                title: LocaleKeys.reminder.tr(),
                 dropDownType: DropDownType.dropDownType,
               ),
             ),
@@ -56,7 +57,7 @@ class _DailyMedicineScreenState extends State<DailyMedicineScreen> {
                       color: context.color.primaryColor, size: 14.sp),
                   SizedBox(width: 8.w),
                   TextApp(
-                    context.translate.addTime,
+                    LocaleKeys.addTime.tr(),
                     style: TextStyle(
                       fontSize: AppDimensions.fontSizeExtraLarge,
                       color: context.color.primaryColor,
@@ -82,7 +83,7 @@ class _DailyMedicineScreenState extends State<DailyMedicineScreen> {
     return BlocProvider(
       create: (context) => MedicineCubit(),
       child: Scaffold(
-        appBar: CustomAppBar(title: context.translate.dailyMedicine),
+        appBar: CustomAppBar(title: LocaleKeys.dailyMedicine.tr()),
         body: Padding(
           padding: EdgeInsets.all(16.w),
           child: SingleChildScrollView(
@@ -91,7 +92,7 @@ class _DailyMedicineScreenState extends State<DailyMedicineScreen> {
               children: [
                 CustomDropdownField(
                   onChanged: (value) {},
-                  title: context.translate.name,
+                  title: LocaleKeys.name.tr(),
                   dropDownType: DropDownType.dropDownType,
                 ),
                 SizedBox(height: 12.h),
@@ -105,7 +106,7 @@ class _DailyMedicineScreenState extends State<DailyMedicineScreen> {
                           color: context.color.primaryColor,
                         ),
                         showTitle: true,
-                        hintText: context.translate.startDate,
+                        hintText: LocaleKeys.startDate.tr(),
                       ),
                     ),
                     SizedBox(width: 12.w),
@@ -117,7 +118,7 @@ class _DailyMedicineScreenState extends State<DailyMedicineScreen> {
                           color: context.color.primaryColor,
                         ),
                         showTitle: true,
-                        hintText: context.translate.endDate,
+                        hintText: LocaleKeys.endDate.tr(),
                       ),
                     ),
                   ],
@@ -142,7 +143,7 @@ class _DailyMedicineScreenState extends State<DailyMedicineScreen> {
                               color: context.color.primaryColor, size: 24)),
                       SizedBox(width: 8.w),
                       TextApp(
-                        context.translate.addAnotherDuration,
+                        LocaleKeys.addAnotherDuration.tr(),
                         style: TextStyle(
                             fontSize: AppDimensions.fontSizeDefault,
                             color: context.color.primaryColor),
@@ -158,7 +159,7 @@ class _DailyMedicineScreenState extends State<DailyMedicineScreen> {
 
                       Navigator.pop(context);
                     },
-                    title: context.translate.save,
+                    title: LocaleKeys.save.tr(),
                   ),
                 ),
               ],

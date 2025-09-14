@@ -6,6 +6,8 @@ import 'package:clean_arc/features/book_appointment_feature/controller/book_appo
 import 'package:clean_arc/features/doctor_feature/domain/model/doctor_complaints_model/doctor_complaints_model.dart';
 import 'package:clean_arc/features/doctor_feature/domain/params/get_doctor_complains_params.dart';
 import 'package:clean_arc/features/doctor_feature/presentation/controller/get_all_doctor_complaints/get_all_doctor_complaints.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -58,7 +60,7 @@ class _ComplainingQuestionComponentState
               spacing: 5,
               children: [
                 TextApp(
-                  context.translate.whatAreYouComplainingAboutQuestion,
+                  LocaleKeys.whatAreYouComplainingAboutQuestion.tr(),
                   style: context.textStyle.copyWith(
                       fontSize: AppDimensions.fontSizeDefault,
                       fontWeight: FontWeightHelper.medium,

@@ -3,7 +3,8 @@ import 'package:clean_arc/core/presentation/util/app_dimensions.dart';
 import 'package:clean_arc/core/presentation/util/style/fonts/font_weight_helper.dart';
 import 'package:clean_arc/core/presentation/widget/text_app.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class LabStats extends StatelessWidget {
   const LabStats({super.key});
 
@@ -12,9 +13,9 @@ class LabStats extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        buildStatItem(context.translate.experience, "+10Y"),
-        buildStatItem(context.translate.reviews, "+150"),
-        buildStatItem(context.translate.clients, "+400"),
+        buildStatItem(LocaleKeys.experience.tr(), "+10Y"),
+        buildStatItem(LocaleKeys.reviews.tr(), "+150"),
+        buildStatItem(LocaleKeys.clients.tr(), "+400"),
       ],
     );
   }

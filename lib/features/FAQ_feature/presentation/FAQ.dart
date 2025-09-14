@@ -3,18 +3,19 @@ import 'package:clean_arc/core/presentation/widget/custom_card_container.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/home_feature/presentation/componant/search_componant.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class FaqScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: context.translate.faq),
+      appBar: CustomAppBar(title: LocaleKeys.faq.tr()),
       body: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
           children: [
             SearchComponent(
-              hint: context.translate.searchForDoctorsNursesLabs,
+              hint: LocaleKeys.searchForDoctorsNursesLabs.tr(),
             ),
             SizedBox(height: 16),
             Expanded(
@@ -39,7 +40,7 @@ class FaqScreen extends StatelessWidget {
                                   color: context.color.textColor)),
                           Expanded(
                             child: TextApp(
-                              context.translate.contactwithdoc,
+                              LocaleKeys.contactwithdoc.tr(),
                               style: TextStyle(
                                   fontWeight: FontWeightHelper.medium,
                                   fontSize: AppDimensions.fontSizeLarge,
@@ -53,7 +54,7 @@ class FaqScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             TextApp(
-                              context.translate.answer + ":",
+                              LocaleKeys.answer.tr() + ":",
                               style: TextStyle(
                                 fontSize: AppDimensions.fontSizeDefault,
                                 color: context.color.primaryColor,
@@ -62,7 +63,7 @@ class FaqScreen extends StatelessWidget {
                             SizedBox(width: 8),
                             Expanded(
                               child: TextApp(
-                                context.translate.ans,
+                                LocaleKeys.ans.tr(),
                                 style: TextStyle(
                                   fontSize: AppDimensions.fontSizeDefault,
                                   color: context.color.titleColor,

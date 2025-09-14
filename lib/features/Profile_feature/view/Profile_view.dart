@@ -3,7 +3,8 @@ import 'package:clean_arc/core/presentation/widget/custom_dropdown_field.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class PersonalInfoScreen extends StatefulWidget {
   @override
   _PersonalInfoScreenState createState() => _PersonalInfoScreenState();
@@ -38,7 +39,7 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: context.translate.accountInformation),
+      appBar: CustomAppBar(title: LocaleKeys.accountInformation.tr()),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
@@ -68,25 +69,25 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
                 ),
               ),
               const SizedBox(height: 20),
-              buildTextField(context.translate.name, nameController),
-              buildTextField(context.translate.email, emailController,
+              buildTextField(LocaleKeys.name.tr(), nameController),
+              buildTextField(LocaleKeys.email.tr(), emailController,
                   enabled: false),
-              buildTextField(context.translate.password, passwordController,
+              buildTextField(LocaleKeys.password.tr(), passwordController,
                   isPassword: true),
-              buildTextField(context.translate.phone_number, phoneController),
-              buildTextField(context.translate.nationalId, idController),
+              buildTextField(LocaleKeys.phone_number.tr(), phoneController),
+              buildTextField(LocaleKeys.nationalId.tr(), idController),
               CustomDropdownField(
                   onChanged: (value) {},
                   items: ["Male", "Female"],
-                  title: context.translate.gender,
+                  title: LocaleKeys.gender.tr(),
                   dropDownType: DropDownType.dropDownType),
               const SizedBox(height: 20),
               CustomTextField(
                 showTitle: true,
                 onTap: () => _selectDate(context),
-                hintText: context.translate.birthDate,
+                hintText: LocaleKeys.birthDate.tr(),
                 titleText: selectedDate == null
-                    ? context.translate.birthDate
+                    ? LocaleKeys.birthDate.tr()
                     : "${selectedDate!.day}/${selectedDate!.month}/${selectedDate!.year}",
                 controller: phoneController,
                 suffixIcon: Icon(IconlyLight.calendar, size: 24),
@@ -97,7 +98,7 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
                 child: CustomButton(
                   width: double.infinity,
                   onPressed: () {},
-                  title: context.translate.save,
+                  title: LocaleKeys.save.tr(),
                 ),
               ),
             ],

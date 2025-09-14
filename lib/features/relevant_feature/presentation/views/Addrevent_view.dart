@@ -5,7 +5,8 @@ import 'package:clean_arc/features/relevant_feature/presentation/items/CustomDro
 import 'package:clean_arc/features/relevant_feature/presentation/views/NewReventView.dart';
 import 'package:clean_arc/features/relevant_feature/presentation/views/relevant_medical_history_view.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class AddRelevantScreen extends StatefulWidget {
   @override
   _AddRelevantScreenState createState() => _AddRelevantScreenState();
@@ -17,7 +18,7 @@ class _AddRelevantScreenState extends State<AddRelevantScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: context.translate.addRelevant),
+      appBar: CustomAppBar(title: LocaleKeys.addRelevant.tr()),
       body: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
@@ -44,7 +45,7 @@ class _AddRelevantScreenState extends State<AddRelevantScreen> {
                       ),
                       SizedBox(width: 8),
                       Text(
-                        context.translate.addYourRelevant,
+                        LocaleKeys.addYourRelevant.tr(),
                         style: TextStyle(
                             color: context.color.titleColor,
                             fontWeight: FontWeightHelper.bold),
@@ -58,7 +59,7 @@ class _AddRelevantScreenState extends State<AddRelevantScreen> {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    title: context.translate.save),
+                    title: LocaleKeys.save.tr()),
               ],
             ),
           ],

@@ -1,4 +1,6 @@
 import 'package:clean_arc/core/presentation/extintions/context_extintions.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/presentation/util/app_dimensions.dart';
@@ -26,7 +28,7 @@ class CustomComplainTextFieldComponent extends StatelessWidget {
         decoration: InputDecoration(
           contentPadding: EdgeInsets.all(8),
           border: InputBorder.none,
-          hintText: context.translate.writeYourSymptomsOfFatigue,
+          hintText: LocaleKeys.writeYourSymptomsOfFatigue.tr(),
           hintStyle: context.textStyle.copyWith(
               fontSize: AppDimensions.fontSizeSmall,
               fontWeight: FontWeightHelper.regular,

@@ -7,7 +7,8 @@ import 'package:clean_arc/features/Pharmacies_feature/view/item/ProductCard.dart
 import 'package:clean_arc/features/Pharmacies_feature/view/widget/Pharmacies_card.dart';
 import 'package:clean_arc/features/home_feature/presentation/componant/search_componant.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class PharmaciesScreen extends StatefulWidget {
   const PharmaciesScreen({super.key});
 
@@ -24,7 +25,7 @@ class _PharmaciesScreenState extends State<PharmaciesScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            CustomAppBar(title: context.translate.pharmacies),
+            CustomAppBar(title: LocaleKeys.pharmacies.tr()),
             const SizedBox(height: 10),
             Padding( 
               padding: const EdgeInsets.symmetric(horizontal: 16),

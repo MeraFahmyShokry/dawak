@@ -6,6 +6,8 @@ import 'package:clean_arc/features/appointment_feature/presentation/componant/Al
 import 'package:clean_arc/features/appointment_feature/presentation/componant/Cancelled.dart';
 import 'package:clean_arc/features/appointment_feature/presentation/componant/Completed.dart';
 import 'package:clean_arc/features/appointment_feature/presentation/componant/upcoming.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class AppointmentView extends StatefulWidget {
@@ -40,7 +42,7 @@ class _AppointmentViewState extends State<AppointmentView>
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Column(
             children: [
-                CustomAppBar(title: context.translate.appointment),
+                CustomAppBar(title: LocaleKeys.appointment.tr()),
               const SizedBox(height: 10),
               CustomTabBar(tabController: _tabController),
               Expanded(

@@ -3,6 +3,8 @@ import 'package:clean_arc/core/presentation/animation/animation_do.dart';
 import 'package:clean_arc/core/presentation/widget/custom_button_button.dart';
 import 'package:clean_arc/core/presentation/widget/text_app.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,7 +51,7 @@ class DarkAndLangButtons extends StatelessWidget {
             height: 44.h,
             width: 100.w,
             child: TextApp(
-               context.translate.changeLanguage,
+               LocaleKeys.changeLanguage.tr(),
               style: context.textStyle.copyWith(
                 fontSize: 16.sp,
                 fontWeight: FontWeightHelper.bold,

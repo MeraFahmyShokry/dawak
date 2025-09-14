@@ -1,3 +1,5 @@
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 // import 'package:clean_arc/core/utils_package/utils_package.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_iconly/flutter_iconly.dart';
@@ -103,7 +105,7 @@
 //                           IconlyLight.calendar,
 //                           color: Color(0xff15A042),
 //                         ),
-//                         TextApp(context.translate.availableNow)
+//                         TextApp(LocaleKeys.availableNow.tr())
 //                       ],
 //                     ),
 //                     SizedBox(
@@ -113,7 +115,7 @@
 //                       child: CustomButton(
 //                         height: 40,
 //                         onPressed: () {},
-//                         title: context.translate.bookingNow,
+//                         title: LocaleKeys.bookingNow.tr(),
 //                       ),
 //                     )
 //                   ],
@@ -298,7 +300,7 @@ class OldDoctorItems extends StatelessWidget {
                                         const Icon(IconlyLight.calendar,
                                             color: Color(0xff15A042)),
                                         TextApp(availableTime == 'Now'
-                                            ? context.translate.availableNow
+                                            ? LocaleKeys.availableNow.tr()
                                             : availableTime ?? ''),
                                       ],
                                     )
@@ -315,7 +317,7 @@ class OldDoctorItems extends StatelessWidget {
                                           name: title ?? '',
                                         ));
                                   },
-                                  title: context.translate.bookingNow,
+                                  title: LocaleKeys.bookingNow.tr(),
                                 ),
                               ),
                             ],
@@ -337,7 +339,7 @@ class OldDoctorItems extends StatelessWidget {
                 //         borderRadius: BorderRadius.circular(30.r),
                 //       ),
                 //       child: TextApp(
-                //         context.translate.cancelled,
+                //         LocaleKeys.cancelled.tr(),
                 //         fontWeight: FontWeightHelper.bold,
                 //         color: Color(0xffD53B36),
                 //       ),
@@ -353,7 +355,7 @@ class OldDoctorItems extends StatelessWidget {
                 //         borderRadius: BorderRadius.circular(30.r),
                 //       ),
                 //       child: TextApp(
-                //         context.translate.completed,
+                //         LocaleKeys.completed.tr(),
                 //         fontWeight: FontWeightHelper.bold,
                 //         color: Color(0xff15A042),
                 //       ),
@@ -375,7 +377,7 @@ class OldDoctorItems extends StatelessWidget {
                 //                         name: "Dr. Mohamed Emad",
                 //                       ));
                 //                 }!,
-                //                 title: context.translate.bookingNow,
+                //                 title: LocaleKeys.bookingNow.tr(),
                 //               ),
                 //             ),
                 //           if (onBookNow != null && onViewProfile != null)
@@ -388,7 +390,7 @@ class OldDoctorItems extends StatelessWidget {
                 //                 withBorderOnly: true,
                 //                 height: 40.h,
                 //                 onPressed: onViewProfile!,
-                //                 title: context.translate.cancel,
+                //                 title: LocaleKeys.cancel.tr(),
                 //                 titleColor: context.color.primaryColor,
                 //               ),
                 //             ),

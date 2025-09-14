@@ -1,3 +1,5 @@
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:clean_arc/core/data/model/base_response/base_response.dart';
 import 'package:clean_arc/core/presentation/extintions/widget_extensions.dart';
 import 'package:clean_arc/core/presentation/util/type_of_list.dart';
@@ -33,7 +35,7 @@ class _SpecialistGridState extends State<SpecialistGrid> {
     return Column(
       children: [
         ShowAllWidget(
-          title: context.translate.specialists,
+          title: LocaleKeys.specialists.tr(),
           onTap: () {},
         ),
         SizedBox(

@@ -3,6 +3,8 @@ import 'package:clean_arc/core/presentation/widget/show_all_widget.dart';
 import 'package:clean_arc/features/doctor_feature/presentation/widget/items/old_doctor_items.dart';
 import 'package:clean_arc/features/home_feature/presentation/componant/custom_home_appbar.dart';
 import 'package:clean_arc/features/home_feature/presentation/componant/search_componant.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,7 +31,7 @@ class TopReviewDoctorView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: context.translate.bestDoctors,
+        title: LocaleKeys.bestDoctors.tr(),
       ),
       body: SafeArea(
         child: Column(

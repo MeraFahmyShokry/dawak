@@ -6,7 +6,8 @@ import 'package:clean_arc/features/payment_componant/payment_componant/payment_m
 import 'package:clean_arc/features/payment_componant/view/payment_information_view.dart';
 import 'package:clean_arc/features/paymentsss/IRSPaymentWebView.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class ChargeYourBalanceView extends StatelessWidget {
   const ChargeYourBalanceView({super.key});
 
@@ -14,7 +15,7 @@ class ChargeYourBalanceView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: context.translate.paymentinformation,
+        title: LocaleKeys.paymentinformation.tr(),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
@@ -25,15 +26,15 @@ class ChargeYourBalanceView extends StatelessWidget {
               spacing: AppDimensions.fontSizeDefault,
               children: [
                 PaymentInformationTextItem(
-                  text: context.translate.chargeYourBalance,
+                  text: LocaleKeys.chargeYourBalance.tr(),
                 ),
                 SizedBox(height: AppDimensions.paddingSizeDefault),
                 PaymentWithVisaAndMastercard(),
                 PaymentWithFawryAndVodafone(),
                 SizedBox(height: AppDimensions.paddingSizeDefault),
-                PaymentInformationTextItem(text: context.translate.totalAmount),
+                PaymentInformationTextItem(text: LocaleKeys.totalAmount.tr()),
                 CustomTextField(
-                  hintText: context.translate.enterTheAmountYouWantToCharge,
+                  hintText: LocaleKeys.enterTheAmountYouWantToCharge.tr(),
                 ),
                 CustomButton(
                   onPressed: () {
@@ -44,7 +45,7 @@ class ChargeYourBalanceView extends StatelessWidget {
 
                     {}
                   },
-                  title: context.translate.chargeYourBalance,
+                  title: LocaleKeys.chargeYourBalance.tr(),
                   width: double.infinity,
                 )
               ]),

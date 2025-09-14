@@ -5,103 +5,103 @@ class Validator {
 
   static String? validate(String? value) {
     if (value?.isEmpty ?? true) {
-      return "LocaleKeys.fieldIsRequired.tr()";
+      return "LocaleKeys.fieldIsRequire.tr()d.tr()";
     }
     return null;
   }
 
   // static String? validateCountry(String? value) {
   //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.countryIsRequired.tr();
+  //     return LocaleKeys.countryIsRequire.tr()d.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validateCity(String? value) {
   //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.cityIsRequired.tr();
+  //     return LocaleKeys.cityIsRequire.tr()d.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validateRegion(String? value) {
   //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.regionIsRequired.tr();
+  //     return LocaleKeys.regionIsRequire.tr()d.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validateGender(String? value) {
   //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.genderIsRequired.tr();
+  //     return LocaleKeys.genderIsRequire.tr()d.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validatePostalCode(String? value) {
   //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.postalCodeIsRequired.tr();
+  //     return LocaleKeys.postalCodeIsRequire.tr()d.tr();
   //   }
   //   if (value?.length != 5) {
-  //     return LocaleKeys.postalCodeMustBe5Digits.tr();
+  //     return LocaleKeys.postalCodeMustBe5Digit.tr()s.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validateBuildingNumber(String? value) {
   //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.buildingNumberIsRequired.tr();
+  //     return LocaleKeys.buildingNumberIsRequire.tr()d.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validateStreetName(String? value) {
   //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.streetNameIsRequired.tr();
+  //     return LocaleKeys.streetNameIsRequire.tr()d.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validateFullAddress(String? value) {
   //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.fullAddressIsRequired.tr();
+  //     return LocaleKeys.fullAddressIsRequire.tr()d.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validateFirstName(String? value) {
   //   if (value == null || value.isEmpty) {
-  //     return LocaleKeys.pleaseEnterYourFirstName.tr();
+  //     return LocaleKeys.pleaseEnterYourFirstNam.tr()e.tr();
   //   }
   //   if (value.length < 3) {
-  //     return LocaleKeys.mustBeAtLeast3CharactersLong.tr();
+  //     return LocaleKeys.mustBeAtLeast3CharactersLon.tr()g.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validateLastName(String? value) {
   //   if (value == null || value.isEmpty) {
-  //     return LocaleKeys.pleaseEnterYourLastName.tr();
+  //     return LocaleKeys.pleaseEnterYourLastNam.tr()e.tr();
   //   }
   //   if (value.length < 3) {
-  //     return LocaleKeys.mustBeAtLeast3CharactersLong.tr();
+  //     return LocaleKeys.mustBeAtLeast3CharactersLon.tr()g.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validateDateOfBirth(String? value) {
   //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.dateOfBirthIsRequired.tr();
+  //     return LocaleKeys.dateOfBirthIsRequire.tr()d.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validateOTP(String? value) {
   //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.otpIsRequired.tr();
+  //     return LocaleKeys.otpIsRequire.tr()d.tr();
   //   }
   //   if (value?.length != 5) {
-  //     return LocaleKeys.otpMustBe5Digits.tr();
+  //     return LocaleKeys.otpMustBe5Digit.tr()s.tr();
   //   }
   //   return null;
   // }
@@ -115,22 +115,22 @@ class Validator {
   //   String lengthPattern = r'^.{8,}';
   //
   //   if (value.isEmpty) {
-  //     return LocaleKeys.pleaseEnterYourCurrentPassword.tr();
+  //     return LocaleKeys.pleaseEnterYourCurrentPasswor.tr()d.tr();
   //   }
   //   if (!RegExp(lengthPattern).hasMatch(value)) {
-  //     return LocaleKeys.pleaseEnterYourCorrectPassword.tr();
+  //     return LocaleKeys.pleaseEnterYourCorrectPasswor.tr()d.tr();
   //   }
   //   if (!RegExp(atLeastOneUpper).hasMatch(value)) {
-  //     return LocaleKeys.pleaseEnterYourCorrectPassword.tr();
+  //     return LocaleKeys.pleaseEnterYourCorrectPasswor.tr()d.tr();
   //   }
   //   if (!RegExp(atLeastOneLower).hasMatch(value)) {
-  //     return LocaleKeys.pleaseEnterYourCorrectPassword.tr();
+  //     return LocaleKeys.pleaseEnterYourCorrectPasswor.tr()d.tr();
   //   }
   //   if (!RegExp(atLeastOneDigit).hasMatch(value)) {
-  //     return LocaleKeys.pleaseEnterYourCorrectPassword.tr();
+  //     return LocaleKeys.pleaseEnterYourCorrectPasswor.tr()d.tr();
   //   }
   //   if (!RegExp(atLeastOneSpecial).hasMatch(value)) {
-  //     return LocaleKeys.pleaseEnterYourCorrectPassword.tr();
+  //     return LocaleKeys.pleaseEnterYourCorrectPasswor.tr()d.tr();
   //   }
   //   return null;
   // }
@@ -142,29 +142,29 @@ class Validator {
     String atLeastOneSpecial = r'^(?=.*?[!@#\$&*~?%^])';
     String lengthPattern = r'^.{8,}';
     if (value == null || value.isEmpty) {
-      return "LocaleKeys.passwordIsRequired.tr()";
+      return "LocaleKeys.passwordIsRequire.tr()d.tr()";
     }
     if (!RegExp(lengthPattern).hasMatch(value)) {
-      return "LocaleKeys.mustBeAtLeast8CharactersLong.tr()";
+      return "LocaleKeys.mustBeAtLeast8CharactersLon.tr()g.tr()";
     }
     if (!RegExp(atLeastOneUpper).hasMatch(value)) {
-      return "LocaleKeys.mustContainAtLeastOneUppercaseLetter.tr()";
+      return "LocaleKeys.mustContainAtLeastOneUppercaseLette.tr()r.tr()";
     }
     if (!RegExp(atLeastOneLower).hasMatch(value)) {
-      return "LocaleKeys.mustContainAtLeastOneLowerCase.tr()";
+      return "LocaleKeys.mustContainAtLeastOneLowerCas.tr()e.tr()";
     }
     if (!RegExp(atLeastOneDigit).hasMatch(value)) {
-      return "LocaleKeys.mustContainAtLeastOneNumber.tr()";
+      return "LocaleKeys.mustContainAtLeastOneNumbe.tr()r.tr()";
     }
     if (!RegExp(atLeastOneSpecial).hasMatch(value)) {
-      return "LocaleKeys.mustContainAtLeastOneSpecialCharacter.tr()";
+      return "LocaleKeys.mustContainAtLeastOneSpecialCharacte.tr()r.tr()";
     }
     return null;
   }
 
   static String? validateConfirmPassword(String? value, String? confirm) {
     if (value != confirm) {
-      return "LocaleKeys.twoPasswordsMustBeIdentical.tr()";
+      return "LocaleKeys.twoPasswordsMustBeIdentica.tr()l.tr()";
     }
     return null;
   }
@@ -179,7 +179,7 @@ class Validator {
       return null;
     }
     if (!regex.hasMatch(value)) {
-      return "LocaleKeys.enterTheCorrectEmail.tr()";
+      return "LocaleKeys.enterTheCorrectEmai.tr()l.tr()";
     } else {
       return null;
     }
@@ -191,9 +191,9 @@ class Validator {
   //   RegExp regExp = RegExp(pattern);
   //
   //   if (value?.isEmpty??true) {
-  //     return LocaleKeys.phoneNumberIsRequired.tr();
+  //     return LocaleKeys.phoneNumberIsRequire.tr()d.tr();
   //   } else if (!regExp.hasMatch(value??"")) {
-  //     return LocaleKeys.phoneNumberIsIncorrect.tr();
+  //     return LocaleKeys.phoneNumberIsIncorrec.tr()t.tr();
   //   }
   //
   //   return null;
@@ -203,16 +203,16 @@ class Validator {
   //   RegExp regExp = RegExp(pattern);
   //
   //   if (value == null || value.isEmpty) {
-  //     return LocaleKeys.phoneNumberIsRequired.tr();
+  //     return LocaleKeys.phoneNumberIsRequire.tr()d.tr();
   //   }
   //   if (!value.startsWith('39')) {
-  //     return LocaleKeys.mustStartWith39.tr(); //Must start with 39
+  //     return LocaleKeys.mustStartWith3.tr()9.tr(); //Must start with 39
   //   }
   //   if (value.length != 10) {
-  //     return LocaleKeys.phoneNumberLengthMustBe10.tr();
+  //     return LocaleKeys.phoneNumberLengthMustBe1.tr()0.tr();
   //   }
   //   if (!regExp.hasMatch(value)) {
-  //     return LocaleKeys.phoneNumberIsIncorrect.tr();
+  //     return LocaleKeys.phoneNumberIsIncorrec.tr()t.tr();
   //   }
   //
   //   return null;
@@ -223,37 +223,37 @@ class Validator {
   //   RegExp regExp = RegExp(pattern);
   //
   //   if (value == null || value.isEmpty) {
-  //     return LocaleKeys.phoneNumberIsRequired.tr();
+  //     return LocaleKeys.phoneNumberIsRequire.tr()d.tr();
   //   }
   //   if (!value.startsWith('1')) {
-  //     return LocaleKeys.mustStartWith1.tr(); //Must start with 1
+  //     return LocaleKeys.mustStartWith.tr()1.tr(); //Must start with 1
   //   }
   //   if (value.length != 10) {
-  //     return LocaleKeys.phoneNumberLengthMustBe10.tr();
+  //     return LocaleKeys.phoneNumberLengthMustBe1.tr()0.tr();
   //   }
   //   if (!regExp.hasMatch(value)) {
-  //     return LocaleKeys.phoneNumberIsIncorrect.tr();
+  //     return LocaleKeys.phoneNumberIsIncorrec.tr()t.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validateChildName(String? value) {
   //   if (value == null || value.isEmpty) {
-  //     return LocaleKeys.childNameIsRequired.tr();
+  //     return LocaleKeys.childNameIsRequire.tr()d.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validateChildGender(String? value) {
   //   if (value == null || value.isEmpty) {
-  //     return LocaleKeys.childGenderIsRequired.tr();
+  //     return LocaleKeys.childGenderIsRequire.tr()d.tr();
   //   }
   //   return null;
   // }
   //
   // static String? validateChildAge(String? value) {
   //   if (value == null || value.isEmpty) {
-  //     return LocaleKeys.childAgeIsRequired.tr();
+  //     return LocaleKeys.childAgeIsRequire.tr()d.tr();
   //   }
   //   return null;
   // }
@@ -263,9 +263,9 @@ class Validator {
 //   String pattern = r'(^[0-9]*$)';
 //   RegExp regExp = RegExp(pattern);
 //   if (value.isEmpty) {
-//     return LocaleKeys.numberIsRequired.tr();
+//     return LocaleKeys.numberIsRequire.tr()d.tr();
 //   } else if (!regExp.hasMatch(value)) {
-//     return LocaleKeys.numberIsIncorrect.tr();
+//     return LocaleKeys.numberIsIncorrec.tr()t.tr();
 //   }
 //   return null;
 // }
@@ -273,15 +273,15 @@ class Validator {
 // static String? validatePriceRange(
 //     {required double? fromPrice, required double? toPrice}) {
 //   if (fromPrice == null && toPrice == null) {
-//     return LocaleKeys.priceRangeMustBeProvided.tr();
+//     return LocaleKeys.priceRangeMustBeProvide.tr()d.tr();
 //   } else if (fromPrice == null) {
-//     return LocaleKeys.makeSureFromPriceIsEntered.tr();
+//     return LocaleKeys.makeSureFromPriceIsEntere.tr()d.tr();
 //   } else if (toPrice == null) {
-//     return LocaleKeys.makeSureToPriceIsEntered.tr();
+//     return LocaleKeys.makeSureToPriceIsEntere.tr()d.tr();
 //   }
 //
 //   if (fromPrice > toPrice) {
-//     return LocaleKeys.fromPriceMustBeLessThanToPrice.tr();
+//     return LocaleKeys.fromPriceMustBeLessThanToPric.tr()e.tr();
 //   }
 //   return null;
 // }

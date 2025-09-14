@@ -7,7 +7,8 @@ import 'package:clean_arc/features/clinic_feature/controller/get_avilavle_time_f
 import 'package:clean_arc/features/clinic_feature/domain/model/avilable_time_model/avilable_clinic_time.dart';
 import 'package:clean_arc/injection/injection.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class SelectDateComponent extends StatefulWidget {
   const SelectDateComponent({
     super.key,
@@ -25,7 +26,7 @@ class _SelectDateComponentState extends State<SelectDateComponent> {
       spacing: 5,
       children: [
         TextApp(
-          context.translate.selectdate,
+          LocaleKeys.selectdate.tr(),
           style: context.textStyle.copyWith(
               fontSize: AppDimensions.fontSizeDefault,
               fontWeight: FontWeightHelper.medium,
@@ -46,7 +47,7 @@ class _SelectDateComponentState extends State<SelectDateComponent> {
                         ?.date
                         .toString(),
                     context: context) ??
-                context.translate.selectdate,
+                LocaleKeys.selectdate.tr(),
             isSelected: null,
           ),
           itemBuilder: (context, item, isSelected) => DropDownText(
@@ -59,7 +60,7 @@ class _SelectDateComponentState extends State<SelectDateComponent> {
             BookAppointmentCubit.get(context).selectedDate = value;
             setState(() {});
           },
-          title: context.translate.chooseYourAnswer,
+          title: LocaleKeys.chooseYourAnswer.tr(),
           dropDownType: DropDownType.dropDownType,
           showTitle: false,
         ),

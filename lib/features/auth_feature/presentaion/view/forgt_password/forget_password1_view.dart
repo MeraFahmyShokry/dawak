@@ -1,6 +1,8 @@
 import 'package:clean_arc/core/routing/navigation_helper.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/view/forgt_password/rest_password_view.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
@@ -44,7 +46,7 @@ class ForgetPasswordView extends StatelessWidget {
                 flex: 3,
               ),
               TextApp(
-                context.translate.forgetPassword2,
+                LocaleKeys.forgetPassword2.tr(),
                 style: context.textStyle.copyWith(
                     fontWeight: FontWeightHelper.bold,
                     fontSize: AppDimensions.fontSizeOverLarge),
@@ -55,7 +57,7 @@ class ForgetPasswordView extends StatelessWidget {
               Container(
                 // width: context.width / 1.5,
                 child: TextApp(
-                  context.translate.dontWorry,
+                  LocaleKeys.dontWorry.tr(),
                   style: context.textStyle.copyWith(
                     fontWeight: FontWeightHelper.medium,
                     fontSize: AppDimensions.fontSizeLarge,
@@ -69,8 +71,8 @@ class ForgetPasswordView extends StatelessWidget {
                 height: 16.h,
               ),
               CustomTextField(
-                titleText: context.translate.phoneOrEmail,
-                hintText: context.translate.enterPhoneOrEmail,
+                titleText: LocaleKeys.phoneOrEmail.tr(),
+                hintText: LocaleKeys.enterPhoneOrEmail.tr(),
                 // isShowBorder: true,
               ),
               const Spacer(
@@ -84,7 +86,7 @@ class ForgetPasswordView extends StatelessWidget {
                         context, ResetPasswordView());
                   },
                   child: TextApp(
-                    context.translate.resetPassword,
+                    LocaleKeys.resetPassword.tr(),
                     style: context.textStyleButton,
                   )),
                SizedBox(
@@ -94,7 +96,7 @@ class ForgetPasswordView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextApp(
-                    context.translate.returnToSignIn,
+                    LocaleKeys.returnToSignIn.tr(),
                     style: context.textStyle.copyWith(
                         color: context.color.descriptionColor,
                         fontWeight: FontWeightHelper.semiBold),

@@ -6,7 +6,8 @@ import 'package:clean_arc/features/Labs_feature/view/widget/SortResultsWidget.da
 import 'package:clean_arc/features/Labs_feature/view/widget/labs_card.dart';
 import 'package:clean_arc/features/home_feature/presentation/componant/search_componant.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class AllLabBrachesSceen extends StatefulWidget {
   const AllLabBrachesSceen({super.key});
 
@@ -63,7 +64,7 @@ class _AllLabBrachesSceenState extends State<AllLabBrachesSceen> {
                               actionButton: CustomButton(
                                 width: 120,
                                 onPressed: () {},
-                                title: context.translate.bookNow,
+                                title: LocaleKeys.bookNow.tr(),
                               ))),
                     ),
                   ],

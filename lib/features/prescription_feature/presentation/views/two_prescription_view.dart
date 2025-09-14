@@ -7,7 +7,8 @@ import 'package:clean_arc/features/Book_Appointment_feature/presentation/compone
 import 'package:flutter/material.dart';
 
 import '../../../../core/presentation/widget/filter_dropdown_menu_button.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 @RoutePage()
 class TwoPrescriptionView extends StatelessWidget {
   static const String path = '/TwoPrescriptionView';
@@ -50,7 +51,7 @@ class TwoPrescriptionView extends StatelessWidget {
                                 color: context.color.titleColor),
                           ),
                           TextApp(
-                            context.translate.dentistry,
+                            LocaleKeys.dentistry.tr(),
                             style: context.textStyle.copyWith(
                                 fontSize: AppDimensions.fontSizeDefault,
                                 fontWeight: FontWeightHelper.regular,
@@ -79,7 +80,7 @@ class TwoPrescriptionView extends StatelessWidget {
                             spacing: 8,
                             children: [
                               TextApp(
-                                '${context.translate.name}:',
+                                '${LocaleKeys.name.tr()}:',
                                 style: context.textStyle.copyWith(
                                     fontSize: AppDimensions.fontSizeDefault,
                                     fontWeight: FontWeightHelper.medium,
@@ -98,7 +99,7 @@ class TwoPrescriptionView extends StatelessWidget {
                             spacing: 8,
                             children: [
                               TextApp(
-                                '${context.translate.date}:',
+                                '${LocaleKeys.date.tr()}:',
                                 style: context.textStyle.copyWith(
                                     fontSize: AppDimensions.fontSizeDefault,
                                     fontWeight: FontWeightHelper.medium,
@@ -117,14 +118,14 @@ class TwoPrescriptionView extends StatelessWidget {
                             spacing: 8,
                             children: [
                               TextApp(
-                                '${context.translate.bookingType}:',
+                                '${LocaleKeys.bookingType.tr()}:',
                                 style: context.textStyle.copyWith(
                                     fontSize: AppDimensions.fontSizeDefault,
                                     fontWeight: FontWeightHelper.medium,
                                     color: context.color.titleColor),
                               ),
                               TextApp(
-                                context.translate.examination,
+                                LocaleKeys.examination.tr(),
                                 style: context.textStyle.copyWith(
                                     fontSize: AppDimensions.fontSizeDefault,
                                     fontWeight: FontWeightHelper.regular,
@@ -179,14 +180,14 @@ class DoctorDetailsTabBarComponent extends StatelessWidget {
             tabs: [
               Tab(
                 child: TextApp(
-                  context.translate.diagnoseAndMedicine,
+                  LocaleKeys.diagnoseAndMedicine.tr(),
                   // 'Diagnose & Medicine',
                   textOverflow: TextOverflow.ellipsis,
                 ),
               ),
               Tab(
                 child: TextApp(
-                  context.translate.testsAndScans,
+                  LocaleKeys.testsAndScans.tr(),
                   textOverflow: TextOverflow.ellipsis,
                 ),
               ),
@@ -264,14 +265,14 @@ class DiagonseComponent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextApp(
-                context.translate.diagnose,
+                LocaleKeys.diagnose.tr(),
                 style: context.textStyle.copyWith(
                     fontSize: AppDimensions.fontSizeLarge,
                     fontWeight: FontWeightHelper.medium,
                     color: context.color.titleColor),
               ),
               TextApp(
-                context.translate.loremText,
+                LocaleKeys.loremText.tr(),
                 style: context.textStyle.copyWith(
                     fontSize: AppDimensions.fontSizeDefault,
                     fontWeight: FontWeightHelper.regular,
@@ -313,7 +314,7 @@ class DiagonseComponent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextApp(
-                      context.translate.startDate,
+                      LocaleKeys.startDate.tr(),
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeLarge,
                           fontWeight: FontWeightHelper.medium,
@@ -335,7 +336,7 @@ class DiagonseComponent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextApp(
-                      context.translate.endDate,
+                      LocaleKeys.endDate.tr(),
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeLarge,
                           fontWeight: FontWeightHelper.medium,
@@ -364,7 +365,7 @@ class DiagonseComponent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextApp(
-                      context.translate.dosage,
+                      LocaleKeys.dosage.tr(),
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeLarge,
                           fontWeight: FontWeightHelper.medium,
@@ -386,14 +387,14 @@ class DiagonseComponent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextApp(
-                      context.translate.amount,
+                      LocaleKeys.amount.tr(),
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeLarge,
                           fontWeight: FontWeightHelper.medium,
                           color: context.color.titleColor),
                     ),
                     TextApp(
-                      context.translate.capsule,
+                      LocaleKeys.capsule.tr(),
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeDefault,
                           fontWeight: FontWeightHelper.regular,
@@ -415,14 +416,14 @@ class DiagonseComponent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextApp(
-                      context.translate.duration,
+                      LocaleKeys.duration.tr(),
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeLarge,
                           fontWeight: FontWeightHelper.medium,
                           color: context.color.titleColor),
                     ),
                     TextApp(
-                      '1 ${context.translate.week}',
+                      '1 ${LocaleKeys.week.tr()}',
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeDefault,
                           fontWeight: FontWeightHelper.regular,
@@ -437,14 +438,15 @@ class DiagonseComponent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextApp(
-                      context.translate.howManyTimes,
+                      LocaleKeys.howManyTimes.tr(),
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeLarge,
                           fontWeight: FontWeightHelper.medium,
                           color: context.color.titleColor),
                     ),
                     TextApp(
-                      context.translate.twiceBerWeek,
+                      //twiceBerWeek
+                      LocaleKeys.twiceBerWeek.tr(),
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeDefault,
                           fontWeight: FontWeightHelper.regular,
@@ -485,14 +487,14 @@ class TestAndScanComponent extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TextApp(
-                    context.translate.urineTest,
+                    LocaleKeys.urineTest.tr(),
                     style: context.textStyle.copyWith(
                         fontSize: AppDimensions.fontSizeDefault,
                         fontWeight: FontWeightHelper.regular,
                         color: context.color.primaryColor),
                   ),
                   TextApp(
-                    context.translate.bloodPicture,
+                    LocaleKeys.bloodPicture.tr(),
                     style: context.textStyle.copyWith(
                         fontSize: AppDimensions.fontSizeDefault,
                         fontWeight: FontWeightHelper.regular,
@@ -510,14 +512,14 @@ class TestAndScanComponent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextApp(
-          context.translate.scans,
+          LocaleKeys.scans.tr(),
                 style: context.textStyle.copyWith(
                     fontSize: AppDimensions.fontSizeLarge,
                     fontWeight: FontWeightHelper.medium,
                     color: context.color.titleColor),
               ),
               TextApp(
-              context.translate.noScans,
+              LocaleKeys.noScans.tr(),
                 style: context.textStyle.copyWith(
                     fontSize: AppDimensions.fontSizeDefault,
                     fontWeight: FontWeightHelper.regular,

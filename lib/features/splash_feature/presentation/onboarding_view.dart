@@ -9,7 +9,8 @@ import 'package:clean_arc/features/auth_feature/presentaion/view/login/login_vie
 import 'package:clean_arc/features/splash_feature/domain/entity/onboarding_entity.dart';
 import 'package:clean_arc/features/splash_feature/presentation/componant/dots.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../../../core/data/services/shared_prefs/i_local_preference.dart';
 import '../../../injection/injection.dart';
 
@@ -36,24 +37,24 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     Future.delayed(Duration.zero, () {
       onBoardingList = [
         OnBoardingEntity(
-            title: context.translate.onboardingTitle1,
-            description: context.translate.onboardingDescription1,
+            title: LocaleKeys.onboardingTitle1.tr(),
+            description: LocaleKeys.onboardingDescription1.tr(),
             image: AppImages.images.core.png.onboarding1.path),
         OnBoardingEntity(
-            title: context.translate.onboardingTitle2,
-            description: context.translate.onboardingDescription2,
+            title: LocaleKeys.onboardingTitle2.tr(),
+            description: LocaleKeys.onboardingDescription2.tr(),
             image: AppImages.images.core.png.onboarding2.path),
         OnBoardingEntity(
-            title: context.translate.onboardingTitle3,
-            description: context.translate.onboardingDescription3,
+            title: LocaleKeys.onboardingTitle3.tr(),
+            description: LocaleKeys.onboardingDescription3.tr(),
             image: AppImages.images.core.png.onboarding3.path),
         OnBoardingEntity(
-            title: context.translate.onboardingTitle4,
-            description: context.translate.onboardingDescription4,
+            title: LocaleKeys.onboardingTitle4.tr(),
+            description: LocaleKeys.onboardingDescription4.tr(),
             image: AppImages.images.core.png.onboarding4.path),
         OnBoardingEntity(
-            title: context.translate.onboardingTitle5,
-            description: context.translate.onboardingDescription5,
+            title: LocaleKeys.onboardingTitle5.tr(),
+            description: LocaleKeys.onboardingDescription5.tr(),
             image: AppImages.images.core.png.onboarding5.path),
       ];
       setState(() {});
@@ -79,7 +80,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                       context, LoginView());
                 },
                 child: Text(
-                  context.translate.skip,
+                  LocaleKeys.skip.tr(),
                   style: AppTextTheme.bodySmall,
                 ),
               ),
@@ -151,8 +152,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 },
                 child: Text(
                   (currentPage + 1 == onBoardingList.length)
-                      ? context.translate.start
-                      : context.translate.next,
+                      ? LocaleKeys.start.tr()
+                      : LocaleKeys.next.tr(),
                   style: context.textStyleButton,
                 ),
               ),

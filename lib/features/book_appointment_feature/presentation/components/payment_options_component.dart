@@ -6,6 +6,8 @@ import 'package:clean_arc/core/presentation/widget/custom_card_container.dart';
 import 'package:clean_arc/core/presentation/widget/custom_card_container.dart';
 import 'package:clean_arc/core/presentation/widget/custom_card_container.dart';
 import 'package:clean_arc/core/presentation/widget/custom_card_container.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/presentation/util/app_dimensions.dart';
@@ -62,7 +64,7 @@ class _PaymentOptionsComponentState extends State<PaymentOptionsComponent> {
                     AppImages.images.core.svg.visa.svg(width: 52, height: 35),
                     SizedBox(width: 8),
                     TextApp(
-                      context.translate.visaCard,
+                      LocaleKeys.visaCard.tr(),
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeLarge,
                           fontWeight: FontWeightHelper.medium,
@@ -99,7 +101,7 @@ class _PaymentOptionsComponentState extends State<PaymentOptionsComponent> {
                         .svg(width: 52, height: 35),
                     SizedBox(width: 8),
                     TextApp(
-                      context.translate.masterCard,
+                      LocaleKeys.masterCard.tr(),
                       style: context.textStyle,
                         fontSize: AppDimensions.fontSizeLarge,
                         fontWeight: FontWeightHelper.medium,
@@ -135,7 +137,7 @@ class _PaymentOptionsComponentState extends State<PaymentOptionsComponent> {
                 AppImages.images.core.png.fawry.image(width: 52, height: 35),
                 SizedBox(width: 8),
                 TextApp(
-                  context.translate.fawry,
+                  LocaleKeys.fawry.tr(),
                   style: context.textStyle.copyWith(
                       fontSize: AppDimensions.fontSizeLarge,
                       fontWeight: FontWeightHelper.medium,
@@ -162,7 +164,7 @@ class _PaymentOptionsComponentState extends State<PaymentOptionsComponent> {
                     .svg(width: 24, height: 24),
                 SizedBox(width: 8),
                 TextApp(
-                  '${context.translate.yourBalance}: 350 ${context.translate.egp}',
+                  '${LocaleKeys.yourBalance.tr()}: 350 ${LocaleKeys.egp.tr()}',
                   style: context.textStyle.copyWith(
                       fontSize: AppDimensions.fontSizeLarge,
                       fontWeight: FontWeightHelper.medium,
@@ -198,7 +200,7 @@ class _PaymentOptionsComponentState extends State<PaymentOptionsComponent> {
                   ),
                   SizedBox(width: 20,),
                   TextApp(
-                    context.translate.or,
+                    LocaleKeys.or.tr(),
                     style: context.textStyle.copyWith(
                         fontSize: AppDimensions.fontSizeLarge,
                         fontWeight: FontWeightHelper.medium,
@@ -223,7 +225,7 @@ class _PaymentOptionsComponentState extends State<PaymentOptionsComponent> {
                     .svg(width: 24, height: 24),
                 SizedBox(width: 8),
                 TextApp(
-                  context.translate.payOnClinic,
+                  LocaleKeys.payOnClinic.tr(),
                   style: context.textStyle.copyWith(
                       fontSize: AppDimensions.fontSizeLarge,
                       fontWeight: FontWeightHelper.medium,

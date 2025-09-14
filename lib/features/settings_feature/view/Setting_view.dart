@@ -1,3 +1,5 @@
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:clean_arc/core/app/app_cubit/app_cubit.dart';
 import 'package:clean_arc/core/presentation/extintions/context_extintions.dart';
 import 'package:clean_arc/core/presentation/medical_history_feature/presentation/views/medical_history_summary_view.dart';
@@ -32,7 +34,7 @@ class SettingScreen extends StatelessWidget {
     final cubit = context.read<AppCubit>();
  
     return Scaffold(
-      appBar: CustomAppBar(title: context.translate.settings),
+      appBar: CustomAppBar(title: LocaleKeys.settings.tr()),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
         child: Column(
@@ -65,10 +67,10 @@ class SettingScreen extends StatelessWidget {
             ),
             SizedBox(height: 20),
             SettingSection(
-              title: context.translate.acount,
+              title: LocaleKeys.acount.tr(),
               children: [
                 SettingItem(
-                    title: context.translate.personalinfo,
+                    title: LocaleKeys.personalinfo.tr(),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -77,7 +79,7 @@ class SettingScreen extends StatelessWidget {
                       );
                     }),
                 SettingItem(
-                    title: context.translate.medicalInsurance,
+                    title: LocaleKeys.medicalInsurance.tr(),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -86,13 +88,13 @@ class SettingScreen extends StatelessWidget {
                       );
                     }),
                 SettingItem(
-                    title: context.translate.medicalhistory,
+                    title: LocaleKeys.medicalhistory.tr(),
                     onTap: () {
                       NavigationHelper.push(
                           context, RelevantMedicalHistoryView());
                     }),
                 SettingItem(
-                    title: context.translate.addrelevant,
+                    title: LocaleKeys.addrelevant.tr(),
                     onTap: () {
                       Navigator.push(
                         context,
@@ -103,50 +105,50 @@ class SettingScreen extends StatelessWidget {
                       );
                     }),
                 SettingItem(
-                    title: context.translate.paymentinformation,
+                    title: LocaleKeys.paymentinformation.tr(),
                     onTap: () {
                       NavigationHelper.push(context, PaymentInformationView());
                     }),
                 SettingItem(
-                    title: context.translate.consultationlogs,
+                    title: LocaleKeys.consultationlogs.tr(),
                     onTap: () {
                       NavigationHelper.push(context, ConsultationLogsView());
                     }),
                 SettingItem(
-                    title: context.translate.prescriptions,
+                    title: LocaleKeys.prescriptions.tr(),
                     onTap: () {
                       NavigationHelper.push(context, OnePrescriptionView());
                     }),
               ],
             ),
             SettingSection(
-              title: context.translate.termsandsupport,
+              title: LocaleKeys.termsandsupport.tr(),
               children: [
                 SettingItem(
-                    title: context.translate.privcyandpolicy,
+                    title: LocaleKeys.privcyandpolicy.tr(),
                     onTap: () {
                       NavigationHelper.push(
                           context,
                           PrivacyPolicyView(
-                              title: context.translate.privcyandpolicy));
+                              title: LocaleKeys.privcyandpolicy.tr()));
                     }),
                 SettingItem(
-                    title: context.translate.faq,
+                    title: LocaleKeys.faq.tr(),
                     onTap: () {
                       NavigationHelper.push(context, FaqScreen());
                     }),
                 SettingItem(
-                    title: context.translate.contactus,
+                    title: LocaleKeys.contactus.tr(),
                     onTap: () {
                       NavigationHelper.push(context, ContactUsScreen());
                     }),
               ],
             ),
             SettingSection(
-              title: context.translate.others,
+              title: LocaleKeys.others.tr(),
               children: [
                 SettingItem(
-                  title: context.translate.notifications,
+                  title: LocaleKeys.notifications.tr(),
                   trailing: Transform.scale(
                     scale: 1.5,
                     child: Switch.adaptive(
@@ -158,7 +160,7 @@ class SettingScreen extends StatelessWidget {
                   ),
                 ),
                 SettingItem(
-                    title: context.translate.language,
+                    title: LocaleKeys.language.tr(),
                     onTap: () {
                       if (context.isEnLocale) {
                         cubit.toArabic();
@@ -174,7 +176,7 @@ class SettingScreen extends StatelessWidget {
                 color: Colors.red,
                 size: 30,
               ),
-              title: TextApp(context.translate.logout,
+              title: TextApp(LocaleKeys.logout.tr(),
                   style: TextStyle(
                       color: Colors.red, fontWeight: FontWeightHelper.medium)),
               onTap: () {

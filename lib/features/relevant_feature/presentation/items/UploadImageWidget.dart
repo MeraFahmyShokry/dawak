@@ -4,7 +4,8 @@ import 'package:clean_arc/core/presentation/util/style/fonts/font_weight_helper.
 import 'package:clean_arc/core/presentation/widget/text_app.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class UploadImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class UploadImageWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextApp(
-       context.translate.insertYourMedicalInsuranceImage,
+       LocaleKeys.insertYourMedicalInsuranceImage.tr(),
 
           // "Insert Your Medical Insurance Image *",
           style: TextStyle(
@@ -38,7 +39,7 @@ class UploadImageWidget extends StatelessWidget {
                 children: [
                   Image.asset("assets/images/demo/png/picimage.png"),
                   SizedBox(height: 8),
-                  Text(context.translate.dragYourImageHere,
+                  Text(LocaleKeys.dragYourImageHere.tr(),
                       style: TextStyle(color: Colors.blue)),
                   TextApp("Max Size 240 * 410",
                       style: TextStyle(

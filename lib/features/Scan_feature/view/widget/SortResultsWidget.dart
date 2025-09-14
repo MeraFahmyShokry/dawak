@@ -3,7 +3,8 @@ import 'package:clean_arc/core/presentation/util/style/images/assets.gen.dart';
 import 'package:clean_arc/core/presentation/widget/text_app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class SortResultsWidget extends StatelessWidget {
   final int resultCount;
   final VoidCallback onSortTap;
@@ -37,7 +38,7 @@ class SortResultsWidget extends StatelessWidget {
                 ),
                 const SizedBox(width: 5),
                 TextApp(
-                  context.translate.sortBy,
+                  LocaleKeys.sortBy.tr(),
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
@@ -49,7 +50,7 @@ class SortResultsWidget extends StatelessWidget {
           ),
         ),
         TextApp(
-          ' ${context.translate.results}: $resultCount',
+          ' ${LocaleKeys.results.tr()}: $resultCount',
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,

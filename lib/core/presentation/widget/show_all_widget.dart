@@ -1,4 +1,6 @@
 import 'package:clean_arc/core/utils_package/utils_package.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class ShowAllWidget extends StatelessWidget {
@@ -25,7 +27,7 @@ class ShowAllWidget extends StatelessWidget {
         if (onTap != null) InkWell(
 
             onTap:  onTap  ,
-            child: TextApp(context.translate.seeAll)),
+            child: TextApp(LocaleKeys.seeAll.tr())),
       ],
     );
   }

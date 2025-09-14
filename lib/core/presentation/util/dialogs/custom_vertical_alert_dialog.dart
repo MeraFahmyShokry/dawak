@@ -1,5 +1,7 @@
 import 'package:clean_arc/core/presentation/extintions/context_extintions.dart';
 import 'package:clean_arc/core/routing/navigation_helper.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../widget/custom_button_button.dart';
@@ -70,14 +72,14 @@ class _VerticalAlertDialogState extends State<VerticalAlertDialog> {
             ),
             CustomButton(
               onPressed: widget.confirm,
-              title: widget.confirmTxt ?? context.translate.confirm,
+              title: widget.confirmTxt ?? LocaleKeys.confirm.tr(),
               width: double.infinity,
               height: 40,
             ),
             SizedBox(height: 8,),
             CustomButton(
               onPressed: () =>NavigationHelper.pop(context),
-              title: widget.cancelTxt ?? context.translate.cancel,
+              title: widget.cancelTxt ?? LocaleKeys.cancel.tr(),
               width: double.infinity,
               height: 40,
               bgColor: Colors.transparent,

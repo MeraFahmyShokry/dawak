@@ -3,7 +3,8 @@ import 'package:clean_arc/core/presentation/util/app_dimensions.dart';
 import 'package:clean_arc/core/presentation/util/style/images/assets.gen.dart';
 import 'package:clean_arc/features/payment_componant/items/payment_information_card_item.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class PaymentInformationCardComponent extends StatelessWidget {
   const PaymentInformationCardComponent({super.key});
 
@@ -12,28 +13,28 @@ class PaymentInformationCardComponent extends StatelessWidget {
     return Column(children: [
       PaymentInformationCardItem(
           icon: AppImages.images.core.svg.visaCardName.path,
-          text1: context.translate.cardholderName,
+          text1: LocaleKeys.cardholderName.tr(),
           text2: 'wait from api...'),
       SizedBox(
         height: AppDimensions.paddingSizeExtraSmall,
       ),
       PaymentInformationCardItem(
             icon: AppImages.images.core.svg.visaCardNumber.path,
-          text1: context.translate.cardNumber,
+          text1: LocaleKeys.cardNumber.tr(),
           text2: 'wait from api...'),
       SizedBox(
         height: AppDimensions.paddingSizeExtraSmall,
       ),
       PaymentInformationCardItem(
           icon: AppImages.images.core.svg.visaExpiry.path,
-          text1: context.translate.expiryDate,
+          text1: LocaleKeys.expiryDate.tr(),
           text2: 'wait from api...'),
       SizedBox(
         height: AppDimensions.paddingSizeExtraSmall,
       ),
       PaymentInformationCardItem(
           icon: AppImages.images.core.svg.visaLock.path,
-          text1: context.translate.cvv,
+          text1: LocaleKeys.cvv.tr(),
           text2: 'wait from api...'),
     ]);
   }

@@ -10,7 +10,8 @@ import 'package:clean_arc/features/doctor_feature/presentation/view/tob_review_d
 import 'package:clean_arc/features/doctor_feature/presentation/widget/items/doctor_items.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class TopDoctorsWidget extends StatefulWidget {
   const TopDoctorsWidget({super.key});
 
@@ -32,7 +33,7 @@ class _TopDoctorsWidgetState extends State<TopDoctorsWidget> {
     return Column(
       children: [
         ShowAllWidget(
-          title: context.translate.bestDoctors,
+          title: LocaleKeys.bestDoctors.tr(),
           onTap: () {
             NavigationHelper.push(context, TopReviewDoctorView());
           },

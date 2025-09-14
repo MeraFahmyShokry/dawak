@@ -5,7 +5,8 @@ import 'package:clean_arc/features/payment_componant/payment_componant/payment_b
 import 'package:clean_arc/features/payment_componant/payment_componant/saved_visa_card_componant.dart';
 import 'package:clean_arc/features/payment_componant/view/charge_your_balance_view.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../items/payment_information_text_item.dart'
     show PaymentInformationTextItem;
 import '../payment_componant/payment_information_card_component.dart'
@@ -18,7 +19,7 @@ class PaymentInformationView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: CustomAppBar(title: context.translate.paymentinformation),
+        appBar: CustomAppBar(title: LocaleKeys.paymentinformation.tr()),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,14 +27,14 @@ class PaymentInformationView extends StatelessWidget {
             children: [
               PaymentBalanceComponent(),
               PaymentInformationTextItem(
-                text: context.translate.savedCards,
+                text: LocaleKeys.savedCards.tr(),
               ),
               SavedVisaCardComponent(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   PaymentInformationTextItem(
-                    text: context.translate.cardInformation,
+                    text: LocaleKeys.cardInformation.tr(),
                   ),
                 ],
               ),
@@ -45,7 +46,7 @@ class PaymentInformationView extends StatelessWidget {
                   onPressed: () {
                     NavigationHelper.push(context, ChargeYourBalanceView());
                   },
-                  title: context.translate.addNewCard,
+                  title: LocaleKeys.addNewCard.tr(),
                   width: double.infinity,
                 ),
               ),

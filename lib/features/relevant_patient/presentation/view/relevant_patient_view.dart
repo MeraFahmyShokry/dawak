@@ -14,7 +14,8 @@ import 'package:clean_arc/features/relevant_patient/presentation/item/patient_ca
 import 'package:clean_arc/injection/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../../../../core/data/services/shared_prefs/i_local_preference.dart';
 import '../../../../core/presentation/widget/custom_button_button.dart';
 import '../../../../core/routing/navigation_helper.dart';
@@ -40,7 +41,7 @@ class _FirstBookAppointmentViewState extends State<FirstBookAppointmentView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: context.translate.bookAppointment,
+        title: LocaleKeys.bookAppointment.tr(),
       ),
       body: MultiBlocProvider(
         providers: [
@@ -66,7 +67,7 @@ class _FirstBookAppointmentViewState extends State<FirstBookAppointmentView> {
                 ),
               ),
               CustomAppBar(
-                title: context.translate.selectpatients,
+                title: LocaleKeys.selectpatients.tr(),
                 ShowLeading: false,
               ),
               const SizedBox(height: 10),
@@ -130,7 +131,7 @@ class _FirstBookAppointmentViewState extends State<FirstBookAppointmentView> {
                 child: Builder(builder: (context) {
                   return CustomButton(
                     width: double.infinity,
-                    title: context.translate.next,
+                    title: LocaleKeys.next.tr(),
                     onPressed: () {
                       NavigationHelper.push(
                           context,

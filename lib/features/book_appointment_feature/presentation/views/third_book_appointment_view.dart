@@ -10,7 +10,8 @@ import 'package:clean_arc/features/doctor_feature/presentation/controller/get_al
 import 'package:clean_arc/injection/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../../../../core/routing/navigation_helper.dart';
 import '../components/book_appointment_progress_bar_component.dart';
 
@@ -37,7 +38,7 @@ class _ThirdBookAppointmentViewState extends State<ThirdBookAppointmentView> {
     return Scaffold(
       backgroundColor: context.color.whiteColor,
       appBar: CustomAppBar(
-        title: context.translate.bookAppointment,
+        title: LocaleKeys.bookAppointment.tr(),
       ),
       body: MultiBlocProvider(
         providers: [
@@ -78,7 +79,7 @@ class _ThirdBookAppointmentViewState extends State<ThirdBookAppointmentView> {
                     NavigationHelper.push(
                         context, AppointmentPaymentInfoView());
                   },
-                  title: context.translate.pay,
+                  title: LocaleKeys.pay.tr(),
                   width: double.infinity,
                   height: 40,
                 )

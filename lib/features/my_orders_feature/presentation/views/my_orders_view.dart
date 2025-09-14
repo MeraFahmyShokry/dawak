@@ -6,7 +6,8 @@ import 'package:clean_arc/features/Book_Appointment_feature/presentation/compone
 import 'package:flutter/material.dart';
 
 import '../../../../core/presentation/widget/filter_dropdown_menu_button.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 @RoutePage()
 class MyOrdersView extends StatelessWidget {
   static const String path = '/MyOrdersView';
@@ -15,7 +16,7 @@ class MyOrdersView extends StatelessWidget {
     return Scaffold(
       backgroundColor: context.color.whiteColor,
       appBar: CustomAppBar(
-        title: context.translate.myorders,
+        title: LocaleKeys.myorders.tr(),
         // leadingPadding: 16,
       ),
       body: SafeArea(
@@ -117,14 +118,14 @@ class MyOrdersItem extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   TextApp(
-                    context.translate.alamawyPharmacy,
+                    LocaleKeys.alamawyPharmacy.tr(),
                     style: context.textStyle.copyWith(
                         fontSize: AppDimensions.fontSizeDefault,
                         fontWeight: FontWeightHelper.medium,
                         color: context.color.titleColor),
                   ),
                   TextApp(
-                    '${context.translate.orderId}: 212123',
+                    '${LocaleKeys.orderId.tr()}: 212123',
                     style: context.textStyle.copyWith(
                         fontSize: AppDimensions.fontSizeSmall,
                         fontWeight: FontWeightHelper.regular,
@@ -145,7 +146,7 @@ class MyOrdersItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextApp(
-                    '2 ${context.translate.items}',
+                    '2 ${LocaleKeys.items.tr()}',
                     style: context.textStyle.copyWith(
                         fontSize: AppDimensions.fontSizeSmall,
                         fontWeight: FontWeightHelper.regular,
@@ -180,7 +181,7 @@ class MyOrdersHeaderComponent extends StatelessWidget {
       spacing: 8,
       children: [
         TextApp(
-          '2 ${context.translate.items}',
+          '2 ${LocaleKeys.items.tr()}',
           style: context.textStyle.copyWith(
               fontSize: AppDimensions.fontSizeSmall,
               fontWeight: FontWeightHelper.regular,

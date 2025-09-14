@@ -1,6 +1,8 @@
 import 'package:clean_arc/core/presentation/extintions/context_extintions.dart';
 import 'package:clean_arc/core/presentation/util/style/images/assets.gen.dart';
 import 'package:clean_arc/core/presentation/widget/cached_network_image_utill.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/presentation/util/app_dimensions.dart';
@@ -90,7 +92,7 @@ class DoctorHeaderComponent extends StatelessWidget {
                         width: 4,
                       ),
                       TextApp(
-                        '${distance} ${context.translate.km}',
+                        '${distance} ${LocaleKeys.km.tr()}',
                         style: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeSmall,
                             fontWeight: FontWeightHelper.medium,
@@ -107,7 +109,7 @@ class DoctorHeaderComponent extends StatelessWidget {
                       width: 4,
                     ),
                     TextApp(
-                      '${clinicCount ?? '1'} ${context.translate.clinics}',
+                      '${clinicCount ?? '1'} ${LocaleKeys.clinics.tr()}',
                       style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeSmall,
                           fontWeight: FontWeightHelper.medium,

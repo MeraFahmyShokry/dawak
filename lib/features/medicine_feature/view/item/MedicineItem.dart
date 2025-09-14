@@ -1,7 +1,8 @@
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/medicine_feature/view/item/MedicineTime.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class MedicineItem extends StatefulWidget {
   final String medicineName;
   final String timesPerDay;
@@ -110,7 +111,7 @@ class _MedicineItemState extends State<MedicineItem> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    TextApp(context.translate.times,
+                    TextApp(LocaleKeys.times.tr(),
                         style: TextStyle(
                             color: context.color.primaryColor,
                             fontSize: AppDimensions.fontSizeDefault,

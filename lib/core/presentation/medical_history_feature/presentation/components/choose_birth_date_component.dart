@@ -2,6 +2,8 @@ import 'package:clean_arc/core/presentation/util/style/images/fonts.gen.dart';
 import 'package:clean_arc/core/presentation/widget/custom_dropdown_field.dart';
 import 'package:clean_arc/core/routing/navigation_helper.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -17,7 +19,7 @@ class ChooseBirthDateComponent extends StatelessWidget {
       // spacing: 8,
       children: [
         TextApp(
-          '${context.translate.birthDate}',
+          '${LocaleKeys.birthDate.tr()}',
           style: context.textStyle.copyWith(
               fontSize: AppDimensions.fontSizeDefault,
               fontWeight: FontWeightHelper.medium,
@@ -69,7 +71,7 @@ class _DatePickerInputComponentState extends State<DatePickerInputComponent> {
             Expanded(
               child: TextApp(
                 _selectedDate == null
-                    ? context.translate.chooseBirthDate
+                    ? LocaleKeys.chooseBirthDate.tr()
                     : DateFormat.yMMMd().format(_selectedDate!),
                 style: context.textStyle.copyWith(
                     fontSize: AppDimensions.fontSizeSmall,

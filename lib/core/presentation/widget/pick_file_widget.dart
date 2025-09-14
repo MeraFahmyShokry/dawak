@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:adaptive_action_sheet/adaptive_action_sheet.dart';
 import 'package:clean_arc/core/presentation/widget/custom_dropdown_field.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -131,7 +133,7 @@ class _PickFileWidgetState extends State<PickFileWidget> {
                       ),
                       // osAddHorizontalSpace(),
                       TextApp(
-                        (context.translate.camera),
+                        (LocaleKeys.camera.tr()),
                         style: context.textStyle.copyWith(
                           // color: context.color.trx,
                           fontSize: 16,
@@ -161,7 +163,7 @@ class _PickFileWidgetState extends State<PickFileWidget> {
                         width: 10,
                       ),
                       TextApp(
-                        context.translate.gallery,
+                        LocaleKeys.gallery.tr(),
                         style: context.textStyle.copyWith(
                           // color: context.color.colorBlack,
                           fontSize: 16,
@@ -192,7 +194,7 @@ class _PickFileWidgetState extends State<PickFileWidget> {
                         width: 10,
                       ),
                       TextApp(
-                        context.translate.document,
+                        LocaleKeys.document.tr(),
                         style: context.textStyle.copyWith(
                           fontSize: AppDimensions.fontSizeDefault,
                           fontWeight: FontWeight.w600,
@@ -229,7 +231,7 @@ class _PickFileWidgetState extends State<PickFileWidget> {
               ],
               cancelAction: CancelAction(
                   title: TextApp(
-                context.translate.cancel,
+                LocaleKeys.cancel.tr(),
                 style: context.textStyle.copyWith(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
@@ -334,7 +336,7 @@ class _CustomPickFileWidgetState extends State<CustomPickFileWidget> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(widget.title ?? context.translate.issuesImage),
+                        Text(widget.title ?? LocaleKeys.issuesImage.tr()),
                         CircleAvatar(
                           radius: 35,
                           backgroundColor: Colors.grey.withOpacity(.2),

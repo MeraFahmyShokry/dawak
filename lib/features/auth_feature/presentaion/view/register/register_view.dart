@@ -6,6 +6,8 @@ import 'package:clean_arc/features/auth_feature/presentaion/controller/auth_cubi
 import 'package:clean_arc/features/auth_feature/presentaion/view/register/compleate_register_view.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/SignUpText.dart';
 import 'package:clean_arc/features/splash_feature/SplashView.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -34,7 +36,7 @@ class _RegisterViewState extends State<RegisterView> with ScreenUtils {
         return Scaffold(
             backgroundColor: context.color.whiteColor,
             appBar: CustomAppBar(
-                title: context.translate.createAccount,
+                title: LocaleKeys.createAccount.tr(),
                 leadingWidget: Icon(
                   Icons.arrow_back_ios,
                   color: context.color.primaryColor,
@@ -89,8 +91,8 @@ class _RegisterViewState extends State<RegisterView> with ScreenUtils {
                                     isShowBorder: true,
                                     fillColor: context.color.whiteColor,
                                     showTitle: true,
-                                    titleText: context.translate.firstName,
-                                    hintText: context.translate.enterFirstName,
+                                    titleText: LocaleKeys.firstName.tr(),
+                                    hintText: LocaleKeys.enterFirstName.tr(),
                                   ),
                                   SizedBox(
                                     height: 16.h,
@@ -100,16 +102,16 @@ class _RegisterViewState extends State<RegisterView> with ScreenUtils {
                                     fillColor: context.color.whiteColor,
                                     showTitle: true,
                                     isPassword: true,
-                                    titleText: context.translate.lastName,
-                                    hintText: context.translate.enterLastName,
+                                    titleText: LocaleKeys.lastName.tr(),
+                                    hintText: LocaleKeys.enterLastName.tr(),
                                   ),
                                   CustomTextField(
                                     isShowBorder: true,
                                     fillColor: context.color.whiteColor,
                                     showTitle: true,
-                                    titleText: context.translate.phoneNumber,
+                                    titleText: LocaleKeys.phoneNumber.tr(),
                                     hintText:
-                                        context.translate.enterPhoneNumber,
+                                        LocaleKeys.enterPhoneNumber.tr(),
                                   ),
                                   SizedBox(
                                     height: 16.h,
@@ -118,8 +120,8 @@ class _RegisterViewState extends State<RegisterView> with ScreenUtils {
                                     isShowBorder: true,
                                     fillColor: context.color.whiteColor,
                                     showTitle: true,
-                                    titleText: context.translate.nationalId,
-                                    hintText: context.translate.enterNationalId,
+                                    titleText: LocaleKeys.nationalId.tr(),
+                                    hintText: LocaleKeys.enterNationalId.tr(),
                                   ),
                                   SizedBox(
                                     height: 16.h,
@@ -127,7 +129,7 @@ class _RegisterViewState extends State<RegisterView> with ScreenUtils {
                                   CustomDropdownField(
                                     onChanged: (value) {},
                                     items: ["male", "female"],
-                                    title: context.translate.gender,
+                                    title: LocaleKeys.gender.tr(),
                                     showTitle: true,
                                   ),
                                   SizedBox(
@@ -142,8 +144,8 @@ class _RegisterViewState extends State<RegisterView> with ScreenUtils {
                                     isShowBorder: true,
                                     fillColor: context.color.whiteColor,
                                     showTitle: true,
-                                    titleText: context.translate.birthDate,
-                                    hintText: context.translate.chooseBirthDate,
+                                    titleText: LocaleKeys.birthDate.tr(),
+                                    hintText: LocaleKeys.chooseBirthDate.tr(),
                                   ),
                                   SizedBox(
                                     height: 16.h,
@@ -166,7 +168,7 @@ class _RegisterViewState extends State<RegisterView> with ScreenUtils {
                                     );
                                   },
                                   child: TextApp(
-                                    context.translate.next,
+                                    LocaleKeys.next.tr(),
                                     style: context.textStyleButton,
                                   )), 
 
@@ -182,7 +184,7 @@ class _RegisterViewState extends State<RegisterView> with ScreenUtils {
                                   //         );
                                   //       },
                                   //       child: TextApp(
-                                  //         context.translate.next,
+                                  //         LocaleKeys.next.tr(),
                                   //         style: context.textStyleButton,
                                   //       ));
                                   // }, loading: () {
@@ -193,7 +195,7 @@ class _RegisterViewState extends State<RegisterView> with ScreenUtils {
                                   //         // context.read<LoginCubit>().login();
                                   //       },
                                   //       child: TextApp(
-                                  //         context.translate.signIn,
+                                  //         LocaleKeys.signIn.tr(),
                                   //         style: context.textStyleButton,
                                   //       ));
                                   // }),
@@ -201,8 +203,8 @@ class _RegisterViewState extends State<RegisterView> with ScreenUtils {
                                     height: 30.h,
                                   ),
                                   SignUpText(
-                                    text: context.translate.have_an_account,
-                                    actionText: context.translate.signIn,
+                                    text: LocaleKeys.have_an_account.tr(),
+                                    actionText: LocaleKeys.signIn.tr(),
                                     onTap: () {
                                       // Navigator.push(
                                       //   context,

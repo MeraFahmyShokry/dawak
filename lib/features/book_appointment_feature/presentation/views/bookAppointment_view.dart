@@ -5,7 +5,8 @@ import 'package:clean_arc/features/book_appointment_feature/presentation/compone
 import 'package:clean_arc/features/relevant_patient/presentation/item/patient_card_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class BookAppointmentScreen extends StatefulWidget {
   const BookAppointmentScreen({super.key});
 
@@ -20,7 +21,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            CustomAppBar(title: context.translate.bookAppointment),
+            CustomAppBar(title: LocaleKeys.bookAppointment.tr()),
             const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -35,7 +36,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                 ),
               ),
             ),
-            CustomAppBar(title: context.translate.selectpatients),
+            CustomAppBar(title: LocaleKeys.selectpatients.tr()),
             const SizedBox(height: 10),
             Expanded(
               child: SingleChildScrollView(
@@ -64,7 +65,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
               padding: const EdgeInsets.all(8.0),
               child: CustomButton(
                 width: double.infinity,
-                title: context.translate.next,
+                title: LocaleKeys.next.tr(),
                 onPressed: () {
                   Navigator.push(
                       context,
@@ -97,7 +98,7 @@ class _BookAppointmentFormScreenState extends State<BookAppointmentFormScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            CustomAppBar(title: context.translate.bookAppointment),
+            CustomAppBar(title: LocaleKeys.bookAppointment.tr()),
             const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -122,13 +123,13 @@ class _BookAppointmentFormScreenState extends State<BookAppointmentFormScreen> {
                     children: [
                       CustomDropdownField(
                         onChanged: (value) {},
-                        title: context.translate.selectbranches,
+                        title: LocaleKeys.selectbranches.tr(),
                         dropDownType: DropDownType.dropDownType,
                       ),
                       SizedBox(height: 12.h),
                       CustomTextField(
                           fillColor: Colors.transparent,
-                          hintText: context.translate.selectdate,
+                          hintText: LocaleKeys.selectdate.tr(),
                           showTitle: true,
                           suffixIcon: Icon(
                             IconlyLight.calendar,
@@ -138,7 +139,7 @@ class _BookAppointmentFormScreenState extends State<BookAppointmentFormScreen> {
                       SizedBox(height: 12.h),
                       CustomDropdownField(
                         onChanged: (value) {},
-                        title: context.translate.selecttest,
+                        title: LocaleKeys.selecttest.tr(),
                         dropDownType: DropDownType.dropDownType,
                       ),
                       const SizedBox(height: 30),
@@ -146,7 +147,7 @@ class _BookAppointmentFormScreenState extends State<BookAppointmentFormScreen> {
                         width: double.infinity,
                         bgColor: context.color.primaryColor,
                         onPressed: () {},
-                        title: context.translate.next,
+                        title: LocaleKeys.next.tr(),
                       ),
                     ],
                   ),

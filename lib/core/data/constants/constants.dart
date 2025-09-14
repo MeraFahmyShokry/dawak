@@ -4,10 +4,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../utils/translate.dart';
 import 'endpoints.dart';
 
 const kNullUserId = "00000000-0000-0000-0000-000000000000";
-// final coin = LocaleKeys.coin.tr();
+// final coin = LocaleKeys.coi.tr()n.tr();
 const kClientTopic = 'academies-client';
 const kGuestTopic = 'academies-guest';
 // var baseUrl = BaseUrl.url;
@@ -36,7 +37,7 @@ bool isTablet({BuildContext? context}) {
 class AppStrings {
   AppStrings._();
 
-  // static Translations translations = const Translations();
+   static Translations translations = const Translations();
   static PreferencesKeys prefKeys = const PreferencesKeys();
   // static UserTypes userTypes = const UserTypes();
   static  Endpoints urls =  const Endpoints();

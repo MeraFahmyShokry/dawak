@@ -5,7 +5,8 @@ import 'package:clean_arc/features/clinic_feature/domain/model/clinic_model/doct
 import 'package:clean_arc/features/clinic_feature/domain/params/get_clinic_params.dart';
 import 'package:clean_arc/injection/injection.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import '../../../clinic_feature/controller/get_all_clinics/get_all_clinics.dart';
 
 class SelectClinicComponent extends StatefulWidget {
@@ -29,7 +30,7 @@ class _SelectClinicComponentState extends State<SelectClinicComponent> {
       spacing: 5,
       children: [
         TextApp(
-          context.translate.selectClinic,
+          LocaleKeys.selectClinic.tr(),
           style: context.textStyle.copyWith(
               fontSize: AppDimensions.fontSizeDefault,
               fontWeight: FontWeightHelper.medium,
@@ -47,7 +48,7 @@ class _SelectClinicComponentState extends State<SelectClinicComponent> {
           },
           value: BookAppointmentCubit.get(context).selectedClinic,
           filedBuilder: (context, item) => DropDownText(
-            title: item?.title ?? context.translate.selectClinic,
+            title: item?.title ?? LocaleKeys.selectClinic.tr(),
             isSelected: null,
           ),
           itemBuilder: (context, item, isSelected) => DropDownText(
@@ -59,7 +60,7 @@ class _SelectClinicComponentState extends State<SelectClinicComponent> {
             cubit.clearSelectedTime();
             cubit.clearSelectedDate();
           },
-          title: context.translate.chooseYourAnswer,
+          title: LocaleKeys.chooseYourAnswer.tr(),
           dropDownType: DropDownType.dropDownType,
           showTitle: false,
         )

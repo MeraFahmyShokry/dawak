@@ -103,7 +103,7 @@
 //                           IconlyLight.calendar,
 //                           color: Color(0xff15A042),
 //                         ),
-//                         TextApp(context.translate.availableNow)
+//                         TextApp(LocaleKeys.availableNow.tr())
 //                       ],
 //                     ),
 //                     SizedBox(
@@ -113,7 +113,7 @@
 //                       child: CustomButton(
 //                         height: 40,
 //                         onPressed: () {},
-//                         title: context.translate.bookingNow,
+//                         title: LocaleKeys.bookingNow.tr(),
 //                       ),
 //                     )
 //                   ],
@@ -133,7 +133,8 @@ import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/Book_Appointment_feature/presentation/views/doctor_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class DoctorItems extends StatelessWidget {
   final String? title;
   final String? id;
@@ -284,7 +285,7 @@ class DoctorItems extends StatelessWidget {
                               children: [
                               Icon(IconlyLight.calendar,
                                   color: context.color.grayColor),
-                              TextApp(context.translate.availableNow),
+                              TextApp(LocaleKeys.availableNow.tr()),
                               SizedBox(width: 10.w),
                               Expanded(
                                   child: CustomButton(
@@ -298,7 +299,7 @@ class DoctorItems extends StatelessWidget {
                                           name: title ?? '',
                                         ));
                                   },
-                                  title: context.translate.bookingNow,
+                                  title: LocaleKeys.bookingNow.tr(),
                                 ),
                               ),
                               ],

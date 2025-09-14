@@ -5,7 +5,8 @@ import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/Cart_feature/view/Caer_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class ProductCard extends StatelessWidget {
   final Image imageUrl;
   final String title;
@@ -171,7 +172,7 @@ class ProductCard extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          context.translate.amount,
+                          LocaleKeys.amount.tr(),
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         ),
@@ -232,7 +233,7 @@ class ProductCard extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("${context.translate.total}:",
+                        Text("${LocaleKeys.total.tr()}:",
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold)),
                         Text(
@@ -247,7 +248,7 @@ class ProductCard extends StatelessWidget {
                       onPressed: () {
                         NavigationHelper.pop(context);
                       },
-                      title:context.translate.add_to_cart,
+                      title:LocaleKeys.add_to_cart.tr(),
                     )
                   ],
                 ),

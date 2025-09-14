@@ -7,7 +7,9 @@ import 'package:clean_arc/features/doctor_feature/domain/params/get_doctors_para
 import 'package:clean_arc/features/doctor_feature/presentation/controller/get_all_doctor/get_all_doctor.dart';
 import 'package:clean_arc/features/doctor_feature/presentation/widget/items/old_doctor_items.dart';
 import 'package:clean_arc/features/home_feature/presentation/componant/search_componant.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
 import 'package:clean_arc/injection/injection.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -32,7 +34,7 @@ class DoctorsByCategoryView extends StatelessWidget {
         )),
       child: Scaffold(
         appBar: CustomAppBar(
-          title: context.translate.bestDoctors,
+          title: LocaleKeys.bestDoctors.tr(),
         ),
         body: BlocBuilder<GetDoctorsCubit, PaginatedState<DoctorModel>>(
           builder: (context, state) {
@@ -61,7 +63,7 @@ class DoctorsByCategoryView extends StatelessWidget {
                             child: Row(
                               children: [
                                 TextApp(
-                                  context.translate.sortBy,
+                                  LocaleKeys.sortBy.tr(),
                                   color: context.color.titleColor,
                                 ),
                                 SizedBox(
@@ -80,7 +82,7 @@ class DoctorsByCategoryView extends StatelessWidget {
                                     ?.totalCount
                                     ?.toString() ??
                                 '0') +
-                            context.translate.results),
+                            LocaleKeys.results.tr()),
                       ],
                     ),
                   ),

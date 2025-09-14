@@ -2,6 +2,8 @@ import 'package:clean_arc/core/domain/entity/failures.dart';
 import 'package:clean_arc/core/presentation/extintions/context_extintions.dart';
 import 'package:clean_arc/core/presentation/widget/custom_button_button.dart';
 import 'package:clean_arc/core/presentation/widget/text_app.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,8 +23,8 @@ class CustomErrorWidget extends StatelessWidget {
         message = (failure as ServerFailure).message;
       } else if (failure is NetworkFailure) {
         message = ((failure as NetworkFailure).connectionTimeOut)
-            ? context.translate.connectionTimeOut
-            : context.translate.noInternetConnection;
+            ? LocaleKeys.connectionTimeOut.tr()
+            : LocaleKeys.noInternetConnection.tr();
       }
     }
 
@@ -46,7 +48,7 @@ class CustomErrorWidget extends StatelessWidget {
             child: CustomButton(
                 onPressed: onPressed,
                 child: TextApp(
-                   context.translate.tryAgain,
+                   LocaleKeys.tryAgain.tr(),
                   style: context.textStyleButton,
                 )),
           )

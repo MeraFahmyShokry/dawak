@@ -2,7 +2,8 @@ import 'package:clean_arc/core/presentation/extintions/context_extintions.dart';
 import 'package:clean_arc/core/presentation/widget/custom_card_container.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:flutter/material.dart';
-
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class TestPriceCard extends StatelessWidget {
   final String testName;
   final String inLabPrice;
@@ -36,9 +37,9 @@ class TestPriceCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              buildPriceRow(context.translate.inLab, inLabPrice),
+              buildPriceRow(LocaleKeys.inLab.tr(), inLabPrice),
               const SizedBox(height: 8),
-              buildPriceRow(context.translate.inHome, inHomePrice),
+              buildPriceRow(LocaleKeys.inHome.tr(), inHomePrice),
             ],
           ),
         ),

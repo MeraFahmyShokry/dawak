@@ -1,6 +1,8 @@
 import 'package:clean_arc/core/presentation/widget/CustomAppBar.dart';
 import 'package:clean_arc/core/routing/navigation_helper.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../components/NewReventView.dart';
@@ -31,7 +33,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
             NavigationHelper.pop(context);
           },
           title:
-          context.translate.medicalhistory),
+          LocaleKeys.medicalhistory.tr()),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -45,7 +47,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                     height: 24,
                   ),
                   TextApp(
-                    '${context.translate.medicalhistory}',
+                    '${LocaleKeys.medicalhistory.tr()}',
                     style: context.textStyle.copyWith(
                         fontSize: AppDimensions.fontSizeExtraLarge,
                         fontWeight: FontWeightHelper.medium,
@@ -64,7 +66,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextApp(
-                        '${context.translate.chronicDiseases}',
+                        '${LocaleKeys.chronicDiseases.tr()}',
                         style: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeDefault,
                             fontWeight: FontWeightHelper.medium,
@@ -80,7 +82,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                   ),
                   _chronicDiseases.isEmpty
                       ? TextApp(
-                          '${context.translate.noData}',
+                          '${LocaleKeys.noData.tr()}',
                           style: context.textStyle.copyWith(
                               fontSize: AppDimensions.fontSizeSmall,
                               fontWeight: FontWeightHelper.regular,
@@ -111,7 +113,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextApp(
-                        '${context.translate.chronicMedications}',
+                        '${LocaleKeys.chronicMedications.tr()}',
                         style: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeDefault,
                             fontWeight: FontWeightHelper.medium,
@@ -127,7 +129,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                   ),
                   _chronicMedications.isEmpty
                       ? TextApp(
-                          '${context.translate.noData}',
+                          '${LocaleKeys.noData.tr()}',
                           style: context.textStyle.copyWith(
                               fontSize: AppDimensions.fontSizeSmall,
                               fontWeight: FontWeightHelper.regular,
@@ -159,7 +161,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextApp(
-                        '${context.translate.childhoodIllnesses}',
+                        '${LocaleKeys.childhoodIllnesses.tr()}',
                         style: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeDefault,
                             fontWeight: FontWeightHelper.medium,
@@ -175,7 +177,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                   ),
                   _chronicMedications.isEmpty
                       ? TextApp(
-                          '${context.translate.noData}',
+                          '${LocaleKeys.noData.tr()}',
                           style: context.textStyle.copyWith(
                               fontSize: AppDimensions.fontSizeSmall,
                               fontWeight: FontWeightHelper.regular,
@@ -206,7 +208,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextApp(
-                        '${context.translate.surgeries}',
+                        '${LocaleKeys.surgeries.tr()}',
                         style: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeDefault,
                             fontWeight: FontWeightHelper.medium,
@@ -222,7 +224,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                   ),
                   _chronicMedications.isEmpty
                       ? TextApp(
-                          '${context.translate.noData}',
+                          '${LocaleKeys.noData.tr()}',
                           style: context.textStyle.copyWith(
                               fontSize: AppDimensions.fontSizeSmall,
                               fontWeight: FontWeightHelper.regular,
@@ -253,7 +255,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextApp(
-                        '${context.translate.familyIllnesses}',
+                        '${LocaleKeys.familyIllnesses.tr()}',
                         style: context.textStyle.copyWith(
                             fontSize: AppDimensions.fontSizeDefault,
                             fontWeight: FontWeightHelper.medium,
@@ -270,7 +272,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                   SizedBox(height: 8,),
                   _chronicMedications.isEmpty
                       ? TextApp(
-                          '${context.translate.noData}',
+                          '${LocaleKeys.noData.tr()}',
                           style: context.textStyle.copyWith(
                               fontSize: AppDimensions.fontSizeSmall,
                               fontWeight: FontWeightHelper.regular,
@@ -304,7 +306,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextApp(
-                          '${context.translate.weight}',
+                          '${LocaleKeys.weight.tr()}',
                           style: context.textStyle.copyWith(
                               fontSize: AppDimensions.fontSizeDefault,
                               fontWeight: FontWeightHelper.medium,
@@ -334,7 +336,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextApp(
-                          '${context.translate.bloodType}',
+                          '${LocaleKeys.bloodType.tr()}',
                           style: context.textStyle.copyWith(
                               fontSize: AppDimensions.fontSizeDefault,
                               fontWeight: FontWeightHelper.medium,
@@ -366,7 +368,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextApp(
-                          '${context.translate.bloodPressure}',
+                          '${LocaleKeys.bloodPressure.tr()}',
                           style: context.textStyle.copyWith(
                               fontSize: AppDimensions.fontSizeDefault,
                               fontWeight: FontWeightHelper.medium,
@@ -396,7 +398,7 @@ class _MedicalHistorySummaryViewState extends State<  MedicalHistorySummaryView>
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextApp(
-                          '${context.translate.heartRate}',
+                          '${LocaleKeys.heartRate.tr()}',
                           style: context.textStyle.copyWith(
                               fontSize: AppDimensions.fontSizeDefault,
                               fontWeight: FontWeightHelper.medium,

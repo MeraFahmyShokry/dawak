@@ -1,3 +1,5 @@
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 // import 'package:clean_arc/core/presentation/component/CustomAppBar.dart';
 // import 'package:flutter/material.dart';
 
@@ -89,13 +91,13 @@ class PrivacyPolicyView extends StatelessWidget {
           children: [
             sectionTitle(
               context,
-              context.translate.title + " :",
+              LocaleKeys.title.tr() + " :",
             ),
             sectionParagraph(context),
             const SizedBox(height: 16),
             sectionTitle(
               context,
-              context.translate.title + " :",
+              LocaleKeys.title.tr() + " :",
             ),
             sectionBulletPoints(context),
             const SizedBox(height: 16),
@@ -104,7 +106,7 @@ class PrivacyPolicyView extends StatelessWidget {
             const SizedBox(height: 16),
             sectionTitle(
               context,
-              context.translate.title + " :",
+              LocaleKeys.title.tr() + " :",
             ),
             sectionBulletPoints(context),
           ],

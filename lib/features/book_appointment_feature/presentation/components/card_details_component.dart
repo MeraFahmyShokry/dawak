@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:clean_arc/core/presentation/extintions/context_extintions.dart';
 import 'package:clean_arc/core/presentation/util/style/images/fonts.gen.dart';
+import 'package:clean_arc/gen/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/presentation/util/app_dimensions.dart';
@@ -42,14 +44,14 @@ class CardDetailsComponent extends StatelessWidget {
         children: [
           LabeledCardInputFieldComponent(
             creditCardNumberController: _creditCardNumberController,
-            title: context.translate.cardNumber,
-            hintTxt: context.translate.pleasEnterValidCardNumber,
+            title: LocaleKeys.cardNumber.tr(),
+            hintTxt: LocaleKeys.pleasEnterValidCardNumber.tr(),
             inputType: TextInputType.number,
           ),
           LabeledCardInputFieldComponent(
             creditCardNumberController: _creditCardHolderNameController,
-            title: context.translate.cardholderName,
-            hintTxt: context.translate.enterYourCreditCardHolderName,
+            title: LocaleKeys.cardholderName.tr(),
+            hintTxt: LocaleKeys.enterYourCreditCardHolderName.tr(),
           ),
           Row(
             // spacing: 8,
@@ -57,7 +59,7 @@ class CardDetailsComponent extends StatelessWidget {
               Expanded(
                 child: LabeledCardInputFieldComponent(
                   creditCardNumberController: _cvvController,
-                  title: context.translate.cvv,
+                  title: LocaleKeys.cvv.tr(),
                   inputType: TextInputType.number,
                 ),
               ),
@@ -65,8 +67,8 @@ class CardDetailsComponent extends StatelessWidget {
               Expanded(
                 child: LabeledCardInputFieldComponent(
                   creditCardNumberController: _expiryDateController,
-                  title: context.translate.expiryDate,
-                  hintTxt: context.translate.creditCardDateFormat,
+                  title: LocaleKeys.expiryDate.tr(),
+                  hintTxt: LocaleKeys.creditCardDateFormat.tr(),
                   inputType: TextInputType.datetime,
                 ),
               ),
