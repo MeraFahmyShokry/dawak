@@ -24,6 +24,19 @@ class $AssetsImagesGen {
   $AssetsImagesDemoGen get demo => const $AssetsImagesDemoGen();
 }
 
+class $AssetsTranslationsGen {
+  const $AssetsTranslationsGen();
+
+  /// File path: assets/translations/ar.json
+  String get ar => 'assets/translations/ar.json';
+
+  /// File path: assets/translations/en.json
+  String get en => 'assets/translations/en.json';
+
+  /// List of all assets
+  List<String> get values => [ar, en];
+}
+
 class $AssetsImagesCoreGen {
   const $AssetsImagesCoreGen();
 
@@ -596,12 +609,12 @@ class $AssetsImagesDemoSvgGen {
 class AppImages {
   const AppImages._();
 
-  // static const String aEnv = '.env.dev';
   static const String aEnv = '.env.prod';
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 
   /// List of all assets
-  static List<String> get values => [aEnv, aEnv];
+  static List<String> get values => [aEnv];
 }
 
 class AssetGenImage {

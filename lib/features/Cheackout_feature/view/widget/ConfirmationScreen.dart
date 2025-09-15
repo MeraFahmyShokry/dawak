@@ -68,7 +68,7 @@ class ConfirmationScreen extends StatelessWidget {
                 NavigationHelper.pushReplacementAll(context, HomeView());
                 NavigationHelper.push(context, MyOrdersView());
 
-              }, title:context. translate.myorders),
+              }, title:LocaleKeys.myorders.tr()),
             ),
           ],
         ),

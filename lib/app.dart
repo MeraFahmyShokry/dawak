@@ -64,10 +64,7 @@ class AgzgantyApp extends StatelessWidget {
                       designSize: const Size(375, 812),
                       child: MaterialApp(
                         supportedLocales: Translations.supportedLocales,
-                        localizationsDelegates: const [
-                          MonthYearPickerLocalizations.delegate,
-                          ...Translations.localizationsDelegates
-                        ],
+                        localizationsDelegates: context.localizationDelegates,
                         home: SplashScreen(),
                         locale: Locale(cubit.currentLangCode),
                         themeMode: ThemeMode.light,

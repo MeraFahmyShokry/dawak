@@ -17,6 +17,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../view/all_specialists_screen.dart';
+
 class SpecialistGrid extends StatelessWidget {
   const SpecialistGrid({super.key});
 
@@ -26,7 +28,12 @@ class SpecialistGrid extends StatelessWidget {
       builder: (context, state) {
         return Column(
           children: [
-            ShowAllWidget(title: LocaleKeys.topSpecialists.tr(), onTap: () {}),
+            ShowAllWidget(title: LocaleKeys.topSpecialists.tr(), onTap: () {
+              NavigationHelper.push(
+                context,
+                AllSpecialistsScreen(),
+              );
+            }),
             10.verticalSpace,
             GridView.builder(
               physics: NeverScrollableScrollPhysics(),

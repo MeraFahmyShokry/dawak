@@ -103,8 +103,7 @@ class _CompleateRegisterViewState extends State<CompleateRegisterView>
 
                                         if (value.isDigit() == true &&
                                             (value?.length ?? 0) <= 5) {
-                                          return context
-                                              .translate.enterserialNumberEmail;
+                                          return LocaleKeys.enterserialNumberEmail.tr();
                                         }
 
                                         // if (value.isDigit() == false &&

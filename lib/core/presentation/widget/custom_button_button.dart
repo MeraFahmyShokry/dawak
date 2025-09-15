@@ -50,7 +50,6 @@ class CustomButton extends StatelessWidget {
           },
       child: Container(
         padding: padding??10.padHorizontal+8.padVertical,
-
         decoration: ShapeDecoration(
           color: bgColor ?? context.color.primaryColor,
           shape: RoundedRectangleBorder(

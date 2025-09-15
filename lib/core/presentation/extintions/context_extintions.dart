@@ -6,7 +6,7 @@ extension ContextExt on BuildContext {
 
   MyAssets get assets => Theme.of(this).extension<MyAssets>()!;
 
-  Translations get translate => Translations.of(this)!;
+  // Translations get translate => Translations.of(this)!;
 
   Border get border => Border.all(color: color.borderColor!);
 

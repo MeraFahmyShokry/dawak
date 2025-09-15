@@ -11,6 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../drawer_menu/drawer_menu.dart';
 import '../controller/main_doctors/main_doctors_cubit.dart';
+import '../widget/items/custom_app_bar_location.dart';
 
 class DoctorsView extends StatefulWidget {
   const DoctorsView({super.key});
@@ -27,18 +28,10 @@ class _DoctorsViewState extends State<DoctorsView> {
     return
       BlocProvider(
         create: (context) => MainDoctorsCubit()..init(),
-        // providers: [
-        //   BlocProvider<SpecialistsCubit>(
-        //     create: (context) => getIt<SpecialistsCubit>(),
-        //   ),
-        //   BlocProvider<DoctorReviewsCubit>(
-        //     create: (context) => getIt<DoctorReviewsCubit>(),
-        //   ),
-        // ],
         child: BlocBuilder<MainDoctorsCubit, MainDoctorsState>(
           builder: (context, state) {
             return state.status is Loading?
-            SizedBox():
+            CircularProgressIndicator(color:  AppColors.primary,):
             Scaffold(
               key: key,
               drawer: DrawerMenu(),
@@ -70,73 +63,4 @@ class _DoctorsViewState extends State<DoctorsView> {
   }
 }
 
-class CustomAppBarLocation extends StatelessWidget
-    implements PreferredSizeWidget {
-  const CustomAppBarLocation({
-    super.key,
-    required this.scaffoldKey,
-  });
 
-  final GlobalKey<ScaffoldState> scaffoldKey;
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      title: Row(
-        children: [
-          OnTap(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Padding(
-              padding: 5.padRight + 5.padVertical,
-              child: AppImages.images.core.svg.arrowBack.svg(
-                  width: 25.w, height: 25.w),
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-                color: AppColors.primaryLight,
-                borderRadius: BorderRadius.circular(20.r)
-            ),
-            padding: 12.padHorizontal + 7.padVertical,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                AppImages.images.core.svg.locationIcon.svg(
-                    colorFilter: ColorFilter.mode(
-                        AppColors.primary, BlendMode.srcIn),
-                    width: 22.w, height: 22.w),
-                5.horizontalSpace,
-                Text(
-                  "Maadi, Cairo",
-                  style: AppTextTheme.bodySmall.copyWith(
-                    color: AppColors.primary
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-      automaticallyImplyLeading: false,
-      actions: [
-        OnTap(
-          onTap: () {
-            scaffoldKey.currentState!.openDrawer();
-          },
-          child: Padding(
-            padding: 15.padHorizontal,
-            child: Icon(
-              Icons.menu,
-              color: AppColors.primary,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
-}

@@ -118,14 +118,14 @@ class MyOrdersItem extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   TextApp(
-                    context.translate.alamawyPharmacy,
+                    LocaleKeys.alamawyPharmacy.tr(),
                     style: context.textStyle.copyWith(
                         fontSize: AppDimensions.fontSizeDefault,
                         fontWeight: FontWeightHelper.medium,
                         color: context.color.titleColor),
                   ),
                   TextApp(
-                    '${context.translate.orderId}: 212123',
+                    '${LocaleKeys.orderId.tr()}: 212123',
                     style: context.textStyle.copyWith(
                         fontSize: AppDimensions.fontSizeSmall,
                         fontWeight: FontWeightHelper.regular,

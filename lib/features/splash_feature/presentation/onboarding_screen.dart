@@ -1,5 +1,6 @@
 import 'package:clean_arc/core/data/services/shared_prefs/shared_pref.dart';
 import 'package:clean_arc/core/data/services/shared_prefs/shared_prefs_key.dart';
+import 'package:clean_arc/core/presentation/widget/on_tap.dart';
 import 'package:clean_arc/core/routing/navigation_helper.dart';
 import 'package:clean_arc/core/utils/app_colors.dart';
 import 'package:clean_arc/core/utils/app_text_them.dart';
@@ -69,12 +70,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         child: Padding(
           padding: 15.padAll,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomButton(
-                bgColor: Colors.transparent,
-                width: AppDimensions.fontSizeExtraLarge40,
-                onPressed: () {
+              OnTap(
+                onTap: () {
                   getIt<ILocalPreference>().skipIntro=true;
                   NavigationHelper.pushReplacementAll(
                       context, LoginView());

@@ -55,8 +55,7 @@ class CompleteRequirement extends StatelessWidget {
             ),
           ),
           Positioned(
-            right   : context.isEnLocale?0:null,
-          left       : context.isEnLocale?null:0,
+            right: 0,
             child: AppImages.images.core.png.papperImage.image(height: 113),
           )
         ],

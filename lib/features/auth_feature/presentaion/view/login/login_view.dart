@@ -71,8 +71,7 @@ class _LoginViewState extends State<LoginView> with ScreenUtils {
                               fillColor: AppColors.white,
                               showTitle: true,
                               titleText: LocaleKeys.serialNumberEmail.tr(),
-                              hintText: context
-                                  .translate.enterYourSerialNumberOrEmail,
+                              hintText: LocaleKeys.enterYourSerialNumberOrEmail.tr(),
                               onValidate: Validator.validate,
                             ),
                             SizedBox(
