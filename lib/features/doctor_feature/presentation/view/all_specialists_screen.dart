@@ -12,6 +12,7 @@ import '../../../drawer_menu/drawer_menu.dart';
 import '../../../home_feature/presentation/componant/search_componant.dart';
 import '../controller/getAllSprcialists/get_all_specialists_cubit.dart';
 import '../widget/items/custom_app_bar_location.dart';
+import '../widget/items/location_item.dart';
 import '../widget/special_grid/specialist_grid.dart';
 import 'doctors_by_category_view.dart';
 
@@ -34,7 +35,7 @@ class _AllSpecialistsScreenState extends State<AllSpecialistsScreen> {
           return Scaffold(
             key: key,
             drawer: DrawerMenu(),
-            appBar: CustomAppBarLocation(scaffoldKey: key),
+            appBar: CustomAppBarDrawer(scaffoldKey: key,child: LocationItem(),),
             body: Padding(
               padding: 15.padAll,
               child: Column(

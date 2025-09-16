@@ -13,75 +13,76 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import '../widget/items/custom_app_bar_location.dart';
 
 import '../../../../core/utils_package/utils_package.dart';
 import '../controller/getDoctorsBySpecialist/doctors_by_specialist_cubit.dart';
 import '../widget/items/doctor_items.dart';
+import '../widget/items/location_item.dart';
 
 //@RoutePage()
-class DoctorsByCategoryView extends StatelessWidget {
+class DoctorsByCategoryView extends StatefulWidget {
   final int? specialtyId;
 
   const DoctorsByCategoryView({super.key, this.specialtyId});
 
   @override
+  State<DoctorsByCategoryView> createState() => _DoctorsByCategoryViewState();
+}
+
+class _DoctorsByCategoryViewState extends State<DoctorsByCategoryView> {
+  final GlobalKey<ScaffoldState> key = GlobalKey();
+  @override
   Widget build(BuildContext context) {
     return BlocProvider<DoctorsBySpecialistCubit>(
-      create: (context) => DoctorsBySpecialistCubit()..init(specialtyId: specialtyId),
+      create: (context) => DoctorsBySpecialistCubit()..init(specialtyId: widget.specialtyId),
       child: Scaffold(
-        appBar: CustomAppBar(
-          title: LocaleKeys.bestDoctors.tr(),
-        ),
+        appBar: CustomAppBarDrawer(scaffoldKey: key,child: LocationItem(),),
         body: BlocBuilder<DoctorsBySpecialistCubit, DoctorsBySpecialistState>(
           builder: (context, state) {
             return SafeArea(
               child: Column(
                 children: [
-                  // Padding(
-                  //   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  //   child: SearchComponent(),
-                  // ),
-                  // SizedBox(
-                  //   height: 10,
-                  // ),
-                  // Padding(
-                  //   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  //   child: Row(
-                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //     children: [
-                  //       Container(
-                  //           padding: EdgeInsets.symmetric(
-                  //               horizontal: 10, vertical: 5),
-                  //           decoration: BoxDecoration(
-                  //               color:
-                  //                   context.color.primaryColor?.withOpacity(.2),
-                  //               borderRadius: BorderRadius.circular(1000)),
-                  //           child: Row(
-                  //             children: [
-                  //               TextApp(
-                  //                 LocaleKeys.sortBy.tr(),
-                  //                 color: context.color.titleColor,
-                  //               ),
-                  //               SizedBox(
-                  //                 width: 5,
-                  //               ),
-                  //               Icon(
-                  //                 IconlyLight.filter2,
-                  //                 color: context.color.primaryColor,
-                  //               )
-                  //             ],
-                  //           )),
-                  //       TextApp((context
-                  //                   .read<GetDoctorsCubit>()
-                  //                   .state
-                  //                   .success
-                  //                   ?.totalCount
-                  //                   ?.toString() ??
-                  //               '0') +
-                  //           LocaleKeys.results.tr()),
-                  //     ],
-                  //   ),
-                  // ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: SearchComponent(),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 10, vertical: 5),
+                            decoration: BoxDecoration(
+                                color:
+                                    context.color.primaryColor?.withOpacity(.2),
+                                borderRadius: BorderRadius.circular(1000)),
+                            child: Row(
+                              children: [
+                                TextApp(
+                                  LocaleKeys.sortBy.tr(),
+                                  color: context.color.titleColor,
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Icon(
+                                  IconlyLight.filter2,
+                                  color: context.color.primaryColor,
+                                )
+                              ],
+                            )),
+                        TextApp((state.doctors?.data?.length?.toString() ?? '0') +
+                            LocaleKeys.results.tr()),
+                      ],
+                    ),
+                  ),
+
                   SizedBox(
                     height: 16,
                   ),
