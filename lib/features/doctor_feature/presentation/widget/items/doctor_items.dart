@@ -135,33 +135,18 @@ import 'package:clean_arc/core/utils/app_text_them.dart';
 import 'package:clean_arc/core/utils/extensions/padding_extensions.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/Book_Appointment_feature/presentation/views/doctor_details_view.dart';
+import 'package:clean_arc/features/doctor_feature/domain/model/doctor_model/doctor_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:clean_arc/gen/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 class DoctorItems extends StatelessWidget {
-  final String? title;
-  final String? id;
-  final String? specialist;
-  final String? rate;
-  final String? distance;
-  final String? image;
-  final String? appointmentDateTime;
-  final String? location;
-  final String? status;
+  final DoctorModel? doctor;
 
   const DoctorItems({
     super.key,
-    this.title,
-    this.id,
-    this.specialist,
-    this.rate,
-    this.distance,
-    this.image,
-    this.appointmentDateTime,
-    this.location,
-    this.status,
+    required this.doctor,
   });
 
   @override
@@ -170,7 +155,7 @@ class DoctorItems extends StatelessWidget {
       onTap: () {
         NavigationHelper.push(
           context,
-          DoctorDetailsView(id: id ?? '', name: title ?? ''),
+          DoctorDetailsView(id: doctor?.id ?? '', name: doctor?.name ?? ''),
         );
       },
       child: Container(
@@ -191,11 +176,11 @@ class DoctorItems extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (image != null)
+            if (doctor?.doctorImage?.isNotEmpty??false)
               ClipRRect(
                 borderRadius: BorderRadius.circular(10.r),
                 child: CustomCachedNetworkImage(
-                  imageUrl: image!,
+                  imageUrl: doctor?.doctorImage??"",
                   width: 90.w,
                   height: 110.w,
                   fit: BoxFit.cover,
@@ -209,49 +194,54 @@ class DoctorItems extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      if (title != null)
+                      if (doctor?.name?.isNotEmpty??false)
                         Expanded(
                           child: Text(
-                            title!,
+                            doctor?.name??"",
                             style: AppTextTheme.bodySmallMediumBold,
                           ),
                         ),
+                      5.horizontalSpace,
+                      if(!(doctor?.isAvailable??false))
+                      AppImages.images.core.svg.unavailable.svg(
+
+                      )
                     ],
                   ),
-                  if (specialist != null)
+                  if (doctor?.specialistName?.isNotEmpty??false)
                     Text(
-                      specialist!,
+                      doctor?.specialistName??"",
                       style: AppTextTheme.bodyXSmall.copyWith(
                         color: AppColors.grey2,
                       ),
                     ),
                   2.verticalSpace,
-                  if (rate != null || distance != null) ...[
+                  if (doctor?.reviewRating != null || doctor?.location != null)
                     Row(
                       children: [
-                        if (rate != null) ...[
+                        if (doctor?.reviewRating != null) ...[
                           AppImages.images.core.svg.star.svg(
                             width: 20.w,
                             height: 20.w,
                           ),
                           2.horizontalSpace,
-                          Text(rate!, style: AppTextTheme.bodySmallMediumBold),
+                          Text(doctor?.reviewRating?.toString()??"", style: AppTextTheme.bodySmallMediumBold),
                         ],
                         10.horizontalSpace,
-                        if (distance != null) ...[
+                        if (doctor?.location?.isNotEmpty??false) ...[
                           AppImages.images.core.svg.locationIcon.svg(
                             width: 20.w,
                             height: 20.w,
                           ),
                           2.horizontalSpace,
                           Text(
-                            distance!,
+                            doctor?. location??"",
                             style: AppTextTheme.bodySmallMediumBold,
                           ),
                         ],
                       ],
                     ),
-                  ],
+
 
                   // if (appointmentDateTime != null)
                   //   Row(
@@ -267,17 +257,17 @@ class DoctorItems extends StatelessWidget {
                   //       ),
                   //     ],
                   //   ),
-                  if (location != null)
-                    Row(
-                      children: [
-                        Icon(
-                          IconlyLight.location,
-                          color: context.color.redColor,
-                        ),
-                        SizedBox(width: 5.w),
-                        TextApp(location!, fontWeight: FontWeightHelper.bold),
-                      ],
-                    ),
+                  // if (doctor?.location != null)
+                  //   Row(
+                  //     children: [
+                  //       Icon(
+                  //         IconlyLight.location,
+                  //         color: context.color.redColor,
+                  //       ),
+                  //       SizedBox(width: 5.w),
+                  //       TextApp(doctor?.location??"", fontWeight: FontWeightHelper.bold),
+                  //     ],
+                  //   ),
                   Row(
                     children: [
                       AppImages.images.core.svg.available.svg(
@@ -304,12 +294,18 @@ class DoctorItems extends StatelessWidget {
                           NavigationHelper.push(
                             context,
                             DoctorDetailsView(
-                              id: id ?? '',
-                              name: title ?? '',
+                              id: doctor?.id ?? '',
+                              name: doctor?.name ?? '',
                             ),
                           );
                         },
                         title: LocaleKeys.bookNow.tr(),
+                        child: Text(
+                          LocaleKeys.bookNow.tr(),
+                          style: AppTextTheme.bodySmall
+                              .copyWith(color: AppColors.white),
+
+                        ),
                       ),
                     ],
                   ),

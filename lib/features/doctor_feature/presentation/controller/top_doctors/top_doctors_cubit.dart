@@ -1,5 +1,5 @@
 import 'package:clean_arc/core/presentation/util/type_of_list.dart';
-import 'package:clean_arc/features/doctor_feature/domain/model/top_review_doctors_model/top_review_doctors_model.dart';
+import 'package:clean_arc/features/doctor_feature/domain/model/top_review_doctors_model/top_doctors_review.dart';
 import 'package:clean_arc/features/doctor_feature/domain/repository/doctor_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';

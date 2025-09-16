@@ -15,113 +15,85 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
 import '../../../../core/utils_package/utils_package.dart';
+import '../controller/getDoctorsBySpecialist/doctors_by_specialist_cubit.dart';
+import '../widget/items/doctor_items.dart';
 
 //@RoutePage()
 class DoctorsByCategoryView extends StatelessWidget {
-  int? specialtyId;
+  final int? specialtyId;
 
-  DoctorsByCategoryView({super.key, this.specialtyId});
-
-  final ScrollController _scrollController = ScrollController();
+  const DoctorsByCategoryView({super.key, this.specialtyId});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<GetDoctorsCubit>(
-      create: (context) => getIt<GetDoctorsCubit>()
-        ..getDoctors(
-            params: GetDoctorsParams(
-          specialty: specialtyId,
-        )),
+    return BlocProvider<DoctorsBySpecialistCubit>(
+      create: (context) => DoctorsBySpecialistCubit()..init(specialtyId: specialtyId),
       child: Scaffold(
         appBar: CustomAppBar(
           title: LocaleKeys.bestDoctors.tr(),
         ),
-        body: BlocBuilder<GetDoctorsCubit, PaginatedState<DoctorModel>>(
+        body: BlocBuilder<DoctorsBySpecialistCubit, DoctorsBySpecialistState>(
           builder: (context, state) {
             return SafeArea(
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: SearchComponent(),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 5),
-                            decoration: BoxDecoration(
-                                color:
-                                    context.color.primaryColor?.withOpacity(.2),
-                                borderRadius: BorderRadius.circular(1000)),
-                            child: Row(
-                              children: [
-                                TextApp(
-                                  LocaleKeys.sortBy.tr(),
-                                  color: context.color.titleColor,
-                                ),
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Icon(
-                                  IconlyLight.filter2,
-                                  color: context.color.primaryColor,
-                                )
-                              ],
-                            )),
-                        TextApp((context
-                                    .read<GetDoctorsCubit>()
-                                    .state
-                                    .success
-                                    ?.totalCount
-                                    ?.toString() ??
-                                '0') +
-                            LocaleKeys.results.tr()),
-                      ],
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  //   child: SearchComponent(),
+                  // ),
+                  // SizedBox(
+                  //   height: 10,
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //     children: [
+                  //       Container(
+                  //           padding: EdgeInsets.symmetric(
+                  //               horizontal: 10, vertical: 5),
+                  //           decoration: BoxDecoration(
+                  //               color:
+                  //                   context.color.primaryColor?.withOpacity(.2),
+                  //               borderRadius: BorderRadius.circular(1000)),
+                  //           child: Row(
+                  //             children: [
+                  //               TextApp(
+                  //                 LocaleKeys.sortBy.tr(),
+                  //                 color: context.color.titleColor,
+                  //               ),
+                  //               SizedBox(
+                  //                 width: 5,
+                  //               ),
+                  //               Icon(
+                  //                 IconlyLight.filter2,
+                  //                 color: context.color.primaryColor,
+                  //               )
+                  //             ],
+                  //           )),
+                  //       TextApp((context
+                  //                   .read<GetDoctorsCubit>()
+                  //                   .state
+                  //                   .success
+                  //                   ?.totalCount
+                  //                   ?.toString() ??
+                  //               '0') +
+                  //           LocaleKeys.results.tr()),
+                  //     ],
+                  //   ),
+                  // ),
                   SizedBox(
                     height: 16,
                   ),
                   Expanded(
-                    child: SingleChildScrollView(
-                      controller: _scrollController,
-                      child: PaginatedListView(
-                        successDataKeyEnum: SuccessDataKeyEnum.data,
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                        scrollController: _scrollController,
-                        paginatedList: state,
-                        onPaginate: (page) {
-                          context.read<GetDoctorsCubit>().getDoctors(
-                              params: GetDoctorsParams(
-                                  specialty: specialtyId, pageNumber: page));
-                        },
-                        itemView: (context, index) {
-                          DoctorModel? doctor = state.success?.data?[index];
-                          return OldDoctorItems(
-                            id: doctor?.id ?? '',
-                            isAvilable: doctor?.isAvailable,
-                            availableTime: doctor?.availableIn,
-                            title: doctor?.name,
-                            specialist: doctor?.specialistName,
-                            rate: doctor?.reviewRating.toString(),
-                            distance: doctor?.location,
-                            address:
-                                (doctor?.address?.street.toString() ?? '') +
-                                    ' ' +
-                                    (doctor?.address?.city.toString() ?? ''),
-                            image: doctor?.doctorImage,
-                          );
-                        },
-                        separatorBuilder: (context, index) => SizedBox(
-                          height: 16,
-                        ), // shrinkWrap: true,
+                    child: ListView.separated(
+                      padding: EdgeInsets.all(5),
+                      separatorBuilder: (context, index) => SizedBox(height: 16),
+                      shrinkWrap: true,
+                      itemCount: state.doctors?.data?.length ?? 0,
+                      physics: BouncingScrollPhysics(),
+                      itemBuilder: (context, index) => DoctorItems(
+                        doctor: state.doctors?.data?[index],
                       ),
                     ),
                   )

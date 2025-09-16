@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:clean_arc/core/data/model/base_response/base_response.dart';
 import 'package:clean_arc/core/data/repositories/base_repository_impl.dart';
 import 'package:clean_arc/core/domain/entity/failures.dart';
@@ -6,7 +8,7 @@ import 'package:clean_arc/features/doctor_feature/domain/model/doctor_complaints
 import 'package:clean_arc/features/doctor_feature/domain/model/doctor_details_model/doctor_model.dart';
 import 'package:clean_arc/features/doctor_feature/domain/model/doctor_model/doctor_model.dart';
 import 'package:clean_arc/features/doctor_feature/domain/model/specialists_model/specialists_model.dart';
-import 'package:clean_arc/features/doctor_feature/domain/model/top_review_doctors_model/top_review_doctors_model.dart';
+import 'package:clean_arc/features/doctor_feature/domain/model/top_review_doctors_model/top_doctors_review.dart';
 import 'package:clean_arc/features/doctor_feature/domain/params/get_doctor_complains_params.dart';
 import 'package:clean_arc/features/doctor_feature/domain/params/get_doctors_params.dart';
 import 'package:clean_arc/features/doctor_feature/domain/services/remote/doctors_remote_data_source.dart';
@@ -110,6 +112,7 @@ class DoctorsRepositoryImpl extends BaseRepositoryImpl
         pageNumber: params.pageNumber,
         pageSize: params.pageSize,
       );
+      log("mera:: ${result}");
       return Right(result);
     });
   }

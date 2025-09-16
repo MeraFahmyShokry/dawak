@@ -6,7 +6,7 @@ import 'package:clean_arc/features/doctor_feature/domain/model/doctor_complaints
 import 'package:clean_arc/features/doctor_feature/domain/model/doctor_details_model/doctor_model.dart';
 import 'package:clean_arc/features/doctor_feature/domain/model/doctor_model/doctor_model.dart';
 import 'package:clean_arc/features/doctor_feature/domain/model/specialists_model/specialists_model.dart';
-import 'package:clean_arc/features/doctor_feature/domain/model/top_review_doctors_model/top_review_doctors_model.dart';
+import 'package:clean_arc/features/doctor_feature/domain/model/top_review_doctors_model/top_doctors_review.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 

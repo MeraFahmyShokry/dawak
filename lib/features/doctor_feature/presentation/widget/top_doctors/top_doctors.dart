@@ -5,7 +5,7 @@ import 'package:clean_arc/core/presentation/widget/response_builder.dart';
 import 'package:clean_arc/core/presentation/widget/show_all_widget.dart';
 import 'package:clean_arc/core/routing/navigation_helper.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
-import 'package:clean_arc/features/doctor_feature/domain/model/top_review_doctors_model/top_review_doctors_model.dart';
+import 'package:clean_arc/features/doctor_feature/domain/model/top_review_doctors_model/top_doctors_review.dart';
 import 'package:clean_arc/features/doctor_feature/presentation/controller/main_doctors/main_doctors_cubit.dart';
 import 'package:clean_arc/features/doctor_feature/presentation/controller/top_doctors/top_doctors_cubit.dart';
 import 'package:clean_arc/features/doctor_feature/presentation/view/tob_review_doctors_view.dart';
@@ -35,15 +35,10 @@ class TopDoctors extends StatelessWidget {
               padding: EdgeInsets.all(5),
               separatorBuilder: (context, index) => SizedBox(height: 16),
               shrinkWrap: true,
-              itemCount: state.doctors?.value?.length ?? 0,
+              itemCount: state.doctors?.data?.length ?? 0,
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) => DoctorItems(
-                id: state.doctors?.value?[index].doctorId,
-                title: state.doctors?.value?[index].doctorName,
-                specialist: '{أخصائي طب الأعصاب}',
-                rate: state.doctors?.value?[index].averageRating.toString() ?? '',
-                // distance: state.success?.value?[index].d.toString(),
-                image: state.doctors?.value?[index].imagUrl.toString(),
+                doctor: state.doctors?.data?[index],
               ),
             ),
           ],

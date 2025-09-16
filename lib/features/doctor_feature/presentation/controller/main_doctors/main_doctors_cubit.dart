@@ -1,13 +1,17 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:clean_arc/core/presentation/util/utill.dart';
+import 'package:clean_arc/features/doctor_feature/domain/model/doctor_model/doctor_model.dart';
 import 'package:clean_arc/features/doctor_feature/domain/model/specialists_model/specialists_model.dart';
-import 'package:clean_arc/features/doctor_feature/domain/model/top_review_doctors_model/top_review_doctors_model.dart';
+import 'package:clean_arc/features/doctor_feature/domain/model/top_review_doctors_model/top_doctors_review.dart';
 import 'package:clean_arc/features/doctor_feature/domain/repository/doctor_repository.dart';
 import 'package:clean_arc/injection/injection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../../core/data/model/base_response/base_response.dart';
 import '../../../../../core/presentation/util/type_of_list.dart';
+import '../../../domain/params/get_doctors_params.dart';
 
 part 'main_doctors_state.dart';
 part 'main_doctors_cubit.freezed.dart';
@@ -27,7 +31,7 @@ class MainDoctorsCubit extends Cubit<MainDoctorsState> {
     emit(state.copyWith(status: Loading()));
     await Future.wait([
       specialists(),
-      getAllDoctorReviews()
+      getAllDoctor()
     ]);
     return;
   }
@@ -46,19 +50,36 @@ class MainDoctorsCubit extends Cubit<MainDoctorsState> {
   }
 
 
-  Future<void> getAllDoctorReviews() async {
-    final result = await repository.getAllDoctorReviews(
-      pageNumber: 1,
-      pageSize: 100,
+  Future<void> getAllDoctor() async {
+    final result = await repository.getDoctors(
+      params:GetDoctorsParams( pageNumber: 1,
+        pageSize: 100,),
     );
-
+log("mera:: ${result}");
     result.fold(
           (failure) {
         emit(state.copyWith(status: GetDoctorsFailure()));
       },
           (data) {
+            log("mera:: ${data.value?.length}");
         emit(state.copyWith(status: GetDoctorsSuccess(),doctors: data));
       },
     );
   }
+
+  // Future<void> getAllDoctorReviews() async {
+  //   final result = await repository.getAllDoctorReviews(
+  //     pageNumber: 1,
+  //     pageSize: 100,
+  //   );
+  //
+  //   result.fold(
+  //         (failure) {
+  //       emit(state.copyWith(status: GetDoctorsFailure()));
+  //     },
+  //         (data) {
+  //       emit(state.copyWith(status: GetDoctorsSuccess(),doctors: data));
+  //     },
+  //   );
+  // }
 }

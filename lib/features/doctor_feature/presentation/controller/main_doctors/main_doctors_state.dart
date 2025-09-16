@@ -5,7 +5,7 @@ class MainDoctorsState with _$MainDoctorsState {
   const factory MainDoctorsState({
     required MainDoctorsStatus status,
     PaginatedList<SpecialistsModel>? specialists,
-    PaginatedList<TopDoctorsReview>? doctors,
+    PaginatedList<DoctorModel>? doctors,
   }) = _MainDoctorsState;
 
 }

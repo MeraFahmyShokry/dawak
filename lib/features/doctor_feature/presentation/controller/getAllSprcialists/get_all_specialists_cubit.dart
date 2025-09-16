@@ -60,13 +60,13 @@ class GetAllSpecialistsCubit extends Cubit<GetAllSpecialistsState> {
     );
     result.fold(
           (failure) {
-        emit(state.copyWith(status: GetSpecialistsFailure()));
+        emit(state.copyWith(status: GetMoreSpecialistsFailure()));
       },
           (result) async {
             List<SpecialistsModel> oldSpecialists = state.specialists?.value ?? [] ;
             result.value= oldSpecialists + (result.value??[]);
         emit(
-          state.copyWith(status: GetSpecialistsSuccess(), specialists: result,page: 2),
+          state.copyWith(status: GetMoreSpecialistsSuccess(), specialists: result,page: 2),
         );
       },
     );

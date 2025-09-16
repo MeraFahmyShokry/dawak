@@ -42,7 +42,7 @@ class SpecialistGrid extends StatelessWidget {
                 crossAxisCount: 4,
                 crossAxisSpacing: 5.w,
                 mainAxisSpacing: 5.h,
-                childAspectRatio: .7,
+                childAspectRatio: .90,
               ),
               itemCount: state.specialists?.value?.length??0,
               itemBuilder: (context, index) {
@@ -57,6 +57,7 @@ class SpecialistGrid extends StatelessWidget {
                   },
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       CustomCachedNetworkImage(
                         imageUrl: state.specialists?.value?[index].specialistImageUrl?? '',

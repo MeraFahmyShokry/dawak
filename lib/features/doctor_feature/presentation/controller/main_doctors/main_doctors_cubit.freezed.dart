@@ -20,7 +20,7 @@ mixin _$MainDoctorsState {
   MainDoctorsStatus get status => throw _privateConstructorUsedError;
   BaseResponseModel<List<SpecialistsModel>>? get specialists =>
       throw _privateConstructorUsedError;
-  BaseResponseModel<List<TopDoctorsReview>>? get doctors =>
+  BaseResponseModel<List<DoctorModel>>? get doctors =>
       throw _privateConstructorUsedError;
 
   /// Create a copy of MainDoctorsState
@@ -40,7 +40,7 @@ abstract class $MainDoctorsStateCopyWith<$Res> {
   $Res call({
     MainDoctorsStatus status,
     BaseResponseModel<List<SpecialistsModel>>? specialists,
-    BaseResponseModel<List<TopDoctorsReview>>? doctors,
+    BaseResponseModel<List<DoctorModel>>? doctors,
   });
 
   $MainDoctorsStatusCopyWith<$Res> get status;
@@ -78,7 +78,7 @@ class _$MainDoctorsStateCopyWithImpl<$Res, $Val extends MainDoctorsState>
             doctors: freezed == doctors
                 ? _value.doctors
                 : doctors // ignore: cast_nullable_to_non_nullable
-                      as BaseResponseModel<List<TopDoctorsReview>>?,
+                      as BaseResponseModel<List<DoctorModel>>?,
           )
           as $Val,
     );
@@ -107,7 +107,7 @@ abstract class _$$MainDoctorsStateImplCopyWith<$Res>
   $Res call({
     MainDoctorsStatus status,
     BaseResponseModel<List<SpecialistsModel>>? specialists,
-    BaseResponseModel<List<TopDoctorsReview>>? doctors,
+    BaseResponseModel<List<DoctorModel>>? doctors,
   });
 
   @override
@@ -145,7 +145,7 @@ class __$$MainDoctorsStateImplCopyWithImpl<$Res>
         doctors: freezed == doctors
             ? _value.doctors
             : doctors // ignore: cast_nullable_to_non_nullable
-                  as BaseResponseModel<List<TopDoctorsReview>>?,
+                  as BaseResponseModel<List<DoctorModel>>?,
       ),
     );
   }
@@ -165,7 +165,7 @@ class _$MainDoctorsStateImpl implements _MainDoctorsState {
   @override
   final BaseResponseModel<List<SpecialistsModel>>? specialists;
   @override
-  final BaseResponseModel<List<TopDoctorsReview>>? doctors;
+  final BaseResponseModel<List<DoctorModel>>? doctors;
 
   @override
   String toString() {
@@ -202,7 +202,7 @@ abstract class _MainDoctorsState implements MainDoctorsState {
   const factory _MainDoctorsState({
     required final MainDoctorsStatus status,
     final BaseResponseModel<List<SpecialistsModel>>? specialists,
-    final BaseResponseModel<List<TopDoctorsReview>>? doctors,
+    final BaseResponseModel<List<DoctorModel>>? doctors,
   }) = _$MainDoctorsStateImpl;
 
   @override
@@ -210,7 +210,7 @@ abstract class _MainDoctorsState implements MainDoctorsState {
   @override
   BaseResponseModel<List<SpecialistsModel>>? get specialists;
   @override
-  BaseResponseModel<List<TopDoctorsReview>>? get doctors;
+  BaseResponseModel<List<DoctorModel>>? get doctors;
 
   /// Create a copy of MainDoctorsState
   /// with the given fields replaced by the non-null parameter values.
