@@ -54,7 +54,7 @@ class CustomTextField extends StatefulWidget {
   final bool isShowBorder;
   final bool isShowSuffixIcon;
   final Function? onTap;
-  final Function? onChanged;
+  final Function(String?)? onChanged;
   final Function? onSuffixTap;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
@@ -96,7 +96,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
           textCapitalization: widget.capitalization,
           enabled: widget.isEnabled,
           autofocus: false,
-
           onSaved: widget.onSaved,
           //onChanged: widget.isSearch ? widget.languageProvider.searchLanguage : null,
           obscureText: widget.isPassword == true ? _obscureText : false,
@@ -115,7 +114,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                   borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide(
                     width: 1,
-                    color: Theme.of(context).primaryColor.withOpacity(0.4),
+                    color: AppColors.lightGrey,
                   ),
                 ),
                 enabledBorder: getBorder(),
@@ -127,7 +126,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 fillColor: widget.fillColor ?? AppColors.white,
                 hintStyle: widget.hintStyle ??
                     AppTextTheme.bodySmall.copyWith(
-                      color: AppColors.grey
+                      color: AppColors.lightGrey,
                     ),
                 filled: true,
                 prefixIcon: widget.prefixIcon != null

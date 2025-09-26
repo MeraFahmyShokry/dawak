@@ -235,6 +235,14 @@ class $AssetsImagesCoreSvgGen {
   AssetGenImage get group8 =>
       const AssetGenImage('assets/images/core/svg/Group 8.png');
 
+  /// File path: assets/images/core/svg/addImage.svg
+  SvgGenImage get addImage =>
+      const SvgGenImage('assets/images/core/svg/addImage.svg');
+
+  /// File path: assets/images/core/svg/addPhoto.svg
+  SvgGenImage get addPhoto =>
+      const SvgGenImage('assets/images/core/svg/addPhoto.svg');
+
   /// File path: assets/images/core/svg/appointment_success_img.svg
   SvgGenImage get appointmentSuccessImg =>
       const SvgGenImage('assets/images/core/svg/appointment_success_img.svg');
@@ -279,6 +287,9 @@ class $AssetsImagesCoreSvgGen {
   SvgGenImage get clinicReportIcon =>
       const SvgGenImage('assets/images/core/svg/clinic_report_icon.svg');
 
+  /// File path: assets/images/core/svg/date.svg
+  SvgGenImage get date => const SvgGenImage('assets/images/core/svg/date.svg');
+
   /// File path: assets/images/core/svg/date_picker_icon.svg
   SvgGenImage get datePickerIcon =>
       const SvgGenImage('assets/images/core/svg/date_picker_icon.svg');
@@ -286,6 +297,10 @@ class $AssetsImagesCoreSvgGen {
   /// File path: assets/images/core/svg/default_profile_img.svg
   SvgGenImage get defaultProfileImg =>
       const SvgGenImage('assets/images/core/svg/default_profile_img.svg');
+
+  /// File path: assets/images/core/svg/doctor.svg
+  SvgGenImage get doctor =>
+      const SvgGenImage('assets/images/core/svg/doctor.svg');
 
   /// File path: assets/images/core/svg/doctors.svg
   SvgGenImage get doctors =>
@@ -314,6 +329,9 @@ class $AssetsImagesCoreSvgGen {
   /// File path: assets/images/core/svg/iconlaborhome.svg
   SvgGenImage get iconlaborhome =>
       const SvgGenImage('assets/images/core/svg/iconlaborhome.svg');
+
+  /// File path: assets/images/core/svg/lab.svg
+  SvgGenImage get lab => const SvgGenImage('assets/images/core/svg/lab.svg');
 
   /// File path: assets/images/core/svg/labimage.svg
   SvgGenImage get labimage =>
@@ -354,6 +372,14 @@ class $AssetsImagesCoreSvgGen {
   SvgGenImage get noHistoryData =>
       const SvgGenImage('assets/images/core/svg/no_history_data.svg');
 
+  /// File path: assets/images/core/svg/nurse.svg
+  SvgGenImage get nurse =>
+      const SvgGenImage('assets/images/core/svg/nurse.svg');
+
+  /// File path: assets/images/core/svg/patient.svg
+  SvgGenImage get patient =>
+      const SvgGenImage('assets/images/core/svg/patient.svg');
+
   /// File path: assets/images/core/svg/pay_on_clinic.svg
   SvgGenImage get payOnClinic =>
       const SvgGenImage('assets/images/core/svg/pay_on_clinic.svg');
@@ -373,6 +399,10 @@ class $AssetsImagesCoreSvgGen {
   /// File path: assets/images/core/svg/picked_image_icon.svg
   SvgGenImage get pickedImageIcon =>
       const SvgGenImage('assets/images/core/svg/picked_image_icon.svg');
+
+  /// File path: assets/images/core/svg/rxMarket.svg
+  SvgGenImage get rxMarket =>
+      const SvgGenImage('assets/images/core/svg/rxMarket.svg');
 
   /// File path: assets/images/core/svg/scancenter.svg
   SvgGenImage get scancenter =>
@@ -439,6 +469,8 @@ class $AssetsImagesCoreSvgGen {
   /// List of all assets
   List<dynamic> get values => [
     group8,
+    addImage,
+    addPhoto,
     appointmentSuccessImg,
     arrowBack,
     available,
@@ -450,8 +482,10 @@ class $AssetsImagesCoreSvgGen {
     clinicDetailsIcon,
     clinicNameIcon,
     clinicReportIcon,
+    date,
     datePickerIcon,
     defaultProfileImg,
+    doctor,
     doctors,
     editIcon,
     fawry,
@@ -459,6 +493,7 @@ class $AssetsImagesCoreSvgGen {
     filterIcon,
     freeLabmok,
     iconlaborhome,
+    lab,
     labimage,
     labs,
     locationIcon,
@@ -469,11 +504,14 @@ class $AssetsImagesCoreSvgGen {
     mokhatbar,
     nerse,
     noHistoryData,
+    nurse,
+    patient,
     payOnClinic,
     personIcon,
     personalInfoIcon,
     pharma,
     pickedImageIcon,
+    rxMarket,
     scancenter,
     scanimage,
     search,

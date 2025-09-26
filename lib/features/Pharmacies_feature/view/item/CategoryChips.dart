@@ -31,7 +31,7 @@ class _CategoryChipsState extends State<CategoryChips> {
             padding: const EdgeInsets.symmetric(horizontal: 5),
             child: ChoiceChip(
               label: TextApp(
-                context.tr2(category),
+              "context.tr2(category)",
                 style: TextStyle(
                   fontSize: AppDimensions.fontSizeDefault,
                   color: isSelected ? Colors.white : context.color.titleColor,

@@ -1,11 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 
+import '../../../gen/locale_keys.g.dart';
+
 class Validator {
   Validator._();
 
   static String? validate(String? value) {
     if (value?.isEmpty ?? true) {
-      return "LocaleKeys.fieldIsRequire.tr()d.tr()";
+      return LocaleKeys.fieldIsRequired.tr();
     }
     return null;
   }
@@ -31,12 +33,12 @@ class Validator {
   //   return null;
   // }
   //
-  // static String? validateGender(String? value) {
-  //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.genderIsRequire.tr()d.tr();
-  //   }
-  //   return null;
-  // }
+  static String? validateGender(String? value) {
+    if (value?.isEmpty ?? true) {
+      return LocaleKeys.genderIsRequired.tr();
+    }
+    return null;
+  }
   //
   // static String? validatePostalCode(String? value) {
   //   if (value?.isEmpty ?? true) {
@@ -89,22 +91,22 @@ class Validator {
   //   return null;
   // }
   //
-  // static String? validateDateOfBirth(String? value) {
-  //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.dateOfBirthIsRequire.tr()d.tr();
-  //   }
-  //   return null;
-  // }
+  static String? validateDateOfBirth(String? value) {
+    if (value?.isEmpty ?? true) {
+      return LocaleKeys.dateOfBirthIsRequired.tr();
+    }
+    return null;
+  }
   //
-  // static String? validateOTP(String? value) {
-  //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.otpIsRequire.tr()d.tr();
-  //   }
-  //   if (value?.length != 5) {
-  //     return LocaleKeys.otpMustBe5Digit.tr()s.tr();
-  //   }
-  //   return null;
-  // }
+  static String? validateOTP(String? value) {
+    if (value?.isEmpty ?? true) {
+      return LocaleKeys.otpIsRequired.tr();
+    }
+    if (value?.length != 4) {
+      return LocaleKeys.otpMustBe4Digits.tr();
+    }
+    return null;
+  }
 
   //
   // static String? validateRestPassword(String value) {
@@ -142,29 +144,29 @@ class Validator {
     String atLeastOneSpecial = r'^(?=.*?[!@#\$&*~?%^])';
     String lengthPattern = r'^.{8,}';
     if (value == null || value.isEmpty) {
-      return "LocaleKeys.passwordIsRequire.tr()d.tr()";
+      return LocaleKeys.passwordIsRequired.tr();
     }
     if (!RegExp(lengthPattern).hasMatch(value)) {
-      return "LocaleKeys.mustBeAtLeast8CharactersLon.tr()g.tr()";
+      return LocaleKeys.mustBeAtLeast8CharactersLong.tr();
     }
     if (!RegExp(atLeastOneUpper).hasMatch(value)) {
-      return "LocaleKeys.mustContainAtLeastOneUppercaseLette.tr()r.tr()";
+      return LocaleKeys.mustContainAtLeastOneUppercaseLetter.tr();
     }
     if (!RegExp(atLeastOneLower).hasMatch(value)) {
-      return "LocaleKeys.mustContainAtLeastOneLowerCas.tr()e.tr()";
+      return LocaleKeys.mustContainAtLeastOneLowerCase.tr();
     }
     if (!RegExp(atLeastOneDigit).hasMatch(value)) {
-      return "LocaleKeys.mustContainAtLeastOneNumbe.tr()r.tr()";
+      return LocaleKeys.mustContainAtLeastOneNumber.tr();
     }
     if (!RegExp(atLeastOneSpecial).hasMatch(value)) {
-      return "LocaleKeys.mustContainAtLeastOneSpecialCharacte.tr()r.tr()";
+      return LocaleKeys.mustContainAtLeastOneSpecialCharacter.tr();
     }
     return null;
   }
 
   static String? validateConfirmPassword(String? value, String? confirm) {
     if (value != confirm) {
-      return "LocaleKeys.twoPasswordsMustBeIdentica.tr()l.tr()";
+      return LocaleKeys.twoPasswordsMustBeIdentical.tr();
     }
     return null;
   }
@@ -179,64 +181,42 @@ class Validator {
       return null;
     }
     if (!regex.hasMatch(value)) {
-      return "LocaleKeys.enterTheCorrectEmai.tr()l.tr()";
+      return LocaleKeys.enterTheCorrectEmail.tr();
     } else {
       return null;
     }
   }
 
-  // static String? validateItalianMobile(String? value) {
-  //   // Define a regular expression for Italian mobile numbers.
-  //   String pattern = r'^(\+39)?3[0-9]{9}$';
-  //   RegExp regExp = RegExp(pattern);
-  //
-  //   if (value?.isEmpty??true) {
-  //     return LocaleKeys.phoneNumberIsRequire.tr()d.tr();
-  //   } else if (!regExp.hasMatch(value??"")) {
-  //     return LocaleKeys.phoneNumberIsIncorrec.tr()t.tr();
-  //   }
-  //
-  //   return null;
-  // }
-  // static String? validateItalianMobile(String? value) {
-  //   String pattern = r'^(\+39)?3[0-9]{9}$';
-  //   RegExp regExp = RegExp(pattern);
-  //
-  //   if (value == null || value.isEmpty) {
-  //     return LocaleKeys.phoneNumberIsRequire.tr()d.tr();
-  //   }
-  //   if (!value.startsWith('39')) {
-  //     return LocaleKeys.mustStartWith3.tr()9.tr(); //Must start with 39
-  //   }
-  //   if (value.length != 10) {
-  //     return LocaleKeys.phoneNumberLengthMustBe1.tr()0.tr();
-  //   }
-  //   if (!regExp.hasMatch(value)) {
-  //     return LocaleKeys.phoneNumberIsIncorrec.tr()t.tr();
-  //   }
-  //
-  //   return null;
-  // }
-  //
-  // static String? validateEgyptianMobile(String? value) {
-  //   String pattern = r'^[1][0-9]{9}$';
-  //   RegExp regExp = RegExp(pattern);
-  //
-  //   if (value == null || value.isEmpty) {
-  //     return LocaleKeys.phoneNumberIsRequire.tr()d.tr();
-  //   }
-  //   if (!value.startsWith('1')) {
-  //     return LocaleKeys.mustStartWith.tr()1.tr(); //Must start with 1
-  //   }
-  //   if (value.length != 10) {
-  //     return LocaleKeys.phoneNumberLengthMustBe1.tr()0.tr();
-  //   }
-  //   if (!regExp.hasMatch(value)) {
-  //     return LocaleKeys.phoneNumberIsIncorrec.tr()t.tr();
-  //   }
-  //   return null;
-  // }
-  //
+
+  static String? validateEgyptianMobile(String? value) {
+    String pattern = r'^01[0-9]{9}$';
+    RegExp regExp = RegExp(pattern);
+
+    if (value == null || value.isEmpty) {
+      return LocaleKeys.phoneNumberIsRequired.tr();
+    }
+    if (!value.startsWith('01')) {
+      return LocaleKeys.mustStartWith01.tr();
+    }
+    if (value.length != 11) {
+      return LocaleKeys.phoneNumberLengthMustBe11.tr();
+    }
+    if (!regExp.hasMatch(value)) {
+      return LocaleKeys.phoneNumberIsIncorrect.tr();
+    }
+    return null;
+  }
+
+  static String? validateNationalId(String? value) {
+    if (value == null || value.isEmpty) {
+      return LocaleKeys.nationalIdIsRequired.tr();
+    }
+    if (value.length != 14) {
+      return LocaleKeys.nationalIdLengthMustBe14.tr();
+    }
+    return null;
+  }
+
   // static String? validateChildName(String? value) {
   //   if (value == null || value.isEmpty) {
   //     return LocaleKeys.childNameIsRequire.tr()d.tr();

@@ -63,7 +63,10 @@ class AgzgantyApp extends StatelessWidget {
                     return ScreenUtilInit(
                       designSize: const Size(375, 812),
                       child: MaterialApp(
-                        supportedLocales: Translations.supportedLocales,
+                        supportedLocales: [
+                          Locale(AppStrings.translations.localeAr),
+                          Locale(AppStrings.translations.localeEN),
+                        ],
                         localizationsDelegates: context.localizationDelegates,
                         home: SplashScreen(),
                         locale: Locale(cubit.currentLangCode),

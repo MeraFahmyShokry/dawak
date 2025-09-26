@@ -83,7 +83,7 @@ class MyOrdersItem extends StatelessWidget {
                 padding: EdgeInsetsDirectional.symmetric(
                     horizontal: 8, vertical: 5.5),
                 child: TextApp(
-                  context.tr2(deliveryType.label),
+                  "context.tr2(deliveryType.label)",
                   style: context.textStyle.copyWith(
                       fontSize: AppDimensions.fontSizeSmall,
                       fontWeight: FontWeightHelper.regular,

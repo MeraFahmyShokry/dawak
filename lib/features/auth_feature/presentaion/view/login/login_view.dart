@@ -7,7 +7,6 @@ import 'package:clean_arc/core/utils/extensions/padding_extensions.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/controller/auth_cubit.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/CustomSocialSignIn.dart';
-import 'package:clean_arc/features/auth_feature/presentaion/widgets/SelectAccountTypeScreen.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/SignUpText.dart';
 import 'package:clean_arc/features/layout_feature/view/layout_view.dart';
 import 'package:clean_arc/gen/locale_keys.g.dart';
@@ -17,6 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/helper/validator.dart';
+import '../register/select_account_type_screen.dart';
 
 //@RoutePage()
 class LoginView extends StatefulWidget {

@@ -1,6 +1,5 @@
 library utils_package;
 
-export 'package:clean_arc/core/language/translation/translations.dart';
 export 'package:clean_arc/core/presentation/extintions/context_extintions.dart';
 export 'package:clean_arc/core/presentation/extintions/string_extintion.dart';
 export 'package:clean_arc/core/presentation/util/app_dimensions.dart';

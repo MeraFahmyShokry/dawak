@@ -75,5 +75,13 @@ class
 //===============================
 
 
-    
 
+
+### Easy Localization
+
+- Library for handling app localization.
+- Command for generating localization keys:
+
+```bash
+  dart run easy_localization:generate --source-dir ./assets/translations -f keys -o locale_keys.g.dart -O lib/gen
+  ```

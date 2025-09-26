@@ -1,8 +1,12 @@
+import 'dart:developer';
+
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/gen/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
+
+import '../../utils/translate.dart';
 
 class AppDateTimeFormat {
   static String? formatDateAndTime(
@@ -51,4 +55,15 @@ class AppDateTimeFormat {
         .format(DateTime.parse(date));
     return formattedDate;
   }
+
+  static String? convertSentDate(DateTime? date,BuildContext context) {
+    log("date::$date");
+    if (date != null) {
+      return DateFormat('dd-MM-yyyy', EasyLocalization.of( context)
+          ?.currentLocale
+          ?.languageCode).format(date);
+    }
+    return null;
+  }
+
 }

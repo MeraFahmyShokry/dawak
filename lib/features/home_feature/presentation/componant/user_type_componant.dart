@@ -3,6 +3,7 @@ import 'package:clean_arc/core/constant.dart';
 import 'package:clean_arc/core/presentation/widget/show_all_widget.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
 import 'package:clean_arc/features/auth_feature/domain/model/account_type_model.dart';
+import 'package:clean_arc/features/auth_feature/domain/model/user_type.dart';
 import 'package:clean_arc/features/auth_feature/presentaion/widgets/item/AccountTypeItem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,10 +38,11 @@ class UserTypeComponent extends StatelessWidget {
           itemCount: accountTypes.length,
           itemBuilder: (context, index) {
             return AccountTypeItem(
+              type: UserType(
                 imagePath: accountTypes[index].image,
-                imageSvgPath: accountTypes[index].image,
                 label: accountTypes[index].label,
-                onTap: accountTypes[index].OnTap
+              ),
+                onTap: accountTypes[index].onTap
 
                 //     () {
                 //

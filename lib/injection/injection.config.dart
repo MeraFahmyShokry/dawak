@@ -21,8 +21,12 @@ import 'package:clean_arc/core/utils/helper/error_handler.dart' as _i246;
 import 'package:clean_arc/core/utils_package/utils_package.dart' as _i845;
 import 'package:clean_arc/features/auth_feature/domain/repository/auth_repository.dart'
     as _i453;
+import 'package:clean_arc/features/auth_feature/domain/repository/registration_repository.dart'
+    as _i622;
 import 'package:clean_arc/features/auth_feature/domain/services/remote/login_remote_data_source.dart'
     as _i275;
+import 'package:clean_arc/features/auth_feature/domain/services/remote/registration_remote_data_source.dart'
+    as _i753;
 import 'package:clean_arc/features/auth_feature/presentaion/controller/auth_cubit.dart'
     as _i1020;
 import 'package:clean_arc/features/book_appointment_feature/controller/book_appointment_controller.dart'
@@ -117,6 +121,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i589.PatientServices>(
       () => _i589.PatientServices(gh<_i845.Dio>(), gh<_i790.Configuration>()),
     );
+    gh.lazySingleton<_i753.RegistrationServices>(
+      () => _i753.RegistrationServices(
+        gh<_i845.Dio>(),
+        gh<_i790.Configuration>(),
+      ),
+    );
     gh.lazySingleton<_i790.Configuration>(
       () => _i790.ProdConfiguration(),
       registerFor: {_prod},
@@ -159,6 +169,12 @@ extension GetItInjectableX on _i174.GetIt {
       () => _i820.DoctorsRepositoryImpl(
         gh<_i974.Logger>(),
         gh<_i397.DoctorsServices>(),
+      ),
+    );
+    gh.lazySingleton<_i622.RegistrationRepository>(
+      () => _i622.RegistrationRepositoryImpl(
+        gh<_i974.Logger>(),
+        gh<_i753.RegistrationServices>(),
       ),
     );
     gh.factory<_i311.BookAppointmentCubit>(

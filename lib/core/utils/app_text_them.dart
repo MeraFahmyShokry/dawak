@@ -37,6 +37,8 @@ class AppTextTheme {
 
   static TextStyle get bodyXSmall => _textStyle(12, FontWeight.w400);
 
+  static TextStyle get bodyXXSmall => _textStyle(10, FontWeight.w400);
+
   // mediumBold Body Texts
   static TextStyle get bodyLargeMediumBold => _textStyle(18, FontWeight.w500);
 
