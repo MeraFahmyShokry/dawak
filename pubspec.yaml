@@ -15,6 +15,11 @@ dependencies:
   skeletonizer: ^2.1.0+1
 
   flutter_screenutil: ^5.9.0
+
+  flutter_easyloading: ^3.0.5
+
+  gif: ^2.3.0
+
   # Equality
   equatable: ^2.0.5
   timeago:
@@ -146,6 +151,7 @@ flutter:
     - .env.prod
     - assets/images/core/logos/
     - assets/images/core/png/
+    - assets/images/core/animation/
     - assets/images/core/svg/
     - assets/images/demo/png/
     - assets/images/demo/svg/

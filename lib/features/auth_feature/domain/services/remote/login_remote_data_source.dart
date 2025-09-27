@@ -30,48 +30,11 @@ abstract class AuthServices {
   Future<BasicResponse<AppUser>> getCurrentUser();
 
 
-
-  @POST('profiles/token/refresh/')
-  Future<BaseResponseModel> refreshToken({
-    @Field('refresh') required String refreshToken,
-   });
-
-  // @POST('profiles/login/')
-  // Future<DoctorModel> refreshToken({
-  //   @Field('id_number') required String refreshToken,
-  //   @Field('password') required String password,
-  // });
-
-  @override
-  @POST('api/auth/change-password')
-  Future<BaseResponseModel<MessageModel>> changePassword({
-    @Field('driver_id') required String driverId,
-    @Field('current_password') required String oldPassword,
-    @Field('password') required String newPassword,
-    @Field('password_confirmation') required String confirmPassword,
+  @POST('Account/ForgetPassword')
+  Future<BasicResponse<bool?>> forgetPassword({
+    @Query('phonenumber') required String phoneNumber,
+    @Query('newPassword') required String newPassword,
+    @Query('otp') required String otp,
   });
 
-  @override
-  @POST('api/auth/reset-password')
-  Future<BaseResponseModel<MessageModel>> forgetPassword({
-    @Field('phone') required String phone,
-  });
-
-  @override
-  @POST('/user/signup')
-  Future<BaseResponseModel<UserModel>> register({
-    @Field('phone') required String? phone,
-    @Field('email') required String? email,
-    @Field('name') required String? userName,
-    @Field('address') required String? address,
-    @Field('country') required String? country,
-    @Field('national_Id') required String? nationalId,
-    @Field('password') required String? password,
-    @Field('password_confirmation') required String? passwordConfirmation,
-  });
-
-
-
-  @GET('profiles/profile/')
-  Future<BaseResponseModel<UserProfileDetails>> getProfileData();
 }

@@ -23,12 +23,14 @@ mixin _$RegistrationState {
   UserDto get registerModel => throw _privateConstructorUsedError;
   File? get profileImage => throw _privateConstructorUsedError;
   File? get insuranceImage => throw _privateConstructorUsedError;
-  GlobalKey<FormState> get registerKey => throw _privateConstructorUsedError;
   TextEditingController get dobController => throw _privateConstructorUsedError;
   List<Gender> get genders => throw _privateConstructorUsedError;
   List<Item> get maritalStatus => throw _privateConstructorUsedError;
   List<Country> get countries => throw _privateConstructorUsedError;
   List<InsuranceCompany> get companies => throw _privateConstructorUsedError;
+  GlobalKey<FormState> get registerKey => throw _privateConstructorUsedError;
+  GlobalKey<FormState> get addressKey => throw _privateConstructorUsedError;
+  GlobalKey<FormState> get passwordKey => throw _privateConstructorUsedError;
 
   /// Create a copy of RegistrationState
   /// with the given fields replaced by the non-null parameter values.
@@ -50,12 +52,14 @@ abstract class $RegistrationStateCopyWith<$Res> {
     UserDto registerModel,
     File? profileImage,
     File? insuranceImage,
-    GlobalKey<FormState> registerKey,
     TextEditingController dobController,
     List<Gender> genders,
     List<Item> maritalStatus,
     List<Country> countries,
     List<InsuranceCompany> companies,
+    GlobalKey<FormState> registerKey,
+    GlobalKey<FormState> addressKey,
+    GlobalKey<FormState> passwordKey,
   });
 
   $RegistrationStatusCopyWith<$Res> get registrationStatus;
@@ -81,12 +85,14 @@ class _$RegistrationStateCopyWithImpl<$Res, $Val extends RegistrationState>
     Object? registerModel = null,
     Object? profileImage = freezed,
     Object? insuranceImage = freezed,
-    Object? registerKey = null,
     Object? dobController = null,
     Object? genders = null,
     Object? maritalStatus = null,
     Object? countries = null,
     Object? companies = null,
+    Object? registerKey = null,
+    Object? addressKey = null,
+    Object? passwordKey = null,
   }) {
     return _then(
       _value.copyWith(
@@ -110,10 +116,6 @@ class _$RegistrationStateCopyWithImpl<$Res, $Val extends RegistrationState>
                 ? _value.insuranceImage
                 : insuranceImage // ignore: cast_nullable_to_non_nullable
                       as File?,
-            registerKey: null == registerKey
-                ? _value.registerKey
-                : registerKey // ignore: cast_nullable_to_non_nullable
-                      as GlobalKey<FormState>,
             dobController: null == dobController
                 ? _value.dobController
                 : dobController // ignore: cast_nullable_to_non_nullable
@@ -134,6 +136,18 @@ class _$RegistrationStateCopyWithImpl<$Res, $Val extends RegistrationState>
                 ? _value.companies
                 : companies // ignore: cast_nullable_to_non_nullable
                       as List<InsuranceCompany>,
+            registerKey: null == registerKey
+                ? _value.registerKey
+                : registerKey // ignore: cast_nullable_to_non_nullable
+                      as GlobalKey<FormState>,
+            addressKey: null == addressKey
+                ? _value.addressKey
+                : addressKey // ignore: cast_nullable_to_non_nullable
+                      as GlobalKey<FormState>,
+            passwordKey: null == passwordKey
+                ? _value.passwordKey
+                : passwordKey // ignore: cast_nullable_to_non_nullable
+                      as GlobalKey<FormState>,
           )
           as $Val,
     );
@@ -167,12 +181,14 @@ abstract class _$$RegistrationStateImplCopyWith<$Res>
     UserDto registerModel,
     File? profileImage,
     File? insuranceImage,
-    GlobalKey<FormState> registerKey,
     TextEditingController dobController,
     List<Gender> genders,
     List<Item> maritalStatus,
     List<Country> countries,
     List<InsuranceCompany> companies,
+    GlobalKey<FormState> registerKey,
+    GlobalKey<FormState> addressKey,
+    GlobalKey<FormState> passwordKey,
   });
 
   @override
@@ -198,12 +214,14 @@ class __$$RegistrationStateImplCopyWithImpl<$Res>
     Object? registerModel = null,
     Object? profileImage = freezed,
     Object? insuranceImage = freezed,
-    Object? registerKey = null,
     Object? dobController = null,
     Object? genders = null,
     Object? maritalStatus = null,
     Object? countries = null,
     Object? companies = null,
+    Object? registerKey = null,
+    Object? addressKey = null,
+    Object? passwordKey = null,
   }) {
     return _then(
       _$RegistrationStateImpl(
@@ -227,10 +245,6 @@ class __$$RegistrationStateImplCopyWithImpl<$Res>
             ? _value.insuranceImage
             : insuranceImage // ignore: cast_nullable_to_non_nullable
                   as File?,
-        registerKey: null == registerKey
-            ? _value.registerKey
-            : registerKey // ignore: cast_nullable_to_non_nullable
-                  as GlobalKey<FormState>,
         dobController: null == dobController
             ? _value.dobController
             : dobController // ignore: cast_nullable_to_non_nullable
@@ -251,6 +265,18 @@ class __$$RegistrationStateImplCopyWithImpl<$Res>
             ? _value._companies
             : companies // ignore: cast_nullable_to_non_nullable
                   as List<InsuranceCompany>,
+        registerKey: null == registerKey
+            ? _value.registerKey
+            : registerKey // ignore: cast_nullable_to_non_nullable
+                  as GlobalKey<FormState>,
+        addressKey: null == addressKey
+            ? _value.addressKey
+            : addressKey // ignore: cast_nullable_to_non_nullable
+                  as GlobalKey<FormState>,
+        passwordKey: null == passwordKey
+            ? _value.passwordKey
+            : passwordKey // ignore: cast_nullable_to_non_nullable
+                  as GlobalKey<FormState>,
       ),
     );
   }
@@ -265,12 +291,14 @@ class _$RegistrationStateImpl implements _RegistrationState {
     required this.registerModel,
     this.profileImage,
     this.insuranceImage,
-    required this.registerKey,
     required this.dobController,
     final List<Gender> genders = const [],
     final List<Item> maritalStatus = const [],
     final List<Country> countries = const [],
     final List<InsuranceCompany> companies = const [],
+    required this.registerKey,
+    required this.addressKey,
+    required this.passwordKey,
   }) : _accountTypes = accountTypes,
        _genders = genders,
        _maritalStatus = maritalStatus,
@@ -294,8 +322,6 @@ class _$RegistrationStateImpl implements _RegistrationState {
   final File? profileImage;
   @override
   final File? insuranceImage;
-  @override
-  final GlobalKey<FormState> registerKey;
   @override
   final TextEditingController dobController;
   final List<Gender> _genders;
@@ -335,8 +361,15 @@ class _$RegistrationStateImpl implements _RegistrationState {
   }
 
   @override
+  final GlobalKey<FormState> registerKey;
+  @override
+  final GlobalKey<FormState> addressKey;
+  @override
+  final GlobalKey<FormState> passwordKey;
+
+  @override
   String toString() {
-    return 'RegistrationState(registrationStatus: $registrationStatus, accountTypes: $accountTypes, registerModel: $registerModel, profileImage: $profileImage, insuranceImage: $insuranceImage, registerKey: $registerKey, dobController: $dobController, genders: $genders, maritalStatus: $maritalStatus, countries: $countries, companies: $companies)';
+    return 'RegistrationState(registrationStatus: $registrationStatus, accountTypes: $accountTypes, registerModel: $registerModel, profileImage: $profileImage, insuranceImage: $insuranceImage, dobController: $dobController, genders: $genders, maritalStatus: $maritalStatus, countries: $countries, companies: $companies, registerKey: $registerKey, addressKey: $addressKey, passwordKey: $passwordKey)';
   }
 
   @override
@@ -356,8 +389,6 @@ class _$RegistrationStateImpl implements _RegistrationState {
                 other.profileImage == profileImage) &&
             (identical(other.insuranceImage, insuranceImage) ||
                 other.insuranceImage == insuranceImage) &&
-            (identical(other.registerKey, registerKey) ||
-                other.registerKey == registerKey) &&
             (identical(other.dobController, dobController) ||
                 other.dobController == dobController) &&
             const DeepCollectionEquality().equals(other._genders, _genders) &&
@@ -372,7 +403,13 @@ class _$RegistrationStateImpl implements _RegistrationState {
             const DeepCollectionEquality().equals(
               other._companies,
               _companies,
-            ));
+            ) &&
+            (identical(other.registerKey, registerKey) ||
+                other.registerKey == registerKey) &&
+            (identical(other.addressKey, addressKey) ||
+                other.addressKey == addressKey) &&
+            (identical(other.passwordKey, passwordKey) ||
+                other.passwordKey == passwordKey));
   }
 
   @override
@@ -383,12 +420,14 @@ class _$RegistrationStateImpl implements _RegistrationState {
     registerModel,
     profileImage,
     insuranceImage,
-    registerKey,
     dobController,
     const DeepCollectionEquality().hash(_genders),
     const DeepCollectionEquality().hash(_maritalStatus),
     const DeepCollectionEquality().hash(_countries),
     const DeepCollectionEquality().hash(_companies),
+    registerKey,
+    addressKey,
+    passwordKey,
   );
 
   /// Create a copy of RegistrationState
@@ -410,12 +449,14 @@ abstract class _RegistrationState implements RegistrationState {
     required final UserDto registerModel,
     final File? profileImage,
     final File? insuranceImage,
-    required final GlobalKey<FormState> registerKey,
     required final TextEditingController dobController,
     final List<Gender> genders,
     final List<Item> maritalStatus,
     final List<Country> countries,
     final List<InsuranceCompany> companies,
+    required final GlobalKey<FormState> registerKey,
+    required final GlobalKey<FormState> addressKey,
+    required final GlobalKey<FormState> passwordKey,
   }) = _$RegistrationStateImpl;
 
   @override
@@ -429,8 +470,6 @@ abstract class _RegistrationState implements RegistrationState {
   @override
   File? get insuranceImage;
   @override
-  GlobalKey<FormState> get registerKey;
-  @override
   TextEditingController get dobController;
   @override
   List<Gender> get genders;
@@ -440,6 +479,12 @@ abstract class _RegistrationState implements RegistrationState {
   List<Country> get countries;
   @override
   List<InsuranceCompany> get companies;
+  @override
+  GlobalKey<FormState> get registerKey;
+  @override
+  GlobalKey<FormState> get addressKey;
+  @override
+  GlobalKey<FormState> get passwordKey;
 
   /// Create a copy of RegistrationState
   /// with the given fields replaced by the non-null parameter values.

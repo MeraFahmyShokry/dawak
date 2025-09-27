@@ -8,12 +8,14 @@ class RegistrationState with _$RegistrationState {
     required UserDto registerModel,
     File? profileImage,
     File? insuranceImage,
-    required GlobalKey<FormState> registerKey,
     required TextEditingController dobController,
     @Default([]) List<Gender> genders,
     @Default([]) List<Item> maritalStatus,
     @Default([]) List<Country> countries,
     @Default([]) List<InsuranceCompany> companies,
+    required GlobalKey<FormState> registerKey,
+    required GlobalKey<FormState> addressKey,
+    required GlobalKey<FormState> passwordKey,
 }) = _RegistrationState;
 }
 

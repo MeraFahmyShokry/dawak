@@ -13,6 +13,7 @@ import 'package:clean_arc/injection/injection.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:month_year_picker/month_year_picker.dart';
 
 class AgzgantyApp extends StatelessWidget {
@@ -75,24 +76,7 @@ class AgzgantyApp extends StatelessWidget {
                         title: 'Agzaganty',
                         debugShowCheckedModeBanner:
                             EnvVariable.instance.isDebugMode,
-                        builder: (cnx, widget) {
-                          return GestureDetector(
-                            onTap: () {
-                              FocusManager.instance.primaryFocus?.unfocus();
-                            },
-                            child: Scaffold(
-                              body: Builder(
-                                builder: (context) {
-                                  ConnectivityController.instance.init();
-                                  return Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 0),
-                                      child: widget!);
-                                },
-                              ),
-                            ),
-                          );
-                        },
+                        builder: EasyLoading.init(),
                       ),
                     );
                   },

@@ -626,6 +626,8 @@
   "postalCode": "الرمز البريدي",
   "enterPostalCode": "أدخل الرمز البريدي",
   "selectCompany": "اختر الشركة",
-  "addressDetails": "تفاصيل العنوان"
+  "addressDetails": "تفاصيل العنوان",
+  "checkYourSMSOn": "تحقق من الرسائل القصيرة على",
+  "goToLogin": "اذهب إلى تسجيل الدخول"
 }
 

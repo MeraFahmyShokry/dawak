@@ -1,122 +1,97 @@
 import 'package:clean_arc/core/routing/navigation_helper.dart';
+import 'package:clean_arc/core/utils/app_text_them.dart';
+import 'package:clean_arc/core/utils/extensions/padding_extensions.dart';
 import 'package:clean_arc/core/utils_package/utils_package.dart';
-import 'package:clean_arc/features/auth_feature/presentaion/view/forgt_password/rest_password_view.dart';
+import 'package:clean_arc/features/auth_feature/presentaion/view/forgt_password/create_new_password_view.dart';
 import 'package:clean_arc/gen/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../../core/presentation/widget/custom_app_bar_new.dart';
+import '../../../../../core/presentation/widget/on_tap.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/helper/validator.dart';
+import '../../controller/forgetPasswordCubit/forget_password_cubit.dart';
+import '../otp/otp_view.dart';
 
 //@RoutePage()
 class ForgetPasswordView extends StatelessWidget {
   const ForgetPasswordView({super.key});
 
-  static const path = '/ForgetPasswordView';
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        // backgroundColor: context.color.primaryColor?.withOpacity(.2),
-        body: SafeArea(
-      child: SizedBox(
-        height: context.height,
-        width: context.width,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Spacer(),
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.arrow_back_ios,
-                    size: AppDimensions.fontSizeExtraLarge,
-                  )),
-              Spacer(),
-              Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(
-                      10,
+    return OnTap(
+      onTap: FocusScope.of(context).unfocus,
+      child: Scaffold(
+          appBar: CustomAppBarNew(
+            title: "Forget Password", isHaveBackButton: true,),
+          body: Padding(
+            padding: 16.padHorizontal,
+            child: BlocProvider(
+              create: (context) => ForgetPasswordCubit(),
+              child: BlocBuilder<ForgetPasswordCubit, ForgetPasswordState>(
+                builder: (context, state) {
+                  return Form(
+                    key: state.forgetKey,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Text("Enter your phone number to send OTP code",
+                                style: AppTextTheme.bodySmall,),
+                              16.verticalSpace,
+                              CustomTextField(
+                                isShowBorder: true,
+                                inputType: TextInputType.phone,
+                                fillColor: AppColors.white,
+                                showTitle: true,
+                                titleText: "${LocaleKeys.phoneNumber.tr()} *",
+                                hintText: LocaleKeys.enterPhoneNumber.tr(),
+                                onValidate: Validator.validate,
+                                onChanged: (value) {
+                                  context.read<ForgetPasswordCubit>().setPhoneNumber(value);
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        24.verticalSpace,
+                        CustomButton(
+                          width: double.infinity,
+                          onPressed: () {
+                            if(state.forgetKey.currentState!.validate())
+                              {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (con) =>
+                                        OtpView(phoneNumber:state.phoneNumber??"", callBack: (otp) {
+                                          NavigationHelper.push(context, CreateNewPasswordView(
+                                            cubit: context.read<ForgetPasswordCubit>(),
+                                            otp: otp??"",
+                                          ));
+                                        },),
+                                  ),
+                                );
+                              }
+                          },
+                          child: TextApp(
+                            LocaleKeys.next.tr(),
+                            style: context.textStyleButton,
+                          ),
+                        ),
+                        16.verticalSpace,
+                      ],
                     ),
-                    border: Border.all(color: context.color.borderColor!)),
-                height: 60,
-                width: 60,
-                // child: AppImages.images.svg.keyIcon.svg(fit: BoxFit.scaleDown),
+                  );
+                },
               ),
-              Spacer(
-                flex: 3,
-              ),
-              TextApp(
-                LocaleKeys.forgetPassword2.tr(),
-                style: context.textStyle.copyWith(
-                    fontWeight: FontWeightHelper.bold,
-                    fontSize: AppDimensions.fontSizeOverLarge),
-              ),
-              SizedBox(
-                height: 16.h,
-              ),
-              Container(
-                // width: context.width / 1.5,
-                child: TextApp(
-                  LocaleKeys.dontWorry.tr(),
-                  style: context.textStyle.copyWith(
-                    fontWeight: FontWeightHelper.medium,
-                    fontSize: AppDimensions.fontSizeLarge,
-                    color: context.color.descriptionColor,
-                    height: 2,
-                  ),
-                  textAlign: TextAlign.start,
-                ),
-              ),
-              SizedBox(
-                height: 16.h,
-              ),
-              CustomTextField(
-                titleText: LocaleKeys.phoneOrEmail.tr(),
-                hintText: LocaleKeys.enterPhoneOrEmail.tr(),
-                // isShowBorder: true,
-              ),
-              const Spacer(
-                flex: 10,
-              ),
-              CustomButton(
-                  width: double.infinity,
-                  onPressed: () {
-                    // context.router.push(ResetPasswordViewRoute());
-                    NavigationHelper.push(
-                        context, ResetPasswordView());
-                  },
-                  child: TextApp(
-                    LocaleKeys.resetPassword.tr(),
-                    style: context.textStyleButton,
-                  )),
-               SizedBox(
-                height: 22.h,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextApp(
-                    LocaleKeys.returnToSignIn.tr(),
-                    style: context.textStyle.copyWith(
-                        color: context.color.descriptionColor,
-                        fontWeight: FontWeightHelper.semiBold),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Icon(
-                    Icons.arrow_forward,
-                    color: context.color.descriptionColor,
-                  )
-                ],
-              ),
-              Spacer(
-                flex: 10,
-              ),
-            ],
-          ),
-        ),
-      ),
-    ));
+            ),
+          )),
+    );
   }
 }

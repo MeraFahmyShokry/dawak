@@ -63,34 +63,7 @@ class Validator {
   //   }
   //   return null;
   // }
-  //
-  // static String? validateFullAddress(String? value) {
-  //   if (value?.isEmpty ?? true) {
-  //     return LocaleKeys.fullAddressIsRequire.tr()d.tr();
-  //   }
-  //   return null;
-  // }
-  //
-  // static String? validateFirstName(String? value) {
-  //   if (value == null || value.isEmpty) {
-  //     return LocaleKeys.pleaseEnterYourFirstNam.tr()e.tr();
-  //   }
-  //   if (value.length < 3) {
-  //     return LocaleKeys.mustBeAtLeast3CharactersLon.tr()g.tr();
-  //   }
-  //   return null;
-  // }
-  //
-  // static String? validateLastName(String? value) {
-  //   if (value == null || value.isEmpty) {
-  //     return LocaleKeys.pleaseEnterYourLastNam.tr()e.tr();
-  //   }
-  //   if (value.length < 3) {
-  //     return LocaleKeys.mustBeAtLeast3CharactersLon.tr()g.tr();
-  //   }
-  //   return null;
-  // }
-  //
+
   static String? validateDateOfBirth(String? value) {
     if (value?.isEmpty ?? true) {
       return LocaleKeys.dateOfBirthIsRequired.tr();
@@ -178,7 +151,7 @@ class Validator {
     RegExp regex = RegExp(pattern);
 
     if (value == null || value.isEmpty) {
-      return null;
+      return LocaleKeys.fieldIsRequired.tr();
     }
     if (!regex.hasMatch(value)) {
       return LocaleKeys.enterTheCorrectEmail.tr();

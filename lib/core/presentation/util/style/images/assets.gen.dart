@@ -40,6 +40,10 @@ class $AssetsTranslationsGen {
 class $AssetsImagesCoreGen {
   const $AssetsImagesCoreGen();
 
+  /// Directory path: assets/images/core/animation
+  $AssetsImagesCoreAnimationGen get animation =>
+      const $AssetsImagesCoreAnimationGen();
+
   /// Directory path: assets/images/core/logos
   $AssetsImagesCoreLogosGen get logos => const $AssetsImagesCoreLogosGen();
 
@@ -58,6 +62,22 @@ class $AssetsImagesDemoGen {
 
   /// Directory path: assets/images/demo/svg
   $AssetsImagesDemoSvgGen get svg => const $AssetsImagesDemoSvgGen();
+}
+
+class $AssetsImagesCoreAnimationGen {
+  const $AssetsImagesCoreAnimationGen();
+
+  /// File path: assets/images/core/animation/changePasswordSuccees.gif
+  AssetGenImage get changePasswordSuccees => const AssetGenImage(
+    'assets/images/core/animation/changePasswordSuccees.gif',
+  );
+
+  /// File path: assets/images/core/animation/registerSuccess.gif
+  AssetGenImage get registerSuccess =>
+      const AssetGenImage('assets/images/core/animation/registerSuccess.gif');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [changePasswordSuccees, registerSuccess];
 }
 
 class $AssetsImagesCoreLogosGen {

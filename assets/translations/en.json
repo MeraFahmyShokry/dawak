@@ -44,7 +44,7 @@
   "resetYourPassword": "Reset Your Password",
   "confirmVerificationCode": "Confirm Verification Code",
   "codeSent": "We sent you a activation code to your phone consisting of 6 digits",
-  "resendCode": "Resend the code",
+  "resendCode": "Resend code",
   "newPasswordMustDiffer": "Your new password must be different from the previous one",
   "confirmPassword": "Confirm Password",
   "passwordCondition1": "Must be 8 characters long and include some numbers",
@@ -586,7 +586,7 @@
   "allSpecialists": "ALL Specialists",
   "enterUserName": "Enter User Name",
   "selectYourGender": "Select your Gender",
-  "enterYourEmail": "enterYourEmail",
+  "enterYourEmail": "Enter your Email",
   "addPhoto": "Add Photo",
   "selectDate": "Select Date",
   "sun": "sun",
@@ -622,11 +622,13 @@
   "selectCountry": "Select Country",
   "selectCity": "Select City",
   "city": "City",
-
   "street": "Street",
   "enterStreet": "Enter Street",
   "postalCode": "Postal Code",
   "enterPostalCode": "Enter Postal Code",
   "selectCompany": "Select Company",
-  "addressDetails": "Address Details"
+  "addressDetails": "Address Details",
+
+  "checkYourSMSOn": "Check your SMS on",
+  "goToLogin": "Go To Login"
 }

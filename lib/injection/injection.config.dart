@@ -17,22 +17,26 @@ import 'package:clean_arc/core/data/services/shared_prefs/i_local_preference.dar
 import 'package:clean_arc/core/data/services/shared_prefs/local_storage.dart'
     as _i290;
 import 'package:clean_arc/core/data/utill/configration.dart' as _i790;
+import 'package:clean_arc/core/presentation/util/dialogs/message_service.dart'
+    as _i919;
 import 'package:clean_arc/core/utils/helper/error_handler.dart' as _i246;
 import 'package:clean_arc/core/utils_package/utils_package.dart' as _i845;
 import 'package:clean_arc/features/auth_feature/domain/repository/auth_repository.dart'
     as _i453;
+import 'package:clean_arc/features/auth_feature/domain/repository/otp_repository.dart'
+    as _i888;
 import 'package:clean_arc/features/auth_feature/domain/repository/registration_repository.dart'
     as _i622;
 import 'package:clean_arc/features/auth_feature/domain/services/remote/login_remote_data_source.dart'
     as _i275;
+import 'package:clean_arc/features/auth_feature/domain/services/remote/otp_remote_data_source.dart'
+    as _i455;
 import 'package:clean_arc/features/auth_feature/domain/services/remote/registration_remote_data_source.dart'
     as _i753;
 import 'package:clean_arc/features/auth_feature/presentaion/controller/auth_cubit.dart'
     as _i1020;
 import 'package:clean_arc/features/book_appointment_feature/controller/book_appointment_controller.dart'
     as _i311;
-import 'package:clean_arc/features/book_appointment_feature/domain/repository/book_appointment_repository.dart'
-    as _i847;
 import 'package:clean_arc/features/book_appointment_feature/domain/services/remote/book_appointment_remote_data_source.dart'
     as _i453;
 import 'package:clean_arc/features/clinic_feature/controller/get_all_clinics/get_all_clinics.dart'
@@ -87,6 +91,7 @@ extension GetItInjectableX on _i174.GetIt {
     final injectableModule = _$InjectableModule();
     gh.factory<_i421.AppCubit>(() => _i421.AppCubit());
     gh.factory<_i732.LayoutCubit>(() => _i732.LayoutCubit());
+    gh.singleton<_i919.MessageService>(() => _i919.MessageService());
     gh.singleton<_i246.ErrorHandler>(() => _i246.ErrorHandler());
     await gh.lazySingletonAsync<_i460.SharedPreferences>(
       () => injectableModule.sharedPref,
@@ -106,6 +111,15 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i275.AuthServices>(
       () => _i275.AuthServices(gh<_i845.Dio>(), gh<_i790.Configuration>()),
     );
+    gh.lazySingleton<_i455.OtpServices>(
+      () => _i455.OtpServices(gh<_i845.Dio>(), gh<_i790.Configuration>()),
+    );
+    gh.lazySingleton<_i753.RegistrationServices>(
+      () => _i753.RegistrationServices(
+        gh<_i845.Dio>(),
+        gh<_i790.Configuration>(),
+      ),
+    );
     gh.lazySingleton<_i453.BookAppointmentServices>(
       () => _i453.BookAppointmentServices(
         gh<_i845.Dio>(),
@@ -120,12 +134,6 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.lazySingleton<_i589.PatientServices>(
       () => _i589.PatientServices(gh<_i845.Dio>(), gh<_i790.Configuration>()),
-    );
-    gh.lazySingleton<_i753.RegistrationServices>(
-      () => _i753.RegistrationServices(
-        gh<_i845.Dio>(),
-        gh<_i790.Configuration>(),
-      ),
     );
     gh.lazySingleton<_i790.Configuration>(
       () => _i790.ProdConfiguration(),
@@ -147,11 +155,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i1043.GetClinicDetailsCubit>(
       () => _i1043.GetClinicDetailsCubit(gh<_i654.ClinicsRepository>()),
     );
-    gh.lazySingleton<_i847.AuthRepository>(
-      () => _i847.AuthRepositoryImpl(
-        gh<_i974.Logger>(),
-        gh<_i275.AuthServices>(),
-      ),
+    gh.lazySingleton<_i888.OtpRepository>(
+      () =>
+          _i888.OtpRepositoryImpl(gh<_i974.Logger>(), gh<_i455.OtpServices>()),
     );
     gh.lazySingleton<_i453.AuthRepository>(
       () => _i453.AuthRepositoryImpl(

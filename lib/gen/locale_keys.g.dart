@@ -629,5 +629,7 @@ abstract class  LocaleKeys {
   static const enterPostalCode = 'enterPostalCode';
   static const selectCompany = 'selectCompany';
   static const addressDetails = 'addressDetails';
+  static const checkYourSMSOn = 'checkYourSMSOn';
+  static const goToLogin = 'goToLogin';
 
 }

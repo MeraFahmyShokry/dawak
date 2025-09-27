@@ -6,7 +6,9 @@ import 'package:clean_arc/features/auth_feature/domain/model/insurance_company.d
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../../../../../core/data/model/base_response/base_response.dart';
 import '../../model/item.dart';
+import '../../model/user_model/user_model.dart';
 
 part 'registration_remote_data_source.g.dart';
 
@@ -26,5 +28,11 @@ abstract class RegistrationServices {
 
   @GET('InsuranceCompany/GetinsuranceCompanies/getinsuranceCompanies')
   Future<List<InsuranceCompany>?> getCompanies();
+
+  @POST("User/CreateUser")
+  @MultiPart()
+  Future<BaseResponseModel<UserModel>> register({
+    @Body() FormData? formData
+  });
 
 }

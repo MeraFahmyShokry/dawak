@@ -16,6 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/helper/validator.dart';
+import '../forgt_password/forget_password1_view.dart';
 import '../register/select_account_type_screen.dart';
 
 //@RoutePage()
@@ -41,102 +42,106 @@ class _LoginViewState extends State<LoginView> with ScreenUtils {
         }
       }, builder: (context, state) {
         LoginCubit loginCubit = context.read<LoginCubit>();
-        return Scaffold(
-            backgroundColor: context.color.whiteColor,
-            body: SingleChildScrollView(
-              child: SafeArea(
-                child: Padding(
-                  padding: 15.padAll,
-                  child: Column(
-                    children: [
-                      Center(
-                          child: Image.asset(
-                        AppImages.images.core.png.logo.path,
-                        width: 177.w,
-                        height: 123.h,
-                        fit: BoxFit.contain,
-                      )),
-                      Form(
-                        key: loginCubit.loginFormKey,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              height: 32.h,
-                            ),
-                            CustomTextField(
-                              controller:
-                                  loginCubit.serialNumberEmailController,
-                              isShowBorder: true,
-                              fillColor: AppColors.white,
-                              showTitle: true,
-                              titleText: LocaleKeys.serialNumberEmail.tr(),
-                              hintText: LocaleKeys.enterYourSerialNumberOrEmail.tr(),
-                              onValidate: Validator.validate,
-                            ),
-                            SizedBox(
-                              height: 16.h,
-                            ),
-                            CustomTextField(
-                              controller: loginCubit.passwordController,
-                              isShowBorder: true,
-                              fillColor: context.color.whiteColor,
-                              showTitle: true,
-                              isPassword: true,
-                              titleText: LocaleKeys.password.tr(),
-                              hintText: LocaleKeys.enterYourPassword.tr(),
-                              onValidate: Validator.validatePassword,
-                            ),
-                            OnTap(
-                              onTap: () {
-                                /// navigate to forget password
-                              },
-                              child: Padding(
-                                padding: 6.padVertical + 4.padHorizontal,
-                                child: Text(
-                                  LocaleKeys.forgetYourPassword.tr(),
-                                  style: AppTextTheme.linkSmall
-                                      .copyWith(color: AppColors.primary),
+        return OnTap(
+          onTap: FocusScope.of(context).unfocus,
+          child: Scaffold(
+              backgroundColor: context.color.whiteColor,
+              body: SingleChildScrollView(
+                child: SafeArea(
+                  child: Padding(
+                    padding: 15.padAll,
+                    child: Column(
+                      children: [
+                        Center(
+                            child: Image.asset(
+                          AppImages.images.core.png.logo.path,
+                          width: 177.w,
+                          height: 123.h,
+                          fit: BoxFit.contain,
+                        )),
+                        Form(
+                          key: loginCubit.loginFormKey,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                height: 32.h,
+                              ),
+                              CustomTextField(
+                                controller:
+                                    loginCubit.serialNumberEmailController,
+                                isShowBorder: true,
+                                fillColor: AppColors.white,
+                                showTitle: true,
+                                titleText: LocaleKeys.serialNumberEmail.tr(),
+                                hintText: LocaleKeys.enterYourSerialNumberOrEmail.tr(),
+                                onValidate: Validator.validate,
+                              ),
+                              SizedBox(
+                                height: 16.h,
+                              ),
+                              CustomTextField(
+                                controller: loginCubit.passwordController,
+                                isShowBorder: true,
+                                fillColor: context.color.whiteColor,
+                                showTitle: true,
+                                isPassword: true,
+                                titleText: LocaleKeys.password.tr(),
+                                hintText: LocaleKeys.enterYourPassword.tr(),
+                                onValidate: Validator.validatePassword,
+                              ),
+                              OnTap(
+                                onTap: () {
+                                  /// navigate to forget password
+                                  NavigationHelper.push(context, ForgetPasswordView());
+                                },
+                                child: Padding(
+                                  padding: 6.padVertical + 4.padHorizontal,
+                                  child: Text(
+                                    LocaleKeys.forgetYourPassword.tr(),
+                                    style: AppTextTheme.linkSmall
+                                        .copyWith(color: AppColors.primary),
+                                  ),
                                 ),
                               ),
-                            ),
-                            18.verticalSpace,
-                            CustomButton(
-                              width: double.infinity,
-                              isLoading: loginCubit.state.isLoadingLogin,
-                              onPressed: () async {
-                                if (loginCubit.loginFormKey.currentState!
-                                    .validate()) {
-                                  await loginCubit.login();
-                                }
-                              },
-                              title: LocaleKeys.login.tr(),
-                            ),
-                            20.verticalSpace,
-                            CustomSocialSignIn(),
-                            SizedBox(
-                              height: 24.h,
-                            ),
-                            SignUpText(
-                              text: LocaleKeys.haveAnAccount.tr(),
-                              actionText: LocaleKeys.signUp.tr(),
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          SelectAccountTypeScreen()),
-                                );
-                              },
-                            ),
-                          ],
+                              18.verticalSpace,
+                              CustomButton(
+                                width: double.infinity,
+                                isLoading: loginCubit.state.isLoadingLogin,
+                                onPressed: () async {
+                                  if (loginCubit.loginFormKey.currentState!
+                                      .validate()) {
+                                    await loginCubit.login();
+                                  }
+                                },
+                                title: LocaleKeys.login.tr(),
+                              ),
+                              20.verticalSpace,
+                              CustomSocialSignIn(),
+                              SizedBox(
+                                height: 24.h,
+                              ),
+                              SignUpText(
+                                text: LocaleKeys.haveAnAccount.tr(),
+                                actionText: LocaleKeys.signUp.tr(),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            SelectAccountTypeScreen()),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ));
+              )),
+        );
       }),
     );
   }
